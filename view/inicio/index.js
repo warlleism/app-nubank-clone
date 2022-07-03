@@ -30,7 +30,7 @@ const conainerTop = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        backgroundColor: '#9600c4',
+        backgroundColor: '#a031df',
         height: 150
     },
     containerIcons: {
