@@ -8,15 +8,16 @@ import Pix from "../../icones/pix.png"
 import Cobrar from "../../icones/cobrar.png"
 import Doacao from "../../icones/coracao.png"
 import Global from "../../icones/global.png"
+import Investir from "../../icones/investir.png"
 
-export default function corpoTopo() {
+export default function firstBlock() {
     return (
         <>
             <View style={{ width: '100%', display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <View style={styleContainerCorpo.containerCorpoTop}>
+                <View style={firstStyleContainer.containerCorpoTop}>
                     <View>
-                        <View><Text style={styleContainerCorpo.textoContent}>Conta</Text></View>
-                        <View><Text style={styleContainerCorpo.textoContent}>R$ 1829,80</Text></View>
+                        <View><Text style={firstStyleContainer.textoContent}>Conta</Text></View>
+                        <View><Text style={firstStyleContainer.textoContent}>R$ 1829,80</Text></View>
                     </View>
                     <View>
                         <Icon name="right" size={14} style={{ color: 'black' }} />
@@ -24,72 +25,72 @@ export default function corpoTopo() {
                 </View>
                 <ScrollView scrollEventThrottle={16}>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ display: "flex", flexDirection: "row", marginTop: 40 }}>
-                        <View style={styleContainerCorpo.viewContentIcon}>
+                        <View style={firstStyleContainer.viewContentIcon}>
                             <View style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
                                 <Image source={Pix} style={{ width: 30, height: 30 }} />
                             </View>
-                            <Text style={styleContainerCorpo.textoContentIcons}>Área Pix</Text>
+                            <Text style={firstStyleContainer.textoContentIcons}>Área Pix</Text>
                         </View>
-                        <View style={styleContainerCorpo.viewContentIcon}>
+                        <View style={firstStyleContainer.viewContentIcon}>
                             <View style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
                                 <Image source={Pagar} style={{ width: 30, height: 15, marginTop: 8 }} />
                             </View>
-                            <Text style={styleContainerCorpo.textoContentIcons}>Pagar</Text>
+                            <Text style={firstStyleContainer.textoContentIcons}>Pagar</Text>
                         </View>
-                        <View style={styleContainerCorpo.viewContentIcon}>
+                        <View style={firstStyleContainer.viewContentIcon}>
                             <View style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
                                 <Image source={Transferir} style={{ width: 33, height: 30 }} />
                             </View>
-                            <Text style={styleContainerCorpo.textoContentIcons}>Transferir</Text>
+                            <Text style={firstStyleContainer.textoContentIcons}>Transferir</Text>
                         </View>
-                        <View style={styleContainerCorpo.viewContentIcon}>
+                        <View style={firstStyleContainer.viewContentIcon}>
                             <View style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
                                 <Image source={Depositar} style={{ width: 35, height: 30 }} />
                             </View>
-                            <Text style={styleContainerCorpo.textoContentIcons}>Depositar</Text>
+                            <Text style={firstStyleContainer.textoContentIcons}>Depositar</Text>
                         </View>
-                        <View style={styleContainerCorpo.viewContentIcon}>
+                        <View style={firstStyleContainer.viewContentIcon}>
                             <View style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
                                 <Image source={Telefone} style={{ width: 30, height: 30 }} />
                             </View>
-                            <Text style={styleContainerCorpo.textoContentIcons}>Recarga de celular</Text>
+                            <Text style={firstStyleContainer.textoContentIcons}>Recarga de celular</Text>
                         </View>
-                        <View style={styleContainerCorpo.viewContentIcon}>
+                        <View style={firstStyleContainer.viewContentIcon}>
                             <View style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
                                 <Image source={Cobrar} style={{ width: 42, height: 30 }} />
                             </View>
-                            <Text style={styleContainerCorpo.textoContentIcons}>Cobrar</Text>
+                            <Text style={firstStyleContainer.textoContentIcons}>Cobrar</Text>
                         </View>
-                        <View style={styleContainerCorpo.viewContentIcon}>
+                        <View style={firstStyleContainer.viewContentIcon}>
                             <View style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
                                 <Image source={Doacao} style={{ width: 30, height: 30 }} />
                             </View>
-                            <Text style={styleContainerCorpo.textoContentIcons}>Doação</Text>
+                            <Text style={firstStyleContainer.textoContentIcons}>Doação</Text>
                         </View>
-                        <View style={styleContainerCorpo.viewContentIcon}>
+                        <View style={firstStyleContainer.viewContentIcon}>
                             <View style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
                                 <Image source={Global} style={{ width: 53, height: 30 }} />
                             </View>
-                            <Text style={styleContainerCorpo.textoContentIcons}>Tranferência Internac. </Text>
+                            <Text style={firstStyleContainer.textoContentIcons}>Tranferência Internac. </Text>
                         </View>
-                        <View style={styleContainerCorpo.viewContentIcon}>
+                        <View style={firstStyleContainer.viewContentIcon}>
                             <View style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
-                                <Image source={Pix} style={{ width: 30, height: 30 }} />
+                                <Image source={Investir } style={{ width: 30, height: 30 }} />
                             </View>
-                            <Text style={styleContainerCorpo.textoContentIcons}>Área Pix</Text>
+                            <Text style={firstStyleContainer.textoContentIcons}>Investir</Text>
                         </View>
                     </ScrollView>
                 </ScrollView>
-                <View style={styleContainerCorpo.cartoesContent}>
+                <View style={firstStyleContainer.cartoesContent}>
                     <Image source={Pix} style={{ width: 30, height: 30 }} />
                     <Text style={{ marginLeft: 10, fontWeight: '500' }}>Meus Cartões</Text>
                 </View>
                 <ScrollView scrollEventThrottle={16} >
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}  style={{ display: "flex", flexDirection: "row", padding: 20 }} >
-                        <View style={styleContainerCorpo.cartoesSegundoContent}>
+                        <View style={firstStyleContainer.cartoesSegundoContent}>
                             <Text style={{ marginLeft: 10, fontWeight: '500', fontWeight: '400' }}>Conheça <Text style={{ color: '#a031df' }}>Nubank Vida</Text>: um seguro simples e que cabe no bolso</Text>
                         </View>
-                        <View style={styleContainerCorpo.cartoesSegundoContent} marginLeft={10} marginRight={40} >
+                        <View style={firstStyleContainer.cartoesSegundoContent} marginLeft={10} marginRight={40} >
                             <Text style={{ marginLeft: 10, fontWeight: '500', fontWeight: '400' }}>Salve seus amigos da burocracia. <Text style={{ color: '#a031df' }}>Faça um convite...</Text></Text>
                         </View>
                     </ScrollView>
@@ -99,7 +100,7 @@ export default function corpoTopo() {
     )
 }
 
-const styleContainerCorpo = StyleSheet.create({
+const firstStyleContainer = StyleSheet.create({
     containerCorpoTop: {
         width: '100%',
         display: "flex",
