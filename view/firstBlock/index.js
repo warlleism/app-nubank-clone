@@ -20,9 +20,9 @@ export default function firstBlock() {
                         <View><Text style={firstStyleContainer.textoContent}>Conta</Text></View>
                         <View><Text style={firstStyleContainer.textoContent}>R$ 1829,80</Text></View>
                     </View>
-                    <View>
+                    <TouchableOpacity onPress={console.log('teste')}>
                         <Icon name="right" size={14} style={{ color: 'black' }} />
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <ScrollView scrollEventThrottle={16}>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ display: "flex", flexDirection: "row", marginTop: 40 }}>

@@ -1,5 +1,6 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
+
 import FirstBlock from "../firstBlock";
 import SecondBlock from "../secondblock";
 
@@ -7,23 +8,29 @@ export default function Inicio() {
     return (
         <>
             <ScrollView scrollEventThrottle={16}>
-                    <View style={conainerTop.container}>
-                        <View style={conainerTop.containerIcons}>
-                            <View>
-                                <Icon name="user" size={23} style={{ color: '#fff', backgroundColor: '#a031df', borderRadius: 23, padding: 10, marginTop: -14 }} />
-                            </View>
-                            <View style={{ display: 'flex', flexDirection: 'row', marginLeft: '60%' }} >
+                <View style={conainerTop.container}>
+                    <View style={conainerTop.containerIcons}>
+                        <TouchableOpacity onPress={console.log('teste')}>
+                            <Icon name="user" size={23} style={{ color: '#fff', backgroundColor: '#a031df', borderRadius: 23, padding: 10, marginTop: -14 }} />
+                        </TouchableOpacity>
+                        <View style={{ display: 'flex', flexDirection: 'row', marginLeft: '60%' }} >
+                            <TouchableOpacity onPress={console.log('teste')}>
                                 <Icon name="eye" size={23} style={{ marginRight: '16%', color: '#fff' }} />
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={console.log('teste')}>
                                 <Icon name="questioncircleo" size={23} style={{ marginRight: '16%', color: '#fff' }} />
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={console.log('teste')}>
                                 <Icon name="adduser" size={23} style={{ color: '#fff', marginRight: '16%' }} />
-                            </View>
-                        </View>
-                        <View>
-                            <Text style={{ color: '#fff', marginTop: '-10%', marginLeft: '5%', fontSize: 20 }}>Olá, Warllei</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
-                    <FirstBlock />
-                    <SecondBlock />
+                    <View>
+                        <Text style={{ color: '#fff', marginTop: '-10%', marginLeft: '5%', fontSize: 20 }}>Olá, Warllei</Text>
+                    </View>
+                </View>
+                <FirstBlock />
+                <SecondBlock />
             </ScrollView>
         </>
     )
