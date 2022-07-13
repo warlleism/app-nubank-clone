@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, Button } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
 import Telefone from "../../icones/smartphone.png"
 import Pagar from "../../icones/barcode.png"
@@ -9,9 +9,13 @@ import Cobrar from "../../icones/cobrar.png"
 import Doacao from "../../icones/coracao.png"
 import Global from "../../icones/global.png"
 import Investir from "../../icones/investir.png"
+import { useNavigation } from '@react-navigation/native';
+
 
 
 export default function firstBlock() {
+    const navigation = useNavigation();
+
     return (
         <>
             <View style={{ width: '100%', display: "flex", flexDirection: "column", alignItems: "center" }}>
@@ -20,7 +24,7 @@ export default function firstBlock() {
                         <View><Text style={firstStyleContainer.textoContent}>Conta</Text></View>
                         <View><Text style={firstStyleContainer.textoContent}>R$ 1829,80</Text></View>
                     </View>
-                    <TouchableOpacity onPress={console.log('teste')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Teste')} >
                         <Icon name="right" size={14} style={{ color: 'black' }} />
                     </TouchableOpacity>
                 </View>
