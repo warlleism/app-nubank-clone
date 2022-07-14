@@ -4,12 +4,12 @@ import Icon from "react-native-vector-icons/AntDesign";
 import Tesseract from '../../icones/tesseract.png'
 import Cartao from '../../icones/cartao.png'
 import Crypto from '../../icones/crypto.png'
-import Coracao from '../../icones/coracaopiscando.gif'
+import Coracao from '../../icones/coracaopiscando.png'
 import Img1 from '../../imagens/nuimg1.png'
 import Img2 from '../../imagens/nuimg2.png'
 import Img3 from '../../imagens/nuimg3.png'
 
-export default function secondBlock({navigation}) {
+export default function secondBlock() {
 
 
     return (
