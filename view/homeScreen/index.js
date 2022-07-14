@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, StatusBar } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
 
 import FirstBlock from "../firstBlock";
@@ -7,6 +7,7 @@ import SecondBlock from "../secondblock";
 export default function Inicio() {
     return (
         <>
+            <StatusBar backgroundColor={"#4b1475"} />
             <ScrollView scrollEventThrottle={16}>
                 <View style={conainerTop.container}>
                     <View style={conainerTop.containerIcons}>

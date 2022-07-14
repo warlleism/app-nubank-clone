@@ -24,7 +24,7 @@ export default function firstBlock() {
                         <View><Text style={firstStyleContainer.textoContent}>Conta</Text></View>
                         <View><Text style={firstStyleContainer.textoContent}>R$ 1829,80</Text></View>
                     </View>
-                    <TouchableOpacity onPress={() => navigation.navigate('Teste')} >
+                    <TouchableOpacity onPress={() => navigation.navigate('Conta')} >
                         <Icon name="right" size={14} style={{ color: 'black' }} />
                     </TouchableOpacity>
                 </View>
@@ -62,25 +62,25 @@ export default function firstBlock() {
                         </View>
                         <View style={firstStyleContainer.viewContentIcon}>
                             <TouchableOpacity onPress={console.log('teste')} style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
-                                <Image source={Cobrar} style={{ width: 42, height: 30 }} />
+                                <Image source={Cobrar} style={{ width: 42, height: 39 }} />
                             </TouchableOpacity>
                             <Text style={firstStyleContainer.textoContentIcons}>Cobrar</Text>
                         </View>
                         <View style={firstStyleContainer.viewContentIcon}>
                             <TouchableOpacity onPress={console.log('teste')} style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
-                                <Image source={Doacao} style={{ width: 30, height: 30 }} />
+                                <Image source={Doacao} style={{ width: 39, height: 34 }} />
                             </TouchableOpacity>
                             <Text style={firstStyleContainer.textoContentIcons}>Doação</Text>
                         </View>
                         <View style={firstStyleContainer.viewContentIcon}>
                             <TouchableOpacity onPress={console.log('teste')} style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
-                                <Image source={Global} style={{ width: 53, height: 30 }} />
+                                <Image source={Global} style={{ width: 53, height: 33 }} />
                             </TouchableOpacity>
                             <Text style={firstStyleContainer.textoContentIcons}>Tranferência Internac. </Text>
                         </View>
                         <View style={firstStyleContainer.viewContentIcon}>
                             <TouchableOpacity onPress={console.log('teste')} style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
-                                <Image source={Investir} style={{ width: 30, height: 30 }} />
+                                <Image source={Investir} style={{ width: 30, height: 36 }} />
                             </TouchableOpacity>
                             <Text style={firstStyleContainer.textoContentIcons}>Investir</Text>
                         </View>
