@@ -8,12 +8,12 @@ export default function NavegateTopScreen(props) {
     return (
         <>
             <StatusBar backgroundColor={"#a7a7a7"} />
-            <View style={{ width: "100%", padding: 15,  display: "flex", flexDirection: "row", justifyContent: "space-between"  }}>
+            <View style={{ width: "100%", padding: 15,  display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                 <TouchableOpacity onPress={() => navigation.navigate(props.route)}>
-                    <Icon name="left" size={20} style={{ color: '#000000d1' }} />
+                    <Icon name={props.icon} size={23} style={{ color: '#000000d1' }} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate(props.route)}>
-                    <Icon name="questioncircleo" size={20} style={{ color: '#000000d1' }} />
+                    <Icon name={props.rightIcon} size={23} style={{ color: '#000000d1' }} />
                 </TouchableOpacity>
             </View>
         </>

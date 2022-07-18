@@ -24,7 +24,7 @@ export default function firstBlock() {
                         <View><Text style={firstStyleContainer.textoContent}>Conta</Text></View>
                         <View><Text style={firstStyleContainer.textoContent}>R$ 1829,80</Text></View>
                     </View>
-                    <TouchableOpacity onPress={() => navigation.navigate('Conta')} >
+                    <TouchableOpacity onPress={() => navigation.navigate('Account')} >
                         <Icon name="right" size={14} style={{ color: 'black' }} />
                     </TouchableOpacity>
                 </View>
@@ -93,7 +93,7 @@ export default function firstBlock() {
                 <ScrollView scrollEventThrottle={16} >
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ display: "flex", flexDirection: "row", padding: 20 }} >
                         <TouchableOpacity onPress={console.log('teste')} style={firstStyleContainer.cartoesSegundoContent}>
-                            <Text style={{ marginLeft: 10, fontWeight: '500', fontWeight: '400' }}>Conheça <Text style={{ color: '#a031df' }}>Nubank Vida</Text>: um seguro simples e que cabe no bolso</Text>
+                            <Text style={{ marginLeft: 10, fontWeight: '500', fontWeight: '400' }}>Conheça a <Text style={{ color: '#a031df' }}>conta PJ</Text>: prática e livre de burocracia para seu...</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={console.log('teste')} style={firstStyleContainer.infoContent}>
                             <Text style={{ marginLeft: 10, fontWeight: '500', fontWeight: '400' }}>Salve seus amigos da burocracia. <Text style={{ color: '#a031df' }}>Faça um convite...</Text></Text>

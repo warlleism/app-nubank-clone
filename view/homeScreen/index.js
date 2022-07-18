@@ -3,10 +3,10 @@ import Icon from "react-native-vector-icons/AntDesign";
 import FirstBlock from "../firstBlock";
 import SecondBlock from "../secondblock";
 
-export default function Inicio() {
+export default function Home() {
     return (
         <>
-            <StatusBar backgroundColor={"#4b1475"} />
+            <StatusBar backgroundColor={"#8734c7"} />
             <ScrollView scrollEventThrottle={16}>
                 <View style={conainerTop.container}>
                     <View style={conainerTop.containerIcons}>
@@ -42,13 +42,13 @@ const conainerTop = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-between',
         backgroundColor: '#8734c7',
-        height: 170,
+        height: 130,
     },
     containerIcons: {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: 30,
+        marginTop: 13,
         padding: 20
     },
 

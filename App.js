@@ -1,8 +1,9 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-
-import Inicio from './view/homeScreen';
-import Conta from './view/conta/index'
+import Home from './view/homeScreen';
+import Account from './view/bankAccount/account/index'
+import SavedMoney from './view/bankAccount/savedMoney';
+import TotalIncome from './view/bankAccount/totalIncome';
 
 const Stack = createStackNavigator();
 
@@ -13,8 +14,10 @@ function MyStack() {
         headerMode: 'none',
       }}
     >
-      <Stack.Screen name="Home" component={Inicio} />
-      <Stack.Screen name="Conta" component={Conta} />
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Account" component={Account} />
+      <Stack.Screen name="SavedMoney" component={SavedMoney} />
+      <Stack.Screen name="TotalIncome" component={TotalIncome} />
     </Stack.Navigator>
   );
 }

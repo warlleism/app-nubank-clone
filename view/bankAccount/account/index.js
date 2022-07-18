@@ -1,20 +1,20 @@
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, Button, TextInput, Dimensions } from "react-native";
-import Icon from "react-native-vector-icons/AntDesign";
-import NavegateTopScreen from "../../components/topScreenNavegate";
-import Pig from "../../icones/pig.png"
-import Pagar from "../../icones/barcode.png"
-import Transferir from "../../icones/transferir.png"
-import Depositar from "../../icones/depositar.png"
-import Cobrar from "../../icones/cobrar.png"
-import emprestimos from "../../icones/emprestino.png"
-import Investir from "../../icones/investir.png"
-import Extrato from "../../icones/extrato.png"
-import Compra from "../../icones/compra.png"
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, TextInput } from "react-native";
 import { useRef, useState } from "react";
+import Icon from "react-native-vector-icons/AntDesign";
+import NavegateTopScreen from "../../../components/topScreenNavegate";
+import Pig from "../../../icones/pig.png"
+import Pagar from "../../../icones/barcode.png"
+import Transferir from "../../../icones/transferir.png"
+import Depositar from "../../../icones/depositar.png"
+import Cobrar from "../../../icones/cobrar.png"
+import emprestimos from "../../../icones/emprestino.png"
+import Investir from "../../../icones/investir.png"
+import Extrato from "../../../icones/extrato.png"
+import Compra from "../../../icones/compra.png"
+import BottonLine from "../../../components/bottonLine";
 
-
-export default function Conta() {
+export default function Account() {
 
     const navigation = useNavigation()
     const [input, setInput] = useState(true)
@@ -22,7 +22,7 @@ export default function Conta() {
 
     return (
         <>
-            <NavegateTopScreen route={"Home"} />
+            <NavegateTopScreen route={"Home"} icon={"left"} rightIcon={"questioncircleo"} />
             <ScrollView
                 ref={scrollRef}
                 showsVerticalScrollIndicator={false}
@@ -34,7 +34,7 @@ export default function Conta() {
                             <Text style={{ fontSize: 28, fontWeight: "600" }}>R$ 1829,80</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "column", marginTop: 30 }}>
-                            <TouchableOpacity onPress={() => navigation.navigate('Home')} style={{ display: "flex", flexDirection: "row", marginBottom: 20, justifyContent: "space-between" }}>
+                            <TouchableOpacity onPress={() => navigation.navigate('SavedMoney')} style={{ display: "flex", flexDirection: "row", marginBottom: 20, justifyContent: "space-between" }}>
                                 <View style={{ display: "flex", flexDirection: "row", alignItems: "center", marginBottom: 20 }}>
                                     <View>
                                         <Image source={Pig} style={{ width: 40, height: 38, marginRight: 20 }} />
@@ -47,7 +47,7 @@ export default function Conta() {
                                 <Icon name="right" size={16} style={{ color: '#000000d1' }} />
                             </TouchableOpacity>
 
-                            <TouchableOpacity onPress={() => navigation.navigate('Home')} style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+                            <TouchableOpacity onPress={() => navigation.navigate('TotalIncome')} style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                                 <View style={{ display: "flex", flexDirection: "row", alignItems: "center", marginBottom: 20 }}>
                                     <View>
                                         <Image source={Investir} style={{ width: 40, height: 38, marginRight: 20 }} />
@@ -101,7 +101,7 @@ export default function Conta() {
                             </ScrollView>
                         </View>
                     </View>
-                    <View style={styleContent.line}></View>
+                    <BottonLine />
                     <View style={{ padding: 20 }}>
                         <Text style={{ fontSize: 20, marginBottom: 20 }}>Historico</Text>
                         <View>
@@ -114,18 +114,15 @@ export default function Conta() {
                                 )}
                                 <TextInput
                                     style={{ backgroundColor: "#c2c2c38c", padding: 8, borderRadius: 20 }}
-
                                     placeholder="      Buscar"
                                     onFocus={() => setInput(!input)}
                                     onEndEditing={() => setInput(!input)}
-
                                     onPressIn={() =>
                                         scrollRef.current.scrollTo({
                                             x: 0,
                                             y: 450,
                                             animated: true
                                         })}
-
                                 />
                             </View>
                             <View style={{ marginTop: 20, display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
@@ -141,7 +138,7 @@ export default function Conta() {
                                 </View>
                                 <Text>11 JUL</Text>
                             </View>
-                            <View style={styleContent.line}></View>
+                            <BottonLine />
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                                 <View style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
                                     <View style={{ padding: 7, backgroundColor: "#c2c2c38c", borderRadius: 50, marginRight: 20 }}>
@@ -155,7 +152,7 @@ export default function Conta() {
                                 </View>
                                 <Text>11 JUL</Text>
                             </View>
-                            <View style={styleContent.line}></View>
+                            <BottonLine />
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                                 <View style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
                                     <View style={{ padding: 7, backgroundColor: "#c2c2c38c", borderRadius: 50, marginRight: 20 }}>
@@ -169,7 +166,7 @@ export default function Conta() {
                                 </View>
                                 <Text>03 JAN</Text>
                             </View>
-                            <View style={styleContent.line}></View>
+                            <BottonLine />
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                                 <View style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
                                     <View style={{ padding: 7, backgroundColor: "#c2c2c38c", borderRadius: 50, marginRight: 20 }}>
@@ -196,7 +193,7 @@ export default function Conta() {
                                 </View>
                                 <Text>11 JUL</Text>
                             </View>
-                            <View style={styleContent.line}></View>
+                            <BottonLine />
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                                 <View style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
                                     <View style={{ padding: 7, backgroundColor: "#c2c2c38c", borderRadius: 50, marginRight: 20 }}>
@@ -210,7 +207,7 @@ export default function Conta() {
                                 </View>
                                 <Text>11 JUL</Text>
                             </View>
-                            <View style={styleContent.line}></View>
+                            <BottonLine />
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                                 <View style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
                                     <View style={{ padding: 7, backgroundColor: "#c2c2c38c", borderRadius: 50, marginRight: 20 }}>
@@ -224,7 +221,7 @@ export default function Conta() {
                                 </View>
                                 <Text>03 JAN</Text>
                             </View>
-                            <View style={styleContent.line}></View>
+                            <BottonLine />
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                                 <View style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
                                     <View style={{ padding: 7, backgroundColor: "#c2c2c38c", borderRadius: 50, marginRight: 20 }}>
@@ -245,10 +242,7 @@ export default function Conta() {
         </>
 
     )
-
 }
-
-
 
 const firstStyleContainer = StyleSheet.create({
 
@@ -259,17 +253,6 @@ const firstStyleContainer = StyleSheet.create({
     },
 
 })
-
-const styleContent = StyleSheet.create({
-    line: {
-        marginTop: 20,
-        marginBottom: 20,
-        width: '100%',
-        height: 1,
-        backgroundColor: '#35353740'
-    }
-})
-
 
 
 

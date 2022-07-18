@@ -5,17 +5,16 @@ import Tesseract from '../../icones/tesseract.png'
 import Cartao from '../../icones/cartao.png'
 import Crypto from '../../icones/crypto.png'
 import Coracao from '../../icones/coracaopiscando.png'
-import Img1 from '../../imagens/nuimg1.png'
-import Img2 from '../../imagens/nuimg2.png'
-import Img3 from '../../imagens/nuimg3.png'
+import Img1 from '../../images/nuimg1.png'
+import Img2 from '../../images/nuimg2.png'
+import Img3 from '../../images/nuimg3.png'
+import BottonLine from "../../components/bottonLine";
 
 export default function secondBlock() {
-
-
     return (
         <>
             <View style={{ width: '100%', display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <View style={styleContent.line}></View>
+                <BottonLine />
                 <View style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
                     <View>
                         <Text style={{ marginTop: 5, fontSize: 17, fontWeight: '500' }}>Cartão de crédito</Text>
@@ -31,7 +30,7 @@ export default function secondBlock() {
                         <Icon name="right" size={14} style={{ color: 'black' }} />
                     </TouchableOpacity>
                 </View>
-                <View style={styleContent.line}></View>
+                <BottonLine />
                 <View style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
                     <View>
                         <Text style={{ marginTop: 5, fontSize: 17, fontWeight: '500' }}>Empréstimo</Text>
@@ -41,7 +40,7 @@ export default function secondBlock() {
                         <Icon name="right" size={14} style={{ color: 'black' }} />
                     </TouchableOpacity>
                 </View>
-                <View style={styleContent.line}></View>
+                <BottonLine />
                 <View style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
                     <View>
                         <Text style={{ marginTop: 5, fontSize: 17, fontWeight: '500' }}>Investimentos</Text>
@@ -53,13 +52,13 @@ export default function secondBlock() {
                         <Icon name="right" size={14} style={{ color: 'black' }} />
                     </TouchableOpacity>
                 </View>
-                <View style={styleContent.line}></View>
+                <BottonLine />
                 <View width={'100%'} padding={20}>
                     <Image source={Crypto} style={{ width: 30, height: 30 }} />
                     <Text style={{ fontSize: 20, marginTop: 15 }}>Cripto</Text>
                     <Text style={{ fontSize: 13, marginTop: 15, fontWeight: '500', color: '#151515c7' }}>Compre para você cuidar do que importa</Text>
                 </View>
-                <View style={styleContent.line}></View>
+                <BottonLine />
                 <View style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
                     <View style={{ width: '100%' }}>
                         <Text style={{ marginTop: 5, fontSize: 17, fontWeight: '500' }}>Seguros</Text>
@@ -70,7 +69,7 @@ export default function secondBlock() {
                         <Icon name="right" size={14} style={{ color: 'black' }} />
                     </TouchableOpacity>
                 </View>
-                <View style={styleContent.line}></View>
+                <BottonLine />
                 <View style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
                     <View style={{ width: '100%' }}>
                         <Text style={{ marginTop: 5, fontSize: 17, fontWeight: '500' }}>Shopping</Text>
@@ -80,7 +79,7 @@ export default function secondBlock() {
                         <Icon name="right" size={14} style={{ color: 'black' }} />
                     </TouchableOpacity>
                 </View>
-                <View style={styleContent.line}></View>
+                <BottonLine />
 
                 <ScrollView scrollEventThrottle={16}>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -139,11 +138,6 @@ const styleContent = StyleSheet.create({
         backgroundColor: '#ececf5',
         padding: 15,
         borderRadius: 7
-    },
-    line: {
-        width: '100%',
-        height: 2,
-        backgroundColor: '#ececf5'
     },
     imagem: {
         width: "100%",
