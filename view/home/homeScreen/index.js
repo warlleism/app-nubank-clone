@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, StatusBar } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
-import FirstBlock from "../firstBlock";
-import SecondBlock from "../secondblock";
+import FirstBlock from "../firstBlock/index";
+import SecondBlock from "../secondblock/index";
 
 export default function Home() {
     return (
