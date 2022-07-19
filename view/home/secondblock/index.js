@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from "react-native";
 import AppButton from "../../../components/button";
 import Icon from "react-native-vector-icons/AntDesign";
-import Tesseract from '../../../icones/tesseract.png'
-import Cartao from '../../../icones/cartao.png'
-import Crypto from '../../../icones/crypto.png'
-import Coracao from '../../../icones/coracaopiscando.png'
+import Tesseract from '../../../icons/tesseract.png'
+import Cartao from '../../../icons/cartao.png'
+import Crypto from '../../../icons/crypto.png'
+import Coracao from '../../../icons/coracaopiscando.png'
 import Img1 from '../../../images/nuimg1.png'
 import Img2 from '../../../images/nuimg2.png'
 import Img3 from '../../../images/nuimg3.png'

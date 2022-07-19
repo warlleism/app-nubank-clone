@@ -16,7 +16,7 @@ export default function Transfer() {
         <>
             <NavegateTopScreen route={"Home"} icon={"close"} rightIcon={"qrcode"} />
             <View style={{ padding: 20, position: "relative" }}>
-                <Text style={{ fontSize: 32, width: 300, marginBottom: 10, fontWeight: "600" }}>Qual é o valor da transferência?</Text>
+                <Text style={{ fontSize: 32, width: 300, marginBottom: 10, fontWeight: "500" }}>Qual é o valor da transferência?</Text>
                 <Text>Saldo disponível em conta <Text style={{ fontSize: 17, fontWeight: "600" }}>R$ 1829,80</Text></Text>
                 <TextInput
                     autoFocus={true}

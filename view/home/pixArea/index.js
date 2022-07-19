@@ -1,11 +1,11 @@
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import NavegateTopScreen from "../../../components/topScreenNavegate"
-import Transferir from "../../../icones/transferir.png"
-import QrCode from "../../../icones/qrCode.png"
-import CopiarColar from "../../../icones/copiarColar.png"
-import Cobrar from "../../../icones/cobrar.png"
-import Depositar from "../../../icones/depositar.png"
+import Transferir from "../../../icons/transferir.png"
+import QrCode from "../../../icons/qrCode.png"
+import CopiarColar from "../../../icons/copiarColar.png"
+import Cobrar from "../../../icons/cobrar.png"
+import Depositar from "../../../icons/depositar.png"
 import BottonLine from "../../../components/bottonLine";
 import Icon from "react-native-vector-icons/AntDesign";
 
@@ -13,9 +13,8 @@ export default function PixArea() {
     const navigation = useNavigation()
     return (
         <>
-            <NavegateTopScreen route={"Home"} icon={"left"} rightIcon={"close"} />
-            <ScrollView>
-
+            <NavegateTopScreen route={"Home"} icon={"close"} rightIcon={"questioncircleo"} />
+            <ScrollView style={{marginTop: -30}}>
                 <View style={{ width: "100%", padding: 20, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                     <Text style={{fontSize: 30, fontWeight: "600", marginBottom: 10}}>Área Pix</Text>
                     <Text>Envie e receba pagamentos a  qualquer hora do dia da semana, sem pagar nada por isso.</Text>

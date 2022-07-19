@@ -1,9 +1,9 @@
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import NavegateTopScreen from "../../../components/topScreenNavegate"
-import BarCode from "../../../icones/barcode.png"
-import Celular from "../../../icones/smartphone.png"
-import Pix from "../../../icones/pix.png"
+import BarCode from "../../../icons/barcode.png"
+import Celular from "../../../icons/smartphone.png"
+import Pix from "../../../icons/pix.png"
 import BottonLine from "../../../components/bottonLine";
 
 export default function Pay() {
@@ -50,7 +50,6 @@ export default function Pay() {
                     </View>
                 </View>
             </ScrollView>
-
         </>
     )
 

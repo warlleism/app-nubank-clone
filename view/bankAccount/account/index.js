@@ -3,15 +3,15 @@ import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, TextInput 
 import { useRef, useState } from "react";
 import Icon from "react-native-vector-icons/AntDesign";
 import NavegateTopScreen from "../../../components/topScreenNavegate";
-import Pig from "../../../icones/pig.png"
-import Pagar from "../../../icones/barcode.png"
-import Transferir from "../../../icones/transferir.png"
-import Depositar from "../../../icones/depositar.png"
-import Cobrar from "../../../icones/cobrar.png"
-import emprestimos from "../../../icones/emprestino.png"
-import Investir from "../../../icones/investir.png"
-import Extrato from "../../../icones/extrato.png"
-import Compra from "../../../icones/compra.png"
+import Pig from "../../../icons/pig.png"
+import Pagar from "../../../icons/barcode.png"
+import Transferir from "../../../icons/transferir.png"
+import Depositar from "../../../icons/depositar.png"
+import Cobrar from "../../../icons/cobrar.png"
+import emprestimos from "../../../icons/emprestino.png"
+import Investir from "../../../icons/investir.png"
+import Extrato from "../../../icons/extrato.png"
+import Compra from "../../../icons/compra.png"
 import BottonLine from "../../../components/bottonLine";
 
 export default function Account() {

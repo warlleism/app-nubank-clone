@@ -1,15 +1,15 @@
 import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, Button } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import Icon from "react-native-vector-icons/AntDesign";
-import Telefone from "../../../icones/smartphone.png"
-import Pagar from "../../../icones/barcode.png"
-import Transferir from "../../../icones/transferir.png"
-import Depositar from "../../../icones/depositar.png"
-import Pix from "../../../icones/pix.png"
-import Cobrar from "../../../icones/cobrar.png"
-import Doacao from "../../../icones/coracao.png"
-import Global from "../../../icones/global.png"
-import Investir from "../../../icones/investir.png"
+import Telefone from "../../../icons/smartphone.png"
+import Pagar from "../../../icons/barcode.png"
+import Transferir from "../../../icons/transferir.png"
+import Depositar from "../../../icons/depositar.png"
+import Pix from "../../../icons/pix.png"
+import Cobrar from "../../../icons/cobrar.png"
+import Doacao from "../../../icons/coracao.png"
+import Global from "../../../icons/global.png"
+import Investir from "../../../icons/investir.png"
 
 
 
@@ -31,31 +31,31 @@ export default function firstBlock() {
                 <ScrollView scrollEventThrottle={16}>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ display: "flex", flexDirection: "row", marginTop: 40 }}>
                         <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={()=> navigation.navigate("PixArea")} style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
+                            <TouchableOpacity onPress={() => navigation.navigate("PixArea")} style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
                                 <Image source={Pix} style={{ width: 30, height: 30 }} />
                             </TouchableOpacity>
                             <Text style={firstStyleContainer.textoContentIcons}>Área Pix</Text>
                         </View>
                         <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={()=> navigation.navigate("Pay")} style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
+                            <TouchableOpacity onPress={() => navigation.navigate("Pay")} style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
                                 <Image source={Pagar} style={{ width: 30, height: 15, marginTop: 8 }} />
                             </TouchableOpacity>
                             <Text style={firstStyleContainer.textoContentIcons}>Pagar</Text>
                         </View>
                         <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={()=> navigation.navigate("Transfer")} style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
+                            <TouchableOpacity onPress={() => navigation.navigate("Transfer")} style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
                                 <Image source={Transferir} style={{ width: 33, height: 30 }} />
                             </TouchableOpacity>
                             <Text style={firstStyleContainer.textoContentIcons}>Transferir</Text>
                         </View>
                         <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={console.log('teste')} style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
+                            <TouchableOpacity onPress={() => navigation.navigate("Deposit")} style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
                                 <Image source={Depositar} style={{ width: 35, height: 30 }} />
                             </TouchableOpacity>
                             <Text style={firstStyleContainer.textoContentIcons}>Depositar</Text>
                         </View>
                         <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={console.log('teste')} style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
+                            <TouchableOpacity onPress={() => navigation.navigate("Recharge")} style={{ alignItems: "center", height: 60, width: 60, backgroundColor: '#ececf5', padding: 14, borderRadius: 100 }}>
                                 <Image source={Telefone} style={{ width: 30, height: 30 }} />
                             </TouchableOpacity>
                             <Text style={firstStyleContainer.textoContentIcons}>Recarga de celular</Text>

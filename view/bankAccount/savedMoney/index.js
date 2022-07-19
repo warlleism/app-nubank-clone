@@ -1,10 +1,10 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import NavegateTopScreen from "../../../components/topScreenNavegate";
-import Money from "../../../icones/money.png"
 import Icon from "react-native-vector-icons/AntDesign";
 import BottonLine from "../../../components/bottonLine";
 import Block from "../../../components/block";
-import Investir from "../../../icones/investir.png"
+import Investir from "../../../icons/investir.png"
+import Money from "../../../icons/money.png"
 import AppButton from "../../../components/button";
 import { useNavigation } from "@react-navigation/native";
 

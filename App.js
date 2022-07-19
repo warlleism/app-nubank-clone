@@ -7,6 +7,8 @@ import TotalIncome from './view/bankAccount/totalIncome';
 import Pay from "./view/home/pay/index"
 import PixArea from './view/home/pixArea';
 import Transfer from './view/home/transfer';
+import Depositar from './view/home/deposit';
+import CellPhoneRecharge from './view/home/cellPhoneRecharge';
 
 const Stack = createStackNavigator();
 
@@ -24,6 +26,8 @@ function MyStack() {
       <Stack.Screen name="PixArea" component={PixArea} />
       <Stack.Screen name="Pay" component={Pay} />
       <Stack.Screen name="Transfer" component={Transfer} />
+      <Stack.Screen name="Deposit" component={Depositar} />
+      <Stack.Screen name="Recharge" component={CellPhoneRecharge} />
     </Stack.Navigator>
   );
 }
