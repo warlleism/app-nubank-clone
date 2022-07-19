@@ -40,13 +40,12 @@ export default function CellPhoneRecharge() {
                     <TextInput
                         autoFocus={true}
                         selectionColor={"#a031df"}
-                        color={"transparent"}
                         keyboardType={"number-pad"}
                         placeholder={"(DDD) + Número"}
                         onChangeText={(e) => setNumero(e)}
                         style={styleContent.input} />
                 </View>
-                <Text style={{ fontSize: 32, position: "absolute", bottom: 29.1, left: 19.2, color: "black" }}>{numeroTratado}</Text>
+                <Text style={{ fontSize: 32, position: "absolute", bottom: 29.1, left: 19, color: "black" }}>{numeroTratado}</Text>
             </View>
             <TouchableOpacity disabled={numero.length <= 10 ? true : false} onPress={() => navigation.navigate('Operator')} style={{ width: "100%", display: "flex", alignItems: "flex-end", marginBottom: 20, marginLeft: -20 }}>
                 <Text style={numero.length <= 10 ? styleContent.buttonDesable : styleContent.button}>
@@ -75,7 +74,9 @@ const styleContent = StyleSheet.create({
         backgroundColor: "#4a48486b"
     },
     input: {
-        letterSpacing: 3,
+        color: "transparent",
+        letterSpacing: 2,
+        paddingLeft: 15,
         borderBottomColor: "black",
         borderBottomWidth: 1,
         padding: 10,
