@@ -8,7 +8,8 @@ import Pay from "./view/home/pay/index"
 import PixArea from './view/home/pixArea';
 import Transfer from './view/home/transfer';
 import Depositar from './view/home/deposit';
-import CellPhoneRecharge from './view/home/cellPhoneRecharge';
+import CellPhoneRecharge from './view/home/cellPhoneRecharge/numberRecharge/index';
+import SelectOperator from './view/home/cellPhoneRecharge/selectOperator';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,7 @@ function MyStack() {
       <Stack.Screen name="Transfer" component={Transfer} />
       <Stack.Screen name="Deposit" component={Depositar} />
       <Stack.Screen name="Recharge" component={CellPhoneRecharge} />
+      <Stack.Screen name="Operator" component={SelectOperator} />
     </Stack.Navigator>
   );
 }
