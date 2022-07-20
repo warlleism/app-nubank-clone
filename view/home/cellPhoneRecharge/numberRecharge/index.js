@@ -6,6 +6,8 @@ import { TextInputMask } from "react-native-masked-text";
 import NavegateTopScreen from "../../../../components/topScreenNavegate"
 import Icon from "react-native-vector-icons/AntDesign";
 
+
+
 export default function CellPhoneRecharge() {
 
     const [numero, setNumero] = useState('')
@@ -15,14 +17,14 @@ export default function CellPhoneRecharge() {
         <View style={styleContent.main}>
             <View style={{ position: "relative" }}>
                 <NavegateTopScreen route={"Home"} icon={"close"} />
-                <View style={{ width: "100%", top: -37, display: "flex", alignItems: "center" }}>
+                <View style={{ width: "100%", top: -47, display: "flex", alignItems: "center" }}>
                     <View style={{ backgroundColor: "#4a4848db", width: 160, height: 3, borderRadius: 50 }}>
                         <View style={{ backgroundColor: "#a031df", width: 50, height: 3, borderRadius: 50 }}>
                         </View>
                     </View>
                 </View>
                 <View style={{ padding: 20, position: "relative" }}>
-                    <Text style={{ fontSize: 32, width: "100%", marginBottom: 10, fontWeight: "500" }}>Qual <Text style={{color: "#a031df"}}>número </Text>você quer recarregar?</Text>
+                    <Text style={{ fontSize: 32, width: "100%", marginBottom: 10, fontWeight: "500" }}>Qual <Text style={{ color: "#a031df" }}>número </Text>você quer recarregar?</Text>
                     <TextInputMask
                         autoFocus={true}
                         selectionColor={"#a031df"}
