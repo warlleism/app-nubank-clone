@@ -1,29 +1,15 @@
 import { useEffect, useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
+import { TextInputMask } from "react-native-masked-text";
 import NavegateTopScreen from "../../../../components/topScreenNavegate"
 import Icon from "react-native-vector-icons/AntDesign";
-import { useNavigation } from "@react-navigation/native";
 
 export default function CellPhoneRecharge() {
 
     const [numero, setNumero] = useState('')
-    const [numeroTratado, setNumeroTratado] = useState('')
-
-    const phoneTratado = () => {
-        numero.replace(/(\d{2})?(\d{1})?(\d{1})?(\d{1})?(\d{1})?(\d{1})?(\d{1})?(\d{1})?(\d{1})?(\d{1})?/,
-            function (matchDaRegex, grupo1, grupo2, grupo3, grupo4, grupo5, grupo6, grupo7, grupo8, grupo9, grupo10) {
-                setNumeroTratado(`${grupo1 ? `(${grupo1})` : ''}${grupo2 ? grupo2 : ' '}${grupo3 ? grupo3 : ' '}${grupo4 ? grupo4 : ' '}${grupo5 ? grupo5 : ' '}${grupo6 ? grupo6 : ' '}${grupo7 ? grupo7 : ' '}${grupo8 ? grupo8 : ' '}${grupo9 ? grupo9 : ' '}${grupo10 ? grupo10 : ' '}`)
-            })
-    }
-
-
-
     const navigation = useNavigation();
-
-    useEffect(() => {
-        phoneTratado()
-    }, [numero])
 
     return (
         <View style={styleContent.main}>
@@ -36,19 +22,26 @@ export default function CellPhoneRecharge() {
                     </View>
                 </View>
                 <View style={{ padding: 20, position: "relative" }}>
-                    <Text style={{ fontSize: 32, width: "100%", marginBottom: 10, fontWeight: "500" }}>Qual número você quer recarregar?</Text>
-                    <TextInput
+                    <Text style={{ fontSize: 32, width: "100%", marginBottom: 10, fontWeight: "500" }}>Qual <Text style={{color: "#a031df"}}>número </Text>você quer recarregar?</Text>
+                    <TextInputMask
                         autoFocus={true}
                         selectionColor={"#a031df"}
                         keyboardType={"number-pad"}
+                        type={'cel-phone'}
+                        style={styleContent.input}
                         placeholder={"(DDD) + Número"}
-                        onChangeText={(e) => setNumero(e)}
-                        style={styleContent.input} />
+                        options={{
+                            maskType: 'BRL',
+                            withDDD: true,
+                            dddMask: '(99) '
+                        }}
+                        value={numero}
+                        onChangeText={text => { setNumero(text) }}
+                    />
                 </View>
-                <Text style={{ fontSize: 32, position: "absolute", bottom: 29.1, left: 19, color: "black" }}>{numeroTratado}</Text>
             </View>
-            <TouchableOpacity disabled={numero.length <= 10 ? true : false} onPress={() => navigation.navigate('Operator')} style={{ width: "100%", display: "flex", alignItems: "flex-end", marginBottom: 20, marginLeft: -20 }}>
-                <Text style={numero.length <= 10 ? styleContent.buttonDesable : styleContent.button}>
+            <TouchableOpacity disabled={numero.length <= 14 ? true : false} onPress={() => navigation.navigate('Operator')} style={{ width: "100%", display: "flex", alignItems: "flex-end", marginBottom: 20, marginLeft: -20 }}>
+                <Text style={numero.length <= 14 ? styleContent.buttonDesable : styleContent.button}>
                     <Icon name="arrowright" size={22} color={"#ffff"} />
                 </Text>
             </TouchableOpacity>
@@ -74,9 +67,6 @@ const styleContent = StyleSheet.create({
         backgroundColor: "#4a48486b"
     },
     input: {
-        color: "transparent",
-        letterSpacing: 2,
-        paddingLeft: 15,
         borderBottomColor: "black",
         borderBottomWidth: 1,
         padding: 10,

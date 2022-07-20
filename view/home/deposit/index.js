@@ -15,7 +15,7 @@ export default function Deposit() {
             <NavegateTopScreen route={"Home"} icon={"close"} />
             <ScrollView style={{ marginTop: -30 }}>
                 <View style={{ width: "100%", padding: 20, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                    <Text style={{ fontSize: 30, fontWeight: "600", marginBottom: 10, width: 320 }}>Como você quer depositar na sua conta do Nubank?</Text>
+                    <Text style={{ fontSize: 30, fontWeight: "600", marginBottom: 10, width: 320 }}>Como você quer <Text style={{color: "#a031df"}}>depositar</Text> na sua conta do Nubank?</Text>
                     <View>
                         <View style={{ display: "flex", flexDirection: "column", marginTop: 20, justifyContent: "space-around" }}>
                             <View>
