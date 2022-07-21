@@ -49,7 +49,7 @@ export default function SavedMoney() {
                             padding: 25
                         }} />
                     <BottonLine />
-                    <AppButton titulo={"Guardar"} background={"#530889"} color={"#ffff"} weight={"700"} pVertical={16} />
+                    <AppButton titulo={"Guardar"} marginBotton={20} background={"#530889"} color={"#ffff"} weight={"700"} pVertical={16} />
                 </View>
             </View>
         </>

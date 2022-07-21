@@ -8,7 +8,7 @@ export default function Block(props) {
 
     return (
         <>
-            <TouchableOpacity onPress={() => navigation.navigate(props.route)} style={firstStyleContainer.cartoesContent}>
+            <TouchableOpacity onPress={() => navigation.navigate(props.route)} style={{ backgroundColor: props.backgroundColor? props.backgroundColor : "#ececf5", borderRadius: 10 }}>
                 <View style={props.styleContainer}>
                     <Image source={props.firstImg} style={{ width: 30, height: 30 }} />
                     <View style={props.secondContainer}>
@@ -21,10 +21,3 @@ export default function Block(props) {
         </>
     )
 }
-
-const firstStyleContainer = StyleSheet.create({
-    cartoesContent: {
-        backgroundColor: '#ececf5',
-        borderRadius: 10
-    }
-})

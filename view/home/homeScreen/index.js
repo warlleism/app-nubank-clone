@@ -1,16 +1,17 @@
+import { useNavigation } from "@react-navigation/native";
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, StatusBar } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
 import FirstBlock from "../firstBlock/index";
 import SecondBlock from "../secondblock/index";
 
 export default function Home() {
+    const navigation = useNavigation();
     return (
         <>
-            <StatusBar backgroundColor={"#8734c7"} />
-            <ScrollView scrollEventThrottle={16}>
+            <ScrollView scrollEventThrottle={16} style={{backgroundColor : "#8734c7"}}>
                 <View style={conainerTop.container}>
                     <View style={conainerTop.containerIcons}>
-                        <TouchableOpacity onPress={console.log('teste')}>
+                        <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
                             <Icon name="user" size={23} style={{ color: '#fff', backgroundColor: '#a031df', borderRadius: 23, padding: 10, marginTop: -14 }} />
                         </TouchableOpacity>
                         <View style={{ display: 'flex', flexDirection: 'row', marginLeft: '60%' }} >
@@ -32,6 +33,7 @@ export default function Home() {
                 <FirstBlock />
                 <SecondBlock />
             </ScrollView>
+            <StatusBar backgroundColor={"#8734c7"} />
         </>
     )
 }

@@ -10,6 +10,7 @@ import Transfer from './view/home/transfer';
 import Depositar from './view/home/deposit';
 import CellPhoneRecharge from './view/home/cellPhoneRecharge/numberRecharge/index';
 import SelectOperator from './view/home/cellPhoneRecharge/selectOperator';
+import Profile from './view/home/profile';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +31,7 @@ function MyStack() {
       <Stack.Screen name="Deposit" component={Depositar} />
       <Stack.Screen name="Recharge" component={CellPhoneRecharge} />
       <Stack.Screen name="Operator" component={SelectOperator} />
+      <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
   );
 }

@@ -18,7 +18,7 @@ export default function firstBlock() {
 
     return (
         <>
-            <View style={{ width: '100%', display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <View style={{ width: '100%', display: "flex", flexDirection: "column", alignItems: "center" ,backgroundColor: "#ffff" }}>
                 <View style={firstStyleContainer.containerCorpoTop}>
                     <View>
                         <View><Text style={firstStyleContainer.textoContent}>Conta</Text></View>

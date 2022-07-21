@@ -13,7 +13,8 @@ const AppButton = (props) =>
             borderRadius: props.radius ? props.radius : 100,
             fontWeight: props.weight ? props.weight : '400',
             marginRight: props.marginR,
-            backgroundColor: props.background
+            backgroundColor: props.background,
+            marginBottom: props.marginBotton
         }}>{props.titulo}</Text>
     </TouchableOpacity>
 );

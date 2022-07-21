@@ -13,7 +13,7 @@ import BottonLine from "../../../components/bottonLine";
 export default function secondBlock() {
     return (
         <>
-            <View style={{ width: '100%', display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <View style={{ width: '100%', display: "flex", flexDirection: "column", alignItems: "center", backgroundColor: "#ffff" }}>
                 <BottonLine />
                 <View style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
                     <View>
@@ -90,32 +90,36 @@ export default function secondBlock() {
                                 <TouchableOpacity style={{ width: 200, backgroundColor: '#ececf5' }}>
                                     <Image style={styleContent.imagem} source={Img1} />
                                     <View padding={15}>
-                                        <Text>Conta PJ</Text>
-                                        <Text>A gente te ajuda a gerenciar seuas finanças de um jeito fácil ...</Text>
+                                        <Text style={{ fontWeight: "500" }}>Conta PJ</Text>
+                                        <Text style={{ color: "#151515c7", width: "100%", height: 60 }}>A gente te ajuda a gerenciar seuas finanças de um jeito fácil ...</Text>
+                                        <Text style={styleContent.button}>Pedir conta PJ</Text>
                                     </View>
                                 </TouchableOpacity>
 
                                 <TouchableOpacity style={{ width: 200, marginLeft: 10, backgroundColor: '#ececf5' }}>
                                     <Image style={styleContent.imagem} source={Img3} />
                                     <View padding={15}>
-                                        <Text>Conta PJ</Text>
-                                        <Text>A gente te ajuda a gerenciar seuas finanças de um jeito fácil ...</Text>
+                                        <Text style={{ fontWeight: "500" }}>Indique seus amigos</Text>
+                                        <Text style={{ color: "#151515c7", width: "100%", height: 60 }}>Mostre aos seus amigos como é fácil ter uma vida sem ...</Text>
+                                        <Text style={styleContent.button}>Indicar amigos</Text>
                                     </View>
                                 </TouchableOpacity>
 
                                 <TouchableOpacity style={{ width: 200, marginLeft: 10, backgroundColor: '#ececf5' }}>
                                     <Image style={styleContent.imagem} source={Img2} />
                                     <View padding={15}>
-                                        <Text>Conta PJ</Text>
-                                        <Text>A gente te ajuda a gerenciar seuas finanças de um jeito fácil ...</Text>
+                                        <Text style={{ fontWeight: "500" }}>WhatsAppJ</Text>
+                                        <Text style={{ color: "#151515c7", width: "100%", height: 60 }}>Pagamentos seguros, rápidos e sem tarifa. A experiência ...</Text>
+                                        <Text style={styleContent.button}>Quero conhecer</Text>
                                     </View>
                                 </TouchableOpacity>
 
                                 <TouchableOpacity style={{ width: 200, marginLeft: 10, backgroundColor: '#ececf5' }}>
                                     <Image style={styleContent.imagem} source={Img2} />
                                     <View padding={15}>
-                                        <Text>Conta PJ</Text>
-                                        <Text>A gente te ajuda a gerenciar seuas finanças de um jeito fácil ...</Text>
+                                        <Text style={{ fontWeight: "500" }}>Parcele comprar no app</Text>
+                                        <Text style={{ color: "#151515c7", width: "100%", height: 60 }}>Divida comprar feitas à vista no crédito em até 12x</Text>
+                                        <Text style={styleContent.button}>Conhecer</Text>
                                     </View>
                                 </TouchableOpacity>
                             </View>
@@ -144,6 +148,17 @@ const styleContent = StyleSheet.create({
         height: 100,
         borderTopLeftRadius: 4,
         borderTopRightRadius: 4,
+    },
+    button: {
+        marginTop: 15,
+        textAlign: "center",
+        width: "73%",
+        color: "#ffff",
+        fontWeight: "800",
+        paddingHorizontal: 10,
+        paddingVertical: 8,
+        backgroundColor: "#7502a3",
+        borderRadius: 40
     }
 })
 

@@ -80,7 +80,7 @@ export default function SelectOperator() {
 
     return (
         <>
-            <View style={{ position: "relative" }}>
+            <View style={{ position: "relative", height: "100%" }}>
                 <NavegateTopScreen route={"Home"} icon={"close"} />
                 <View style={{ width: "100%", top: -47, display: "flex", alignItems: "center" }}>
                     <View style={{ backgroundColor: "#4a4848db", width: 160, height: 3, borderRadius: 50 }}>
@@ -88,7 +88,7 @@ export default function SelectOperator() {
                         </View>
                     </View>
                 </View>
-                <View style={{ padding: 20 }}>
+                <View style={{ padding: 20, marginTop: -20 }}>
                     <Text style={{ fontSize: 25, fontWeight: "600" }}>Qual é a operadora?</Text>
                     <Text style={{ marginTop: 20, fontSize: 17 }}>(27) 995804151</Text>
                 </View>
@@ -149,7 +149,7 @@ export default function SelectOperator() {
                         onPress={() => setNewValue("Correios")}
                     />
                 </View>
-                <TouchableOpacity disabled={button == false ? true : false} onPress={() => navigation.navigate('Operator')} style={{ width: "100%", display: "flex", alignItems: "flex-end", marginBottom: 20, marginLeft: -20 }}>
+                <TouchableOpacity disabled={button == false ? true : false} onPress={() => navigation.navigate('Operator')} style={{ width: "100%", position: "absolute",bottom: 0, display: "flex", alignItems: "flex-end", marginBottom: 20, marginLeft: -20 }}>
                     <Text style={button == false ? styleContent.buttonDesable : styleContent.button}>
                         <Icon name="arrowright" size={22} color={"#ffff"} />
                     </Text>
