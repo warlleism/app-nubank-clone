@@ -7,7 +7,7 @@ export default function NavegateTopScreen(props) {
     const navigation = useNavigation()
     return (
         <>
-            <View style={{ width: "100%", padding: 15,  display: "flex", flexDirection: "row", justifyContent: "space-between", backgroundColor: props.backgroundColor }}>
+            <View style={{ width: "100%", paddingHorizontal: 10, paddingVertical: 13, display: "flex", flexDirection: "row", justifyContent: "space-between", backgroundColor: props.backgroundColor}}>
                 <TouchableOpacity onPress={() => navigation.navigate(props.route)} >
                     <Icon name={props.icon} size={23} style={{ color: props.color ? props.color : '#000000d1', padding: 10 }} />
                 </TouchableOpacity>

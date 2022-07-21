@@ -18,7 +18,7 @@ export default function firstBlock() {
 
     return (
         <>
-            <View style={{ width: '100%', display: "flex", flexDirection: "column", alignItems: "center" ,backgroundColor: "#ffff" }}>
+            <View style={{ width: '100%', display: "flex", flexDirection: "column", alignItems: "center", backgroundColor: "#ffff" }}>
                 <View style={firstStyleContainer.containerCorpoTop}>
                     <View>
                         <View><Text style={firstStyleContainer.textoContent}>Conta</Text></View>
@@ -86,7 +86,7 @@ export default function firstBlock() {
                         </View>
                     </ScrollView>
                 </ScrollView>
-                <TouchableOpacity onPress={console.log('teste')} style={firstStyleContainer.cartoesContent}>
+                <TouchableOpacity onPress={() => navigation.navigate("Cards")} style={firstStyleContainer.cartoesContent}>
                     <Image source={Pix} style={{ width: 30, height: 30 }} />
                     <Text style={{ marginLeft: 10, fontWeight: '500' }}>Meus Cartões</Text>
                 </TouchableOpacity>

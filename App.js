@@ -11,6 +11,7 @@ import Depositar from './view/home/deposit';
 import CellPhoneRecharge from './view/home/cellPhoneRecharge/numberRecharge/index';
 import SelectOperator from './view/home/cellPhoneRecharge/selectOperator';
 import Profile from './view/home/profile';
+import MyCards from './view/home/myCards';
 
 const Stack = createStackNavigator();
 
@@ -32,6 +33,7 @@ function MyStack() {
       <Stack.Screen name="Recharge" component={CellPhoneRecharge} />
       <Stack.Screen name="Operator" component={SelectOperator} />
       <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="Cards" component={MyCards} />
     </Stack.Navigator>
   );
 }

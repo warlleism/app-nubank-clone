@@ -15,11 +15,10 @@ export default function Transfer() {
 
   return (
     <>
-    {console.log(valor)}
       <NavegateTopScreen route={"Home"} icon={"close"} rightIcon={"qrcode"} />
       <View style={{ padding: 20, position: "relative" }}>
-        <Text style={{ fontSize: 32, width: 300, marginBottom: 10, fontWeight: "500" }}>Qual é o valor da <Text style={{color: "#a031df", fontWeight: "800"}}>transferência?</Text></Text>
-        <Text>Saldo disponível em conta <Text style={{ fontSize: 17, fontWeight: "600" , color: "#a031df"}}>R$ 1829,80</Text></Text>
+        <Text style={{ fontSize: 32, width: 300, marginBottom: 10, fontWeight: "500" }}>Qual é o valor da <Text style={{ color: "#a031df", fontWeight: "800" }}>transferência?</Text></Text>
+        <Text>Saldo disponível em conta <Text style={{ fontSize: 17, fontWeight: "600", color: "#a031df" }}>R$ 1829,80</Text></Text>
         <TextInputMask
           type={'money'}
           autoFocus={true}

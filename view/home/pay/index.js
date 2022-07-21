@@ -11,7 +11,7 @@ export default function Pay() {
     return (
         <>
             <NavegateTopScreen route={"Home"} icon={"close"} />
-            <ScrollView style={{ marginTop: -30 }}>
+            <ScrollView>
                 <View style={{ width: "100%", padding: 20, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                     <Text style={{ fontSize: 30, fontWeight: "600", marginBottom: 10 }}>Estas são suas opções de pagamento</Text>
                     <View>
