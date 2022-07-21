@@ -1,4 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, StatusBar } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
 import FirstBlock from "../firstBlock/index";
@@ -6,16 +7,17 @@ import SecondBlock from "../secondblock/index";
 
 export default function Home() {
     const navigation = useNavigation();
+    const [showMoney, setShowMoney] = useState(true)
     return (
         <>
-            <ScrollView scrollEventThrottle={16} style={{backgroundColor : "#8734c7"}}>
+            <ScrollView scrollEventThrottle={16} style={{ backgroundColor: "#8734c7" }}>
                 <View style={conainerTop.container}>
                     <View style={conainerTop.containerIcons}>
                         <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
                             <Icon name="user" size={23} style={{ color: '#fff', backgroundColor: '#a031df', borderRadius: 23, padding: 10, marginTop: -14 }} />
                         </TouchableOpacity>
                         <View style={{ display: 'flex', flexDirection: 'row', marginLeft: '60%' }} >
-                            <TouchableOpacity onPress={console.log('teste')}>
+                            <TouchableOpacity onPress={()=> setShowMoney(!showMoney)}>
                                 <Icon name="eye" size={23} style={{ marginRight: '16%', color: '#fff' }} />
                             </TouchableOpacity>
                             <TouchableOpacity onPress={console.log('teste')}>
@@ -30,7 +32,7 @@ export default function Home() {
                         <Text style={{ color: '#fff', marginTop: '-10%', marginLeft: '5%', fontSize: 20 }}>Olá, Warllei</Text>
                     </View>
                 </View>
-                <FirstBlock />
+                <FirstBlock showMoney={showMoney} />
                 <SecondBlock />
             </ScrollView>
             <StatusBar backgroundColor={"#8734c7"} />

@@ -12,6 +12,7 @@ import CellPhoneRecharge from './view/home/cellPhoneRecharge/numberRecharge/inde
 import SelectOperator from './view/home/cellPhoneRecharge/selectOperator';
 import Profile from './view/home/profile';
 import MyCards from './view/home/myCards';
+import Cripto from './view/home/cripto';
 
 const Stack = createStackNavigator();
 
@@ -34,6 +35,7 @@ function MyStack() {
       <Stack.Screen name="Operator" component={SelectOperator} />
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="Cards" component={MyCards} />
+      <Stack.Screen name="Cripto" component={Cripto} />
     </Stack.Navigator>
   );
 }
