@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Image, Text, TouchableOpacity, View, StatusBar, Animated } from "react-native";
 import NavegateTopScreen from "../../../components/topScreenNavegate"
 import Img3 from '../../../images/nuimg3.png'
@@ -10,6 +10,10 @@ export default function Cripto() {
     const [posicao, setPosicao] = useState(new Animated.Value(500))
     const [posicao2, setPosicao2] = useState(new Animated.Value(500))
     const [posicao3, setPosicao3] = useState(new Animated.Value(500))
+
+    const [letras, setLetras] = useState(new Animated.Value(48))
+
+    // const [dados, setDados] = useState(20)
 
     Animated.sequence([
 
@@ -39,8 +43,21 @@ export default function Cripto() {
         )
     ]).start();
 
+    // useEffect(() => {
+    //     Animated.timing(letras, {
+    //         toValue: dados,
+    //         duration: 1000,
+    //         useNativeDriver: false
+    //     }).start()
+    // }, [dados])
+
     return (
         <>
+            {/* 
+            <TouchableOpacity onPress={() => setDados(dados == 20 ? 40 : dados == 40 ? 20 : 40)} style={{ marginTop: 30, width: "55%", borderRadius: 200, paddingHorizontal: 20, paddingVertical: 10, backgroundColor: "#600e83" }}>
+                <Animated.Text style={{ fontSize: letras, fontWeight: "600" }}>Chegou agora?</Animated.Text>
+            </TouchableOpacity> */}
+
             <NavegateTopScreen route={"Home"} icon={"left"} rightIcon={"questioncircleo"} />
             <ScrollView padding={20} style={{ position: "relative" }}>
                 <Animated.View style={{ position: "relative", left: posicao }}>
