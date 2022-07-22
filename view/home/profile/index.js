@@ -20,7 +20,7 @@ export default function Profile() {
     return (
         <>
             <ScrollView style={{ display: "flex", flexDirection: "column", backgroundColor: "#712F79" }}>
-                <NavegateTopScreen route={"Account"} icon={"close"} color={"#ffff"} backgroundColor={"#712F79"} />
+                <NavegateTopScreen route={"Home"} icon={"close"} color={"#ffff"} backgroundColor={"#712F79"} />
                 <View style={{ padding: 20, backgroundColor: "#712F79" }}>
                     <Icon name="user" size={23} style={{ display: "flex", textAlign: "center", width: "13%", color: '#fff', backgroundColor: '#a031df', borderRadius: 23, padding: 10 }} />
                     <Text style={{ marginTop: 30, fontWeight: "700", color: "#ffff" }}>Agência 0001 . Conta 4125268-0</Text>
@@ -126,7 +126,7 @@ export default function Profile() {
                 </View>
             </ScrollView>
 
-            <StatusBar backgroundColor="#712F79" />
+            <StatusBar backgroundColor="#712F79"  />
         </>
     )
 }

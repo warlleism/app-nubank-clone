@@ -71,7 +71,7 @@ export default function Cripto() {
                     transform: [{ translateX: posicao }]
                 }]}>
                     <Text style={{ fontSize: 26, fontWeight: "600" }}>Com apenas R$1 você já pode começar</Text>
-                    <TouchableOpacity onPress={() => console.log("teste")} style={{ marginTop: 30, width: "55%", borderRadius: 200, paddingHorizontal: 20, paddingVertical: 10, backgroundColor: "#600e83" }}>
+                    <TouchableOpacity onPress={() => console.log("teste")} style={{ marginTop: 30, width: 220, borderRadius: 200, paddingHorizontal: 20, paddingVertical: 14, backgroundColor: "#600e83" }}>
                         <Text style={{ textAlign: "center", fontWeight: "700", color: "#ffff" }}>Comprar criptomoedas</Text>
                     </TouchableOpacity>
                 </Animated.View>
@@ -84,16 +84,14 @@ export default function Cripto() {
                         <View style={{ padding: 20, width: 230 }}>
                             <Text style={{ fontSize: 18, fontWeight: "600" }}>Chegou agora?</Text>
                             <Text style={{ fontWeight: "300" }}>Separamos algumas informações para te ajudar com os primeiros passos.</Text>
-                            <View style={{ width: "60%", borderRadius: 200, paddingHorizontal: 20, paddingVertical: 10, backgroundColor: "#600e83", marginBottom: 10, marginTop: 15 }}>
+                            <View style={{ width: 140, borderRadius: 200, paddingHorizontal: 20, paddingVertical: 10, backgroundColor: "#600e83", marginBottom: 10, marginTop: 15 }}>
                                 <Text style={{ textAlign: "center", fontWeight: "700", color: "#ffff" }}>Saiba Mais</Text>
                             </View>
                         </View>
                     </TouchableOpacity>
                 </Animated.View>
 
-                <Animated.View style={[{
-                    transform: [{ translateX: posicao3 }]
-                }]}>
+                <Animated.View style={[{marginBottom: 40,transform: [{ translateX: posicao3 }]}]}>
                     <Text style={{ fontSize: 20, fontWeight: "600", marginTop: 20 }}>Criptomoedas disponíveis</Text>
                     <View style={{ display: "flex", flexDirection: "row", alignItems: "center", marginTop: 20, marginBottom: 20 }}>
                         <Image source={Bitcoin} style={{ width: 45, height: 45, marginRight: 15 }} />

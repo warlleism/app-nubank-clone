@@ -22,7 +22,7 @@ export default function PixArea() {
                         <Text style={{ fontSize: 24, marginTop: 20 }}>Enviar</Text>
                         <View style={{ display: "flex", flexDirection: "row", marginTop: 20, justifyContent: "space-around" }}>
                             <View style={firstStyleContainer.viewContentIcon}>
-                                <TouchableOpacity onPress={() => navigation.navigate("PixArea")} style={firstStyleContainer.imagemIcon}>
+                                <TouchableOpacity onPress={() => navigation.navigate("Transfer")} style={firstStyleContainer.imagemIcon}>
                                     <Image source={Transferir} style={{ width: 30, height: 30 }} />
                                 </TouchableOpacity>
                                 <Text style={firstStyleContainer.textoContentIcons}>Transferir</Text>
@@ -45,13 +45,13 @@ export default function PixArea() {
                         <Text style={{ fontSize: 24, marginTop: 20 }}>Receber</Text>
                         <View style={{ display: "flex", flexDirection: "row", marginTop: 20 }}>
                             <View style={firstStyleContainer.viewContentIcon}>
-                                <TouchableOpacity onPress={() => navigation.navigate("PixArea")} style={firstStyleContainer.imagemIcon}>
+                                <TouchableOpacity onPress={() => navigation.navigate("Deposit")} style={firstStyleContainer.imagemIcon}>
                                     <Image source={Cobrar} style={{ width: 30, height: 30 }} />
                                 </TouchableOpacity>
                                 <Text style={firstStyleContainer.textoContentIcons}>Cobrar</Text>
                             </View>
                             <View style={firstStyleContainer.viewContentIcon}>
-                                <TouchableOpacity onPress={() => navigation.navigate("PixArea")} style={firstStyleContainer.imagemIcon}>
+                                <TouchableOpacity onPress={() => navigation.navigate("Deposit")} style={firstStyleContainer.imagemIcon}>
                                     <Image source={Depositar} style={{ width: 30, height: 30 }} />
                                 </TouchableOpacity>
                                 <Text style={firstStyleContainer.textoContentIcons}>Depositar</Text>

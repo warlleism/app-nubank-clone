@@ -1,10 +1,16 @@
 import { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
 import NavegateTopScreen from "../../../../components/topScreenNavegate";
 import { CheckBox } from '@rneui/themed';
 import { useNavigation } from "@react-navigation/native";
-export default function SelectOperator() {
+
+export default function SelectOperator(props) {
+
+
+    const ScreenHeight = Dimensions.get("window").height
+
+    const ScreenWidth = Dimensions.get("window").width
 
     const navigation = useNavigation()
 
@@ -75,12 +81,11 @@ export default function SelectOperator() {
                 setCheck5({ status: true })
                 break;
         }
-
     }
 
     return (
         <>
-            <View style={{ position: "relative", height: "100%" }}>
+            <View style={{ position: "relative", height: ScreenHeight, width: ScreenWidth, backgroundColor: "#f2f2f2", zIndex: 999999999999 }}>
                 <NavegateTopScreen route={"Home"} icon={"close"} />
                 <View style={{ width: "100%", top: -47, display: "flex", alignItems: "center" }}>
                     <View style={{ backgroundColor: "#4a4848db", width: 160, height: 3, borderRadius: 50 }}>
@@ -90,7 +95,7 @@ export default function SelectOperator() {
                 </View>
                 <View style={{ padding: 20, marginTop: -20 }}>
                     <Text style={{ fontSize: 25, fontWeight: "600" }}>Qual é a operadora?</Text>
-                    <Text style={{ marginTop: 20, fontSize: 17 }}>(27) 995804151</Text>
+                    <Text style={{ marginTop: 20, fontSize: 17 }}>{props.numero}</Text>
                 </View>
                 <View>
                     <CheckBox
@@ -149,7 +154,7 @@ export default function SelectOperator() {
                         onPress={() => setNewValue("Correios")}
                     />
                 </View>
-                <TouchableOpacity disabled={button == false ? true : false} onPress={() => navigation.navigate('Operator')} style={{ width: "100%", position: "absolute",bottom: 0, display: "flex", alignItems: "flex-end", marginBottom: 20, marginLeft: -20 }}>
+                <TouchableOpacity disabled={button == false ? true : false} onPress={() => navigation.navigate('Operator')} style={{ position: "absolute", bottom: 0, width: "100%", display: "flex", flexDirection: "row", justifyContent: "flex-end" }}>
                     <Text style={button == false ? styleContent.buttonDesable : styleContent.button}>
                         <Icon name="arrowright" size={22} color={"#ffff"} />
                     </Text>
@@ -170,12 +175,19 @@ const styleContent = StyleSheet.create({
     button: {
         borderRadius: 200 / 2,
         padding: 10,
-        backgroundColor: "#a010df"
+        backgroundColor: "#a010df",
+        textAlign: "center",
+        marginRight: 20,
+        marginBottom: 20
     },
     buttonDesable: {
         borderRadius: 200 / 2,
         padding: 10,
-        backgroundColor: "#4a48486b"
+        backgroundColor: "#4a48486b",
+        textAlign: "center",
+        marginRight: 20,
+        marginBottom: 20
+
     },
     input: {
         borderBottomColor: "black",
