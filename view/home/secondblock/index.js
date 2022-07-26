@@ -62,7 +62,14 @@ export default function secondBlock() {
                     <View style={{ width: '100%' }}>
                         <Text style={{ marginTop: 5, fontSize: 17, fontWeight: '500' }}>Seguros</Text>
                         <Text style={{ fontSize: 13, marginTop: 15, fontWeight: '500', color: '#151515c7' }}>Proteção para você cuidar do que importa</Text>
-                        <TouchableOpacity onPress={console.log('teste')}><Text style={styleContent.content}><Image source={Coracao} style={{ width: 23, height: 23 }} />     Seguro vida                                              <Text style={{ color: '#a031df' }}>Conhecer</Text></Text></TouchableOpacity>
+                        <View style={styleContent.contentHeart}>
+                            <View style={{display: "flex", flexDirection: "row"}}>
+                                <Image source={Coracao} style={{ width: 23, height: 23, marginRight: 20 }} />
+                                <TouchableOpacity onPress={console.log('teste')}><Text>Seguro vida</Text></TouchableOpacity>
+                            </View>
+                            <Text style={{ color: '#a031df' }}>Conhecer</Text>
+                        </View>
+
                     </View>
                     <TouchableOpacity onPress={console.log('teste')}>
                         <Icon name="right" size={14} style={{ color: 'black' }} />
@@ -133,6 +140,18 @@ export default function secondBlock() {
 
 const styleContent = StyleSheet.create({
     content: {
+        fontSize: 13,
+        marginTop: 15,
+        fontWeight: '500',
+        color: 'black',
+        backgroundColor: '#ececf5',
+        padding: 15,
+        borderRadius: 7
+    },
+    contentHeart: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
         fontSize: 13,
         marginTop: 15,
         fontWeight: '500',

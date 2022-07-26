@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Image, Text, TouchableOpacity, View, StatusBar, Animated } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 import NavegateTopScreen from "../../../components/topScreenNavegate"
 import Img3 from '../../../images/nuimg3.png'
 import Bitcoin from "../../../icons/bitcoin.png"
 import Ethereum from "../../../icons/ethereum.png"
-import { ScrollView } from "react-native-gesture-handler";
 
 export default function Cripto() {
     const [posicao, setPosicao] = useState(new Animated.Value(500))
@@ -91,7 +91,7 @@ export default function Cripto() {
                     </TouchableOpacity>
                 </Animated.View>
 
-                <Animated.View style={[{marginBottom: 40,transform: [{ translateX: posicao3 }]}]}>
+                <Animated.View style={[{ marginBottom: 40, transform: [{ translateX: posicao3 }] }]}>
                     <Text style={{ fontSize: 20, fontWeight: "600", marginTop: 20 }}>Criptomoedas disponíveis</Text>
                     <View style={{ display: "flex", flexDirection: "row", alignItems: "center", marginTop: 20, marginBottom: 20 }}>
                         <Image source={Bitcoin} style={{ width: 45, height: 45, marginRight: 15 }} />
@@ -108,7 +108,6 @@ export default function Cripto() {
                         </View>
                     </View>
                 </Animated.View>
-
             </ScrollView>
             <StatusBar backgroundColor={"#f2f2f2"} barStyle="dark-content" />
         </>

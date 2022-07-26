@@ -1,4 +1,4 @@
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Animated, Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import NavegateTopScreen from "../../../components/topScreenNavegate"
 import BarCode from "../../../icons/barcode.png"
@@ -8,14 +8,40 @@ import Salario from "../../../icons/salario.png"
 import BottonLine from "../../../components/bottonLine";
 import Icon from "react-native-vector-icons/AntDesign";
 
-export default function Deposit() {
+export default function Deposit(props) {
+
     const navigation = useNavigation()
+
+    const Height = Dimensions.get("window").height
+    const Width = Dimensions.get("window").width
+
+
+    function Animacao() {
+        Animated.timing(
+            props.posicao,
+            {
+                toValue: 400,
+                duration: 600,
+                useNativeDriver: true
+            }
+        ).start()
+    }
+
+
     return (
-        <>
-            <NavegateTopScreen route={"Home"} icon={"close"} />
+        <Animated.View style={{ position: "absolute", backgroundColor: "#f2f2f2", height: Height, width: Width, transform: [{ translateY: props.posicao }] }}>
+            
+            <NavegateTopScreen route={"Home"} icon={"close"} display={"none"} />
+           
+            <View style={{ width: "100%", paddingHorizontal: 10, paddingVertical: 13, display: "flex", flexDirection: "row", justifyContent: "space-between", backgroundColor: "#f2f2f2" }}>
+                <TouchableOpacity onPress={() => Animacao()} >
+                    <Icon name={"close"} size={23} style={{ color: "black" ? "black" : '#000000d1', padding: 10 }} />
+                </TouchableOpacity>
+            </View>
+
             <ScrollView style={{ marginTop: -30 }}>
                 <View style={{ width: "100%", padding: 20, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                    <Text style={{ fontSize: 30, fontWeight: "600", marginBottom: 10, width: 320 }}>Como você quer <Text style={{color: "#a031df"}}>depositar</Text> na sua conta do Nubank?</Text>
+                    <Text style={{ fontSize: 30, fontWeight: "600", marginBottom: 10, width: 320 }}>Como você quer <Text style={{ color: "#a031df" }}>depositar</Text> na sua conta do Nubank?</Text>
                     <View>
                         <View style={{ display: "flex", flexDirection: "column", marginTop: 20, justifyContent: "space-around" }}>
                             <View>
@@ -74,7 +100,7 @@ export default function Deposit() {
                     </View>
                 </View>
             </ScrollView>
-        </>
+        </Animated.View>
     )
 }
 

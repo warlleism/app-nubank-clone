@@ -1,28 +1,59 @@
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { Animated } from "react-native";
 import NavegateTopScreen from "../../../components/topScreenNavegate"
 import Transferir from "../../../icons/transferir.png"
 import QrCode from "../../../icons/qrCode.png"
 import CopiarColar from "../../../icons/copiarColar.png"
 import Cobrar from "../../../icons/cobrar.png"
-import Depositar from "../../../icons/depositar.png"
+import Depositar from "../../../icons/depositar.png";
 import BottonLine from "../../../components/bottonLine";
 import Icon from "react-native-vector-icons/AntDesign";
+import Transfer from "../transfer/index";
+import Deposit from "../deposit/index";
+import { useState } from "react";
 
 export default function PixArea() {
+
     const navigation = useNavigation()
+
+    const [posicao, setPosicao] = useState(new Animated.Value(1200))
+    const [posicao2, setPosicao2] = useState(new Animated.Value(2200))
+
+
+    function Animacao() {
+        Animated.timing(
+            posicao,
+            {
+                toValue: 0,
+                duration: 600,
+                useNativeDriver: true
+            }
+        ).start()
+    }
+    function Animacao2() {
+        Animated.timing(
+            posicao2,
+            {
+                toValue: 0,
+                duration: 600,
+                useNativeDriver: true
+            }
+        ).start()
+    }
+
     return (
         <>
             <NavegateTopScreen route={"Home"} icon={"close"} rightIcon={"questioncircleo"} />
             <ScrollView>
                 <View style={{ width: "100%", padding: 20, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                    <Text style={{fontSize: 30, fontWeight: "600", marginBottom: 10}}>Área Pix</Text>
+                    <Text style={{ fontSize: 30, fontWeight: "600", marginBottom: 10 }}>Área Pix</Text>
                     <Text>Envie e receba pagamentos a  qualquer hora do dia da semana, sem pagar nada por isso.</Text>
                     <View>
                         <Text style={{ fontSize: 24, marginTop: 20 }}>Enviar</Text>
                         <View style={{ display: "flex", flexDirection: "row", marginTop: 20, justifyContent: "space-around" }}>
                             <View style={firstStyleContainer.viewContentIcon}>
-                                <TouchableOpacity onPress={() => navigation.navigate("Transfer")} style={firstStyleContainer.imagemIcon}>
+                                <TouchableOpacity onPress={() => Animacao()} style={firstStyleContainer.imagemIcon}>
                                     <Image source={Transferir} style={{ width: 30, height: 30 }} />
                                 </TouchableOpacity>
                                 <Text style={firstStyleContainer.textoContentIcons}>Transferir</Text>
@@ -45,13 +76,13 @@ export default function PixArea() {
                         <Text style={{ fontSize: 24, marginTop: 20 }}>Receber</Text>
                         <View style={{ display: "flex", flexDirection: "row", marginTop: 20 }}>
                             <View style={firstStyleContainer.viewContentIcon}>
-                                <TouchableOpacity onPress={() => navigation.navigate("Deposit")} style={firstStyleContainer.imagemIcon}>
+                                <TouchableOpacity onPress={() => Animacao2()} style={firstStyleContainer.imagemIcon}>
                                     <Image source={Cobrar} style={{ width: 30, height: 30 }} />
                                 </TouchableOpacity>
                                 <Text style={firstStyleContainer.textoContentIcons}>Cobrar</Text>
                             </View>
                             <View style={firstStyleContainer.viewContentIcon}>
-                                <TouchableOpacity onPress={() => navigation.navigate("Deposit")} style={firstStyleContainer.imagemIcon}>
+                                <TouchableOpacity onPress={() => Animacao2()} style={firstStyleContainer.imagemIcon}>
                                     <Image source={Depositar} style={{ width: 30, height: 30 }} />
                                 </TouchableOpacity>
                                 <Text style={firstStyleContainer.textoContentIcons}>Depositar</Text>
@@ -85,8 +116,15 @@ export default function PixArea() {
                     <BottonLine />
                 </View>
             </ScrollView>
+            <Animated.View style={{ position: "absolute", transform: [{ translateY: posicao }] }}>
+                <Transfer posicao={posicao} />
+            </Animated.View>
+            <Animated.View style={{ position: "absolute", transform: [{ translateY: posicao2 }] }}>
+                <Deposit posicao={posicao2} />
+            </Animated.View>
 
         </>
+
     )
 
 }
