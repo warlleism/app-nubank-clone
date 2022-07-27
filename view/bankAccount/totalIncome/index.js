@@ -40,7 +40,7 @@ export default function TotalIncome() {
                 scrollEventThrottle={16}
                 horizontal={true}
                 pagingEnabled={true}
-             
+
                 onMomentumScrollBegin={() =>
                     scrollRef.current.scrollTo({
                         x: dimensions.screen,
@@ -49,7 +49,6 @@ export default function TotalIncome() {
                     })}
             >
                 <View style={{ display: "flex", flexDirection: "row" }}>
-
                     <View style={{ width: 412, padding: 20 }}>
                         <Text>Saldo em 31 de janeiro de 2022</Text>
                         <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>

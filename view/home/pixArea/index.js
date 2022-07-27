@@ -11,7 +11,7 @@ import BottonLine from "../../../components/bottonLine";
 import Icon from "react-native-vector-icons/AntDesign";
 import Transfer from "../transfer/index";
 import Deposit from "../deposit/index";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function PixArea() {
 
@@ -19,6 +19,8 @@ export default function PixArea() {
 
     const [posicao, setPosicao] = useState(new Animated.Value(1200))
     const [posicao2, setPosicao2] = useState(new Animated.Value(2200))
+    const [posicao3, setPosicao3] = useState(new Animated.Value(2200))
+    const [showTransfer, setShowTransfer] = useState(false)
 
 
     function Animacao() {
@@ -30,7 +32,9 @@ export default function PixArea() {
                 useNativeDriver: true
             }
         ).start()
+        setShowTransfer(true)
     }
+
     function Animacao2() {
         Animated.timing(
             posicao2,
@@ -40,6 +44,20 @@ export default function PixArea() {
                 useNativeDriver: true
             }
         ).start()
+    }
+
+    function Animacao3() {
+        Animated.timing(
+            posicao,
+            {
+                toValue: 1200,
+                duration: 600,
+                useNativeDriver: true
+            }
+        ).start()
+        setTimeout(() => {
+            setShowTransfer(false)
+        }, 100)
     }
 
     return (
@@ -116,15 +134,23 @@ export default function PixArea() {
                     <BottonLine />
                 </View>
             </ScrollView>
-            <Animated.View style={{ position: "absolute", transform: [{ translateY: posicao }] }}>
-                <Transfer posicao={posicao} />
-            </Animated.View>
+            {showTransfer &&
+                (
+                    <Animated.View style={{ position: "absolute", transform: [{ translateY: posicao }] }}>
+                        <View style={{ width: "100%", paddingHorizontal: 10, paddingVertical: 13, display: "flex", flexDirection: "row", justifyContent: "space-between", backgroundColor: "#f2f2f2" }}>
+                            <TouchableOpacity onPress={() => Animacao3()} >
+                                <Icon name={"close"} size={23} style={{ color: "black" ? "black" : '#000000d1', padding: 10 }} />
+                            </TouchableOpacity>
+                        </View>
+                        <Transfer posicao={posicao} />
+                    </Animated.View>
+
+                )}
             <Animated.View style={{ position: "absolute", transform: [{ translateY: posicao2 }] }}>
                 <Deposit posicao={posicao2} />
             </Animated.View>
-
+            {console.log(showTransfer)}
         </>
-
     )
 
 }
