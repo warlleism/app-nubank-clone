@@ -1,13 +1,12 @@
 import { Dimensions, ScrollView, StatusBar, Text, View, Animated, SafeAreaView, StyleSheet } from "react-native";
 import NavegateTopScreen from "../../../components/topScreenNavegate";
 import BottonLine from "../../../components/bottonLine";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
-const width = Dimensions.get("window").width
+const screen = Dimensions.get("window").width;
 
 export default function TotalIncome() {
 
-    const screen = Dimensions.get("window").width;
     const [x] = useState(new Animated.Value(0))
 
     return (
@@ -16,7 +15,7 @@ export default function TotalIncome() {
             <Animated.View style={{
                 display: "flex",
                 flexDirection: "row",
-                width: screen * 12,
+                maxWidth: screen * 12,
                 transform: [{
                     translateX: x.interpolate({
                         inputRange: [0, screen / 13],
@@ -25,45 +24,45 @@ export default function TotalIncome() {
                 }]
             }}
             >
-                <View style={{ textAlign: "center", width: 160 }}>
-                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", }}>Janeiro</Text>
+                <View style={{ width: 393 / 3.4 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700" }}>Janeiro</Text>
                 </View>
-                <View style={{ textAlign: "center", width: 160 }}>
-                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -70 }}>Fevereiro</Text>
+                <View style={{ width: 393 / 3.4 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700" }}>Fevereiro</Text>
                 </View>
-                <View style={{ textAlign: "center", width: 160 }}>
-                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -140 }}>Março</Text>
+                <View style={{ width: 393 / 3.4 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700" }}>Março</Text>
                 </View>
-                <View style={{ textAlign: "center", width: 160 }}>
-                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -210}}>Abril</Text>
+                <View style={{ width: 393 / 3.4 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700" }}>Abril</Text>
                 </View>
-                <View style={{ textAlign: "center", width: 160 }}>
-                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -280}}>Maio</Text>
+                <View style={{ width: 393 / 3.4 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700" }}>Maio</Text>
                 </View>
-                <View style={{ textAlign: "center", width: 160 }}>
-                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -350 }}>Junho</Text>
+                <View style={{ width: 393 / 3.4 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700" }}>Junho</Text>
                 </View>
-                <View style={{ textAlign: "center", width: 160 }}>
-                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -420 }}>Julho</Text>
+                <View style={{ width: 393 / 3.4 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700" }}>Julho</Text>
                 </View>
-                <View style={{ textAlign: "center", width: 160 }}>
-                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -490}}>Agosto</Text>
+                <View style={{ width: 393 / 3.4 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700" }}>Agosto</Text>
                 </View>
-                <View style={{ textAlign: "center", width: 160 }}>
-                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -560 }}>Setembro</Text>
+                <View style={{ width: 393 / 3.4 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700" }}>Setembro</Text>
                 </View>
-                <View style={{ textAlign: "center", width: 160 }}>
-                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -630 }}>Outubro</Text>
+                <View style={{ width: 393 / 3.4 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700" }}>Outubro</Text>
                 </View>
-                <View style={{ textAlign: "center", width: 160 }}>
-                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -700 }}>Dezembro</Text>
+                <View style={{ width: 393 / 3.4 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700" }}>Dezembro</Text>
                 </View>
             </Animated.View>
             <Animated.View style={[styledComponent.scrollIncicator,
             {
                 transform: [{
                     translateX: x.interpolate({
-                        inputRange: [0, 100 / 17],
+                        inputRange: [0, screen / 31],
                         outputRange: [0, screen / 1720]
                     })
                 }]
@@ -79,7 +78,7 @@ export default function TotalIncome() {
                 })}
             >
                 <View style={{ display: "flex", flexDirection: "row" }}>
-                    <View style={{ width: 412, padding: 20 }}>
+                    <View style={{ width: screen, padding: 20 }}>
                         <Text>Saldo em 31 de janeiro de 2022</Text>
                         <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
                         <Text style={{ color: "green" }}>R$ 0,00</Text>
@@ -115,7 +114,7 @@ export default function TotalIncome() {
                             <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
                         </View>
                     </View>
-                    <View style={{ width: 412, padding: 20 }}>
+                    <View style={{ width: screen, padding: 20 }}>
                         <Text>Saldo em 31 de janeiro de 2022</Text>
                         <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
                         <Text style={{ color: "green" }}>R$ 0,00</Text>
@@ -151,7 +150,7 @@ export default function TotalIncome() {
                             <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
                         </View>
                     </View>
-                    <View style={{ width: 412, padding: 20 }}>
+                    <View style={{ width: screen, padding: 20 }}>
                         <Text>Saldo em 31 de janeiro de 2022</Text>
                         <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
                         <Text style={{ color: "green" }}>R$ 0,00</Text>
@@ -187,7 +186,7 @@ export default function TotalIncome() {
                             <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
                         </View>
                     </View>
-                    <View style={{ width: 412, padding: 20 }}>
+                    <View style={{ width: screen, padding: 20 }}>
                         <Text>Saldo em 31 de janeiro de 2022</Text>
                         <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
                         <Text style={{ color: "green" }}>R$ 0,00</Text>
@@ -223,7 +222,7 @@ export default function TotalIncome() {
                             <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
                         </View>
                     </View>
-                    <View style={{ width: 412, padding: 20 }}>
+                    <View style={{ width: screen, padding: 20 }}>
                         <Text>Saldo em 31 de janeiro de 2022</Text>
                         <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
                         <Text style={{ color: "green" }}>R$ 0,00</Text>
@@ -259,7 +258,7 @@ export default function TotalIncome() {
                             <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
                         </View>
                     </View>
-                    <View style={{ width: 412, padding: 20 }}>
+                    <View style={{ width: screen, padding: 20 }}>
                         <Text>Saldo em 31 de janeiro de 2022</Text>
                         <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
                         <Text style={{ color: "green" }}>R$ 0,00</Text>
@@ -295,7 +294,7 @@ export default function TotalIncome() {
                             <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
                         </View>
                     </View>
-                    <View style={{ width: 412, padding: 20 }}>
+                    <View style={{ width: screen, padding: 20 }}>
                         <Text>Saldo em 31 de janeiro de 2022</Text>
                         <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
                         <Text style={{ color: "green" }}>R$ 0,00</Text>
@@ -331,7 +330,7 @@ export default function TotalIncome() {
                             <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
                         </View>
                     </View>
-                    <View style={{ width: 412, padding: 20 }}>
+                    <View style={{ width: screen, padding: 20 }}>
                         <Text>Saldo em 31 de janeiro de 2022</Text>
                         <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
                         <Text style={{ color: "green" }}>R$ 0,00</Text>
@@ -367,7 +366,7 @@ export default function TotalIncome() {
                             <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
                         </View>
                     </View>
-                    <View style={{ width: 412, padding: 20 }}>
+                    <View style={{ width: screen, padding: 20 }}>
                         <Text>Saldo em 31 de janeiro de 2022</Text>
                         <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
                         <Text style={{ color: "green" }}>R$ 0,00</Text>
@@ -403,7 +402,7 @@ export default function TotalIncome() {
                             <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
                         </View>
                     </View>
-                    <View style={{ width: 412, padding: 20 }}>
+                    <View style={{ width: screen, padding: 20 }}>
                         <Text>Saldo em 31 de janeiro de 2022</Text>
                         <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
                         <Text style={{ color: "green" }}>R$ 0,00</Text>
@@ -439,7 +438,7 @@ export default function TotalIncome() {
                             <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
                         </View>
                     </View>
-                    <View style={{ width: 412, padding: 20 }}>
+                    <View style={{ width: screen, padding: 20 }}>
                         <Text>Saldo em 31 de janeiro de 2022</Text>
                         <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
                         <Text style={{ color: "green" }}>R$ 0,00</Text>
@@ -489,10 +488,9 @@ const styledComponent = StyleSheet.create({
     scrollIncicator: {
         backgroundColor: "#8734c7",
         height: 4,
-        width: 100,
-        marginLeft: 2,
+        width: screen / 3.4,
         borderRadius: 20,
-        marginLeft: 38
+        left: screen / 46
     }
 })
 
