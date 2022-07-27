@@ -1,52 +1,82 @@
-import { Dimensions, ScrollView, StatusBar, Text, View } from "react-native";
+import { Dimensions, ScrollView, StatusBar, Text, View, Animated, SafeAreaView, StyleSheet } from "react-native";
 import NavegateTopScreen from "../../../components/topScreenNavegate";
 import BottonLine from "../../../components/bottonLine";
 import { useRef, useState } from "react";
 
+const width = Dimensions.get("window").width
+
 export default function TotalIncome() {
 
-    const screen = Dimensions.get("screen").width;
-    const scrollRef = useRef()
-    const [dimensions, setDimensions] = useState({ screen });
-
+    const screen = Dimensions.get("window").width;
+    const [x] = useState(new Animated.Value(0))
 
     return (
-        <>
+        <SafeAreaView>
             <NavegateTopScreen route={"Account"} icon={"close"} rightIcon={"questioncircleo"} />
-            <ScrollView
-                ref={scrollRef}
+            <Animated.View style={{
+                display: "flex",
+                flexDirection: "row",
+                width: screen * 12,
+                transform: [{
+                    translateX: x.interpolate({
+                        inputRange: [0, screen / 13],
+                        outputRange: [100 / 12, 0]
+                    })
+                }]
+            }}
+            >
+                <View style={{ textAlign: "center", width: 160 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", }}>Janeiro</Text>
+                </View>
+                <View style={{ textAlign: "center", width: 160 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -70 }}>Fevereiro</Text>
+                </View>
+                <View style={{ textAlign: "center", width: 160 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -140 }}>Março</Text>
+                </View>
+                <View style={{ textAlign: "center", width: 160 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -210}}>Abril</Text>
+                </View>
+                <View style={{ textAlign: "center", width: 160 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -280}}>Maio</Text>
+                </View>
+                <View style={{ textAlign: "center", width: 160 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -350 }}>Junho</Text>
+                </View>
+                <View style={{ textAlign: "center", width: 160 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -420 }}>Julho</Text>
+                </View>
+                <View style={{ textAlign: "center", width: 160 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -490}}>Agosto</Text>
+                </View>
+                <View style={{ textAlign: "center", width: 160 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -560 }}>Setembro</Text>
+                </View>
+                <View style={{ textAlign: "center", width: 160 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -630 }}>Outubro</Text>
+                </View>
+                <View style={{ textAlign: "center", width: 160 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700", marginLeft: -700 }}>Dezembro</Text>
+                </View>
+            </Animated.View>
+            <Animated.View style={[styledComponent.scrollIncicator,
+            {
+                transform: [{
+                    translateX: x.interpolate({
+                        inputRange: [0, 100 / 17],
+                        outputRange: [0, screen / 1720]
+                    })
+                }]
+            }]} />
+
+            <Animated.ScrollView
                 scrollEventThrottle={16}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
-                style={{ backgroundColor: "green", maxHeight: 50 }}
-            >
-                <View style={{ display: "flex", flexDirection: "row" }}>
-                    <Text style={{ paddingHorizontal: 20 }}>Janeiro</Text>
-                    <Text style={{ paddingHorizontal: 20 }}>Fevereiro</Text>
-                    <Text style={{ paddingHorizontal: 20 }}>Março</Text>
-                    <Text style={{ paddingHorizontal: 20 }}>Abril</Text>
-                    <Text style={{ paddingHorizontal: 20 }}>Meio</Text>
-                    <Text style={{ paddingHorizontal: 20 }}>Junho</Text>
-                    <Text style={{ paddingHorizontal: 20 }}>Julho</Text>
-                    <Text style={{ paddingHorizontal: 20 }}>Agosto</Text>
-                    <Text style={{ paddingHorizontal: 20 }}>Teste</Text>
-                    <Text style={{ paddingHorizontal: 20 }}>Teste</Text>
-                    <Text style={{ paddingHorizontal: 20 }}>Teste</Text>
-                    <Text style={{ paddingHorizontal: 20 }}>Teste</Text>
-                </View>
-            </ScrollView>
-
-            <ScrollView
-                scrollEventThrottle={16}
-                horizontal={true}
                 pagingEnabled={true}
-
-                onMomentumScrollBegin={() =>
-                    scrollRef.current.scrollTo({
-                        x: dimensions.screen,
-                        y: 0,
-                        animated: true
-                    })}
+                onScroll={Animated.event([{ nativeEvent: { contentOffset: { x } } }], {
+                    useNativeDriver: true,
+                })}
             >
                 <View style={{ display: "flex", flexDirection: "row" }}>
                     <View style={{ width: 412, padding: 20 }}>
@@ -445,19 +475,26 @@ export default function TotalIncome() {
                             <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
                         </View>
                     </View>
-
                 </View>
-
-            </ScrollView>
-
+            </Animated.ScrollView>
             <StatusBar
                 backgroundColor={"#191a1c"}
                 barStyle="dark-content"
             />
-        </>
+        </SafeAreaView>
     )
 }
 
-const { width, height } = Dimensions.get("window")
+const styledComponent = StyleSheet.create({
+    scrollIncicator: {
+        backgroundColor: "#8734c7",
+        height: 4,
+        width: 100,
+        marginLeft: 2,
+        borderRadius: 20,
+        marginLeft: 38
+    }
+})
+
 
 
