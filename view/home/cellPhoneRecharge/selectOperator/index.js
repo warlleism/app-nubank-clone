@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Dimensions, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
 import NavegateTopScreen from "../../../../components/topScreenNavegate";
 import { CheckBox } from '@rneui/themed';
@@ -84,8 +84,8 @@ export default function SelectOperator(props) {
     }
 
     return (
-        <>
-            <View style={{ position: "relative", height: ScreenHeight, width: ScreenWidth, backgroundColor: "#f2f2f2", zIndex: 999999999999 }}>
+        <SafeAreaView>
+            <View style={{ position: "relative", height: ScreenHeight, width: ScreenWidth, backgroundColor: "#f2f2f2"}}>
                 <NavegateTopScreen route={"Home"} icon={"close"} />
                 <View style={{ width: "100%", top: -47, display: "flex", alignItems: "center" }}>
                     <View style={{ backgroundColor: "#4a4848db", width: 160, height: 3, borderRadius: 50 }}>
@@ -154,13 +154,13 @@ export default function SelectOperator(props) {
                         onPress={() => setNewValue("Correios")}
                     />
                 </View>
-                <TouchableOpacity disabled={button == false ? true : false} onPress={() => navigation.navigate('Operator')} style={{ position: "absolute", bottom: 0, width: "100%", display: "flex", flexDirection: "row", justifyContent: "flex-end" }}>
+                <TouchableOpacity disabled={button == false ? true : false} onPress={() => navigation.navigate('Operator')} style={{ position: "absolute", bottom: 1, width: "100%", display: "flex", flexDirection: "row", justifyContent: "flex-end" }}>
                     <Text style={button == false ? styleContent.buttonDesable : styleContent.button}>
                         <Icon name="arrowright" size={22} color={"#ffff"} />
                     </Text>
                 </TouchableOpacity>
             </View>
-        </>
+        </SafeAreaView>
     )
 }
 
@@ -178,7 +178,7 @@ const styleContent = StyleSheet.create({
         backgroundColor: "#a010df",
         textAlign: "center",
         marginRight: 20,
-        marginBottom: 20
+        marginBottom: 30
     },
     buttonDesable: {
         borderRadius: 200 / 2,
@@ -186,7 +186,7 @@ const styleContent = StyleSheet.create({
         backgroundColor: "#4a48486b",
         textAlign: "center",
         marginRight: 20,
-        marginBottom: 20
+        marginBottom: 30
 
     },
     input: {

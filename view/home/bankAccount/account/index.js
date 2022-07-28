@@ -2,17 +2,17 @@ import { useNavigation } from "@react-navigation/native";
 import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, TextInput } from "react-native";
 import { useRef, useState } from "react";
 import Icon from "react-native-vector-icons/AntDesign";
-import NavegateTopScreen from "../../../components/topScreenNavegate";
-import Pig from "../../../icons/pig.png"
-import Pagar from "../../../icons/barcode.png"
-import Transferir from "../../../icons/transferir.png"
-import Depositar from "../../../icons/depositar.png"
-import Cobrar from "../../../icons/cobrar.png"
-import emprestimos from "../../../icons/emprestino.png"
-import Investir from "../../../icons/investir.png"
-import Extrato from "../../../icons/extrato.png"
-import Compra from "../../../icons/compra.png"
-import BottonLine from "../../../components/bottonLine";
+import NavegateTopScreen from "../../../../components/topScreenNavegate";
+import Pig from "../../../../icons/pig.png"
+import Pagar from "../../../../icons/barcode.png"
+import Transferir from "../../../../icons/transferir.png"
+import Depositar from "../../../../icons/depositar.png"
+import Cobrar from "../../../../icons/cobrar.png"
+import emprestimos from "../../../../icons/emprestino.png"
+import Investir from "../../../../icons/investir.png"
+import Extrato from "../../../../icons/extrato.png"
+import Compra from "../../../../icons/compra.png"
+import BottonLine from "../../../../components/bottonLine";
 
 export default function Account() {
 

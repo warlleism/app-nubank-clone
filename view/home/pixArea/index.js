@@ -1,4 +1,4 @@
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, Keyboard, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Animated } from "react-native";
 import NavegateTopScreen from "../../../components/topScreenNavegate"
@@ -19,45 +19,63 @@ export default function PixArea() {
 
     const [posicao, setPosicao] = useState(new Animated.Value(1200))
     const [posicao2, setPosicao2] = useState(new Animated.Value(2200))
-    const [posicao3, setPosicao3] = useState(new Animated.Value(2200))
     const [showTransfer, setShowTransfer] = useState(false)
+    const [showDeposit, setShowDeposit] = useState(false)
 
 
-    function Animacao() {
-        Animated.timing(
-            posicao,
-            {
-                toValue: 0,
-                duration: 600,
-                useNativeDriver: true
-            }
-        ).start()
-        setShowTransfer(true)
+    function Animacao(valor) {
+        if (valor == 0) {
+            setShowTransfer(true)
+            Animated.timing(
+                posicao,
+                {
+                    toValue: valor,
+                    duration: 600,
+                    useNativeDriver: true
+                }
+            ).start()
+        }
+        if (valor != 0) {
+            Animated.timing(
+                posicao,
+                {
+                    toValue: valor,
+                    duration: 600,
+                    useNativeDriver: true
+                }
+            ).start()
+
+            setTimeout(() => {
+                setShowTransfer(false)
+            }, 100)
+        }
     }
+    function Animacao2(valor) {
+        if (valor == 0) {
+            setShowDeposit(true)
+            Animated.timing(
+                posicao2,
+                {
+                    toValue: valor,
+                    duration: 600,
+                    useNativeDriver: true
+                }
+            ).start()
+        }
+        if (valor != 0) {
+            Animated.timing(
+                posicao2,
+                {
+                    toValue: valor,
+                    duration: 600,
+                    useNativeDriver: true
+                }
+            ).start()
 
-    function Animacao2() {
-        Animated.timing(
-            posicao2,
-            {
-                toValue: 0,
-                duration: 600,
-                useNativeDriver: true
-            }
-        ).start()
-    }
-
-    function Animacao3() {
-        Animated.timing(
-            posicao,
-            {
-                toValue: 1200,
-                duration: 600,
-                useNativeDriver: true
-            }
-        ).start()
-        setTimeout(() => {
-            setShowTransfer(false)
-        }, 100)
+            setTimeout(() => {
+                setShowDeposit(false)
+            }, 100)
+        }
     }
 
     return (
@@ -71,7 +89,7 @@ export default function PixArea() {
                         <Text style={{ fontSize: 24, marginTop: 20 }}>Enviar</Text>
                         <View style={{ display: "flex", flexDirection: "row", marginTop: 20, justifyContent: "space-around" }}>
                             <View style={firstStyleContainer.viewContentIcon}>
-                                <TouchableOpacity onPress={() => Animacao()} style={firstStyleContainer.imagemIcon}>
+                                <TouchableOpacity onPress={() => Animacao(0)} style={firstStyleContainer.imagemIcon}>
                                     <Image source={Transferir} style={{ width: 30, height: 30 }} />
                                 </TouchableOpacity>
                                 <Text style={firstStyleContainer.textoContentIcons}>Transferir</Text>
@@ -94,13 +112,13 @@ export default function PixArea() {
                         <Text style={{ fontSize: 24, marginTop: 20 }}>Receber</Text>
                         <View style={{ display: "flex", flexDirection: "row", marginTop: 20 }}>
                             <View style={firstStyleContainer.viewContentIcon}>
-                                <TouchableOpacity onPress={() => Animacao2()} style={firstStyleContainer.imagemIcon}>
+                                <TouchableOpacity onPress={() => Animacao2(0)} style={firstStyleContainer.imagemIcon}>
                                     <Image source={Cobrar} style={{ width: 30, height: 30 }} />
                                 </TouchableOpacity>
                                 <Text style={firstStyleContainer.textoContentIcons}>Cobrar</Text>
                             </View>
                             <View style={firstStyleContainer.viewContentIcon}>
-                                <TouchableOpacity onPress={() => Animacao2()} style={firstStyleContainer.imagemIcon}>
+                                <TouchableOpacity onPress={() => Animacao2(0)} style={firstStyleContainer.imagemIcon}>
                                     <Image source={Depositar} style={{ width: 30, height: 30 }} />
                                 </TouchableOpacity>
                                 <Text style={firstStyleContainer.textoContentIcons}>Depositar</Text>
@@ -134,22 +152,53 @@ export default function PixArea() {
                     <BottonLine />
                 </View>
             </ScrollView>
+
             {showTransfer &&
                 (
-                    <Animated.View style={{ position: "absolute", transform: [{ translateY: posicao }] }}>
-                        <View style={{ width: "100%", paddingHorizontal: 10, paddingVertical: 13, display: "flex", flexDirection: "row", justifyContent: "space-between", backgroundColor: "#f2f2f2" }}>
-                            <TouchableOpacity onPress={() => Animacao3()} >
+                    <Animated.View style={{
+                        position: "absolute",
+                        transform: [{ translateY: posicao }]
+                    }}>
+                        <View style={{
+                            width: "100%",
+                            paddingHorizontal: 10,
+                            paddingVertical: 13,
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                            backgroundColor: "#f2f2f2"
+                        }}>
+                            <TouchableOpacity onPress={() => Animacao(2200)} >
                                 <Icon name={"close"} size={23} style={{ color: "black" ? "black" : '#000000d1', padding: 10 }} />
                             </TouchableOpacity>
                         </View>
-                        <Transfer posicao={posicao} />
+                        <Transfer posicao={posicao} showCloseTogle={"none"} />
                     </Animated.View>
 
                 )}
-            <Animated.View style={{ position: "absolute", transform: [{ translateY: posicao2 }] }}>
-                <Deposit posicao={posicao2} />
-            </Animated.View>
-            {console.log(showTransfer)}
+
+            {showDeposit &&
+                (
+                    <Animated.View style={{
+                        position: "absolute",
+                        transform: [{ translateY: posicao2 }]
+                    }}>
+                        <View style={{
+                            width: "100%",
+                            paddingHorizontal: 10,
+                            paddingVertical: 13,
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                            backgroundColor: "#f2f2f2"
+                        }}>
+                            <TouchableOpacity onPress={() => Animacao2(2200)} >
+                                <Icon name={"close"} size={23} style={{ color: "black" ? "black" : '#000000d1', padding: 10 }} />
+                            </TouchableOpacity>
+                        </View>
+                        <Deposit posicao={posicao2} showCloseTogle={"none"} />
+                    </Animated.View>
+                )}
         </>
     )
 

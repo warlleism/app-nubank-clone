@@ -1,9 +1,9 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './view/home/homeScreen/index';
-import Account from './view/bankAccount/account/index'
-import SavedMoney from './view/bankAccount/savedMoney';
-import TotalIncome from './view/bankAccount/totalIncome';
+import Account from './view/home/bankAccount/account'
+import SavedMoney from './view/home/bankAccount/savedMoney';
+import TotalIncome from './view/home/bankAccount/totalIncome';
 import Pay from "./view/home/pay/index"
 import PixArea from './view/home/pixArea';
 import Transfer from './view/home/transfer';

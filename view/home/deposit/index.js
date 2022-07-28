@@ -7,6 +7,7 @@ import Copiar from "../../../icons/copiarColar.png"
 import Salario from "../../../icons/salario.png"
 import BottonLine from "../../../components/bottonLine";
 import Icon from "react-native-vector-icons/AntDesign";
+import { useState } from "react";
 
 export default function Deposit(props) {
 
@@ -15,30 +16,9 @@ export default function Deposit(props) {
     const Height = Dimensions.get("window").height
     const Width = Dimensions.get("window").width
 
-
-    function Animacao() {
-        Animated.timing(
-            props.posicao,
-            {
-                toValue: 400,
-                duration: 600,
-                useNativeDriver: true
-            }
-        ).start()
-    }
-
-
     return (
-        <Animated.View style={{ position: "absolute", backgroundColor: "#f2f2f2", height: Height, width: Width, transform: [{ translateY: props.posicao }] }}>
-            
-            <NavegateTopScreen route={"Home"} icon={"close"} display={"none"} />
-           
-            <View style={{ width: "100%", paddingHorizontal: 10, paddingVertical: 13, display: "flex", flexDirection: "row", justifyContent: "space-between", backgroundColor: "#f2f2f2" }}>
-                <TouchableOpacity onPress={() => Animacao()} >
-                    <Icon name={"close"} size={23} style={{ color: "black" ? "black" : '#000000d1', padding: 10 }} />
-                </TouchableOpacity>
-            </View>
-
+        <Animated.View style={{backgroundColor: "#f2f2f2", height: Height, width: Width}}>
+            <NavegateTopScreen route={"Home"} icon={"close"} display={props.showCloseTogle} />
             <ScrollView style={{ marginTop: -30 }}>
                 <View style={{ width: "100%", padding: 20, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                     <Text style={{ fontSize: 30, fontWeight: "600", marginBottom: 10, width: 320 }}>Como você quer <Text style={{ color: "#a031df" }}>depositar</Text> na sua conta do Nubank?</Text>

@@ -1,6 +1,6 @@
 import { Dimensions, ScrollView, StatusBar, Text, View, Animated, SafeAreaView, StyleSheet } from "react-native";
-import NavegateTopScreen from "../../../components/topScreenNavegate";
-import BottonLine from "../../../components/bottonLine";
+import NavegateTopScreen from "../../../../components/topScreenNavegate";
+import BottonLine from "../../../../components/bottonLine";
 import { useState } from "react";
 
 const screen = Dimensions.get("window").width;
@@ -11,10 +11,12 @@ export default function TotalIncome() {
 
     return (
         <SafeAreaView>
-            <NavegateTopScreen route={"Account"} icon={"close"} rightIcon={"questioncircleo"} />
+            <NavegateTopScreen color={"#ffff"} route={"Account"} icon={"close"} rightIcon={"questioncircleo"} backgroundColor={"#8734c7"} />
             <Animated.View style={{
                 display: "flex",
                 flexDirection: "row",
+                marginBottom: 10,
+                marginTop: 20,
                 maxWidth: screen * 12,
                 transform: [{
                     translateX: x.interpolate({
