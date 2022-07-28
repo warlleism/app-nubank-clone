@@ -17,30 +17,28 @@ export default function PixArea() {
 
     const navigation = useNavigation()
 
-    const [posicao, setPosicao] = useState(new Animated.Value(1200))
-    const [posicao2, setPosicao2] = useState(new Animated.Value(2200))
+    const [posicao, setPosicao] = useState(new Animated.Value(3200))
+    const [posicao2, setPosicao2] = useState(new Animated.Value(3200))
     const [showTransfer, setShowTransfer] = useState(false)
-    const [showDeposit, setShowDeposit] = useState(false)
+    const [showDeposit, setShowDeposit] = useState(true)
 
 
     function Animacao(valor) {
-        if (valor == 0) {
-            setShowTransfer(true)
-            Animated.timing(
-                posicao,
-                {
-                    toValue: valor,
-                    duration: 600,
-                    useNativeDriver: true
-                }
-            ).start()
-        }
+        setShowTransfer(true)
+        Animated.timing(
+            posicao,
+            {
+                toValue: valor,
+                duration: 400,
+                useNativeDriver: true
+            }
+        ).start()
         if (valor != 0) {
             Animated.timing(
                 posicao,
                 {
                     toValue: valor,
-                    duration: 600,
+                    duration: 800,
                     useNativeDriver: true
                 }
             ).start()
@@ -51,30 +49,26 @@ export default function PixArea() {
         }
     }
     function Animacao2(valor) {
-        if (valor == 0) {
-            setShowDeposit(true)
-            Animated.timing(
-                posicao2,
-                {
-                    toValue: valor,
-                    duration: 600,
-                    useNativeDriver: true
-                }
-            ).start()
-        }
+
+        setShowDeposit(true)
+        Animated.timing(
+            posicao2,
+            {
+                toValue: valor,
+                duration: 800,
+                useNativeDriver: true
+            }
+        ).start()
+
         if (valor != 0) {
             Animated.timing(
                 posicao2,
                 {
                     toValue: valor,
-                    duration: 600,
+                    duration: 800,
                     useNativeDriver: true
                 }
             ).start()
-
-            setTimeout(() => {
-                setShowDeposit(false)
-            }, 100)
         }
     }
 
@@ -168,7 +162,7 @@ export default function PixArea() {
                             justifyContent: "space-between",
                             backgroundColor: "#f2f2f2"
                         }}>
-                            <TouchableOpacity onPress={() => Animacao(2200)} >
+                            <TouchableOpacity onPress={() => Animacao(3200)} >
                                 <Icon name={"close"} size={23} style={{ color: "black" ? "black" : '#000000d1', padding: 10 }} />
                             </TouchableOpacity>
                         </View>
@@ -192,7 +186,7 @@ export default function PixArea() {
                             justifyContent: "space-between",
                             backgroundColor: "#f2f2f2"
                         }}>
-                            <TouchableOpacity onPress={() => Animacao2(2200)} >
+                            <TouchableOpacity onPress={() => Animacao2(3200)} >
                                 <Icon name={"close"} size={23} style={{ color: "black" ? "black" : '#000000d1', padding: 10 }} />
                             </TouchableOpacity>
                         </View>

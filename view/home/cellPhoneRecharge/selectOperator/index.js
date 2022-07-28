@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Dimensions, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Icon from "react-native-vector-icons/AntDesign";
-import NavegateTopScreen from "../../../../components/topScreenNavegate";
 import { CheckBox } from '@rneui/themed';
 import { useNavigation } from "@react-navigation/native";
+import NavegateTopScreen from "../../../../components/topScreenNavegate";
+import Icon from "react-native-vector-icons/AntDesign";
 
 export default function SelectOperator(props) {
 

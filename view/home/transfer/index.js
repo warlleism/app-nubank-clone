@@ -1,8 +1,7 @@
 
 import { useState } from "react";
-import { Animated, Dimensions, Text, TouchableOpacity, View } from "react-native";
+import { Dimensions, Text,View } from "react-native";
 import { TextInputMask } from "react-native-masked-text";
-import Icon from "react-native-vector-icons/AntDesign";
 import NavegateTopScreen from "../../../components/topScreenNavegate"
 
 
@@ -15,7 +14,7 @@ export default function Transfer(props) {
   return (
     <>
       <View style={{ backgroundColor: "#f2f2f2", height: Height, width: Width }}>
-        <NavegateTopScreen route={"Home"} icon={"close"} rightIcon={"qrcode"} display={props.showCloseTogle} />
+        <NavegateTopScreen route={"Home"} icon={"close"} rightIcon={"qrcode"} display={props.showCloseTogle ? props.showCloseTogle : ""} />
         <View style={{ padding: 20, position: "relative" }}>
           <Text style={{ fontSize: 32, width: 300, marginBottom: 10, fontWeight: "500" }}>Qual é o valor da <Text style={{ color: "#a031df", fontWeight: "800" }}>transferência?</Text></Text>
           <Text>Saldo disponível em conta <Text style={{ fontSize: 17, fontWeight: "600", color: "#a031df" }}>R$ 1829,80</Text></Text>

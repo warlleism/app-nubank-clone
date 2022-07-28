@@ -59,7 +59,7 @@ export default function firstBlock(props) {
                             <Text style={firstStyleContainer.textoContentIcons}>Recarga de celular</Text>
                         </View>
                         <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={console.log('teste')} style={firstStyleContainer.iconsScroll}>
+                            <TouchableOpacity onPress={() => navigation.navigate("Demand")} style={firstStyleContainer.iconsScroll}>
                                 <Image source={Cobrar} style={{ width: 42, height: 39 }} />
                             </TouchableOpacity>
                             <Text style={firstStyleContainer.textoContentIcons}>Cobrar</Text>
