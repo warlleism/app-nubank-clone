@@ -65,19 +65,19 @@ export default function firstBlock(props) {
                             <Text style={firstStyleContainer.textoContentIcons}>Cobrar</Text>
                         </View>
                         <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={console.log('teste')} style={firstStyleContainer.iconsScroll}>
+                            <TouchableOpacity onPress={() => navigation.navigate("Donation")} style={firstStyleContainer.iconsScroll}>
                                 <Image source={Doacao} style={{ width: 39, height: 34 }} />
                             </TouchableOpacity>
                             <Text style={firstStyleContainer.textoContentIcons}>Doação</Text>
                         </View>
                         <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={console.log('teste')} style={firstStyleContainer.iconsScroll}>
+                            <TouchableOpacity onPress={() => navigation.navigate("InternationalTransfer")} style={firstStyleContainer.iconsScroll}>
                                 <Image source={Global} style={{ width: 53, height: 33 }} />
                             </TouchableOpacity>
                             <Text style={firstStyleContainer.textoContentIcons}>Tranferência Internac. </Text>
                         </View>
                         <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={console.log('teste')} style={firstStyleContainer.iconsScroll}>
+                            <TouchableOpacity onPress={() => navigation.navigate("Invest")} style={firstStyleContainer.iconsScroll}>
                                 <Image source={Investir} style={{ width: 30, height: 36 }} />
                             </TouchableOpacity>
                             <Text style={firstStyleContainer.textoContentIcons}>Investir</Text>

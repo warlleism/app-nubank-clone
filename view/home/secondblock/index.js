@@ -19,10 +19,10 @@ export default function secondBlock() {
                 <BottonLine />
                 <TouchableOpacity onPress={console.log("Teste")} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
                     <View>
-                        <Text style={{ marginTop: 5, fontSize: 17, fontWeight: '500' }}>Cartão de crédito</Text>
-                        <Text style={{ fontSize: 13, marginTop: 15, fontWeight: '500', color: '#151515c7' }}>Fatura fechada</Text>
-                        <Text style={{ marginTop: 5, fontWeight: '500' }}>R$ 262,86</Text>
-                        <Text style={{ fontSize: 13, marginTop: 5, fontWeight: '500', color: '#151515c7' }}>Vencimento dia 27</Text>
+                        <Text style={{ marginTop: 5, fontSize: 25, fontWeight: '500' }}>Cartão de crédito</Text>
+                        <Text style={{ fontSize: 16, marginTop: 15, fontWeight: '500', color: '#151515c7' }}>Fatura fechada</Text>
+                        <Text style={{ marginTop: 5, fontWeight: '500', fontSize: 20 }}>R$ 262,86</Text>
+                        <Text style={{ fontSize: 16, marginTop: 5, fontWeight: '500', color: '#151515c7' }}>Vencimento dia 27</Text>
                         <View style={{ display: "flex", flexDirection: "row", marginTop: 15 }}>
                             <AppButton marginR={6} background={'#d40a0a'} color={'#fff'} titulo={'Pagar fatura'} evento={'testess'} />
                             <AppButton background={'#ececf5'} color={'black'} titulo={'Parcelar'} evento={'testess'} />

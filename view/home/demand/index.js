@@ -11,10 +11,10 @@ export default function Demand(props) {
 
     return (
         <>
-            <View style={{ backgroundColor: "#f2f2f2", height: Height, width: Width }}>
+            <View style={{ backgroundColor: "#f2f2f2", height: "100%", width: Width, position: "relative" }}>
                 <NavegateTopScreen route={"Home"} icon={"close"} display={props.showCloseTogle ? props.showCloseTogle : ""} />
                 <View style={{ padding: 20, position: "relative" }}>
-                    <Text style={{ fontSize: 32, width: 300, marginBottom: 10, fontWeight: "500" }}>Qual é o valor da <Text style={{ color: "#a031df", fontWeight: "800" }}>receber?</Text></Text>
+                    <Text style={{ fontSize: 32, width: 300, marginBottom: 10, fontWeight: "500" }}>Qual é o valor a <Text style={{ color: "#a031df", fontWeight: "800" }}>receber?</Text></Text>
                     <TextInputMask
                         autoFocus={true}
                         type={'money'}
@@ -31,23 +31,13 @@ export default function Demand(props) {
                         onChangeText={(text) => setValor(text)}
                         style={{ borderBottomColor: "black", borderBottomWidth: 1, padding: 10, fontSize: 40, marginTop: 20 }}
                     />
-                    <Text style={{ marginTop: 30, fontSize: 12, fontWeight: "600", color: "#a031df" }}>Não espesificar um valor ></Text>
+                    <Text style={{ marginTop: 30, fontSize: 12, fontWeight: "600", color: "#a031df" }}>Não espesificar um valor </Text>
                 </View>
-                <TouchableOpacity disabled={valor == "0,00" ? true : false} onPress={() => navigation.navigate('Operator')} style={{
-                    position: "absolute",
-                    bottom: 1,
-                    width: "100%",
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "flex-end"
-                }}>
-                </TouchableOpacity>
-
-                <View style={{ display: "flex", flexDirection: "row", justifyContent: "flex-end" }}>
+                <TouchableOpacity disabled={valor == "0,00" ? true : false} onPress={() => console.log("teste")} style={{ position: "absolute", bottom: 0, right: 0 }}>
                     <Text style={valor == "R$0,00" || valor == "0,00" ? [styleContent.button, { backgroundColor: "#4a48486b" }] : [styleContent.button, { backgroundColor: "#a010df" }]}>
                         <Icon name="arrowright" size={22} color={"#ffff"} />
                     </Text>
-                </View>
+                </TouchableOpacity>
             </View>
         </>
     )

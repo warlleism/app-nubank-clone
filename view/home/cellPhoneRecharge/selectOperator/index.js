@@ -87,7 +87,7 @@ export default function SelectOperator(props) {
         <SafeAreaView>
             <View style={{ position: "relative", height: ScreenHeight, width: ScreenWidth, backgroundColor: "#f2f2f2"}}>
                 <NavegateTopScreen route={"Home"} icon={"close"} />
-                <View style={{ width: "100%", top: -47, display: "flex", alignItems: "center" }}>
+                <View style={{ width: "100%", top: -30, display: "flex", alignItems: "center" }}>
                     <View style={{ backgroundColor: "#4a4848db", width: 160, height: 3, borderRadius: 50 }}>
                         <View style={{ backgroundColor: "#a031df", width: 70, height: 3, borderRadius: 50 }}>
                         </View>

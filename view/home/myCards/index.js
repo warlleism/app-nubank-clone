@@ -44,7 +44,7 @@ export default function MyCards() {
                     <Text style={{ color: "#662d91", fontSize: 23 }}>Criar cartão virtual</Text>
                 </TouchableOpacity>
             </View>
-            <StatusBar backgroundColor={"#f2f2f2"} />
+            <StatusBar backgroundColor={"#f2f2f2"}  barStyle="dark-content" />
         </>
     )
 }

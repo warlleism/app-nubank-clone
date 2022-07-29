@@ -33,7 +33,7 @@ export default function CellPhoneRecharge() {
             <View style={styleContent.main}>
                 <View style={{ position: "relative" }}>
                     <NavegateTopScreen route={"Home"} icon={"close"} />
-                    <View style={{ width: "100%", top: -47, display: "flex", alignItems: "center" }}>
+                    <View style={{ width: "100%", top: -30, display: "flex", alignItems: "center" }}>
                         <View style={{ backgroundColor: "#4a4848db", width: 160, height: 3, borderRadius: 50 }}>
                             <View style={{ backgroundColor: "#a031df", width: 50, height: 3, borderRadius: 50 }}>
                             </View>

@@ -13,7 +13,10 @@ import SelectOperator from './view/home/cellPhoneRecharge/selectOperator';
 import Profile from './view/home/profile';
 import MyCards from './view/home/myCards';
 import Cripto from './view/home/cripto';
-import Demand from './view/home/Demand';
+import Demand from './view/home/demand';
+import Donation from './view/home/donation';
+import InternationalTransfer from "./view/home/internacionalTransfer"
+import Invest from "./view/home/invest"
 
 const Stack = createStackNavigator();
 
@@ -38,6 +41,9 @@ function MyStack() {
       <Stack.Screen name="Cards" component={MyCards} />
       <Stack.Screen name="Cripto" component={Cripto} />
       <Stack.Screen name="Demand" component={Demand} />
+      <Stack.Screen name="Donation" component={Donation} />
+      <Stack.Screen name="InternationalTransfer" component={InternationalTransfer} />
+      <Stack.Screen name="Invest" component={Invest} />
     </Stack.Navigator>
   );
 }
