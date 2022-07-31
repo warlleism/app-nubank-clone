@@ -1,6 +1,6 @@
 import NavegateTopScreen from "../../../components/topScreenNavegate"
 import { useState } from "react";
-import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Dimensions, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { TextInputMask } from "react-native-masked-text";
 import Icon from "react-native-vector-icons/AntDesign";
 
@@ -10,7 +10,7 @@ export default function Demand(props) {
     const Width = Dimensions.get("window").width
 
     return (
-        <>
+        <SafeAreaView>
             <View style={{ backgroundColor: "#f2f2f2", height: "100%", width: Width, position: "relative" }}>
                 <NavegateTopScreen route={"Home"} icon={"close"} display={props.showCloseTogle ? props.showCloseTogle : ""} />
                 <View style={{ padding: 20, position: "relative" }}>
@@ -18,6 +18,7 @@ export default function Demand(props) {
                     <TextInputMask
                         autoFocus={true}
                         type={'money'}
+                        
                         value={valor}
                         options={{
                             precision: 2,
@@ -26,7 +27,7 @@ export default function Demand(props) {
                             unit: 'R$',
                             suffixUnit: ''
                         }}
-                        selectionColor={"red"}
+                        selectionColor={"#a031df"}
                         keyboardType={"number-pad"}
                         onChangeText={(text) => setValor(text)}
                         style={{ borderBottomColor: "black", borderBottomWidth: 1, padding: 10, fontSize: 40, marginTop: 20 }}
@@ -39,7 +40,7 @@ export default function Demand(props) {
                     </Text>
                 </TouchableOpacity>
             </View>
-        </>
+        </SafeAreaView>
     )
 }
 

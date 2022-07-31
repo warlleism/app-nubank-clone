@@ -1,4 +1,4 @@
-import { Text, View, StatusBar, Image, TouchableOpacity } from "react-native";
+import { Text, View, StatusBar, Image, TouchableOpacity, SafeAreaView } from "react-native";
 import NavegateTopScreen from "../../../components/topScreenNavegate"
 import Icon from "react-native-vector-icons/AntDesign";
 import virtualCard from "../../../icons/virtualCard.png"
@@ -8,7 +8,7 @@ import BottonLine from "../../../components/bottonLine";
 
 export default function MyCards() {
     return (
-        <>
+        <SafeAreaView>
             <NavegateTopScreen route={"Home"} icon={"close"} />
             <View style={{ padding: 20 }}>
                 <Text style={{ fontSize: 26, fontWeight: "600" }}>Meus cartões</Text>
@@ -45,6 +45,6 @@ export default function MyCards() {
                 </TouchableOpacity>
             </View>
             <StatusBar backgroundColor={"#f2f2f2"}  barStyle="dark-content" />
-        </>
+        </SafeAreaView>
     )
 }

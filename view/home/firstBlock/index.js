@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, TouchableHighlight } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, TouchableHighlight, SafeAreaView } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import Icon from "react-native-vector-icons/AntDesign";
 import Telefone from "../../../icons/smartphone.png"
@@ -17,7 +17,7 @@ export default function firstBlock(props) {
     const navigation = useNavigation();
 
     return (
-        <>
+        <SafeAreaView>
             <View style={{ width: '100%', display: "flex", flexDirection: "column", alignItems: "center", backgroundColor: "#ffff" }}>
                 <TouchableOpacity onPress={() => navigation.navigate('Account')} style={firstStyleContainer.containerCorpoTop}>
                     <View>
@@ -102,7 +102,7 @@ export default function firstBlock(props) {
                 </ScrollView>
 
             </View>
-        </>
+        </SafeAreaView>
     )
 }
 

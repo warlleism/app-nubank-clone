@@ -1,4 +1,4 @@
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import NavegateTopScreen from "../../../components/topScreenNavegate"
 import BarCode from "../../../icons/barcode.png"
@@ -9,7 +9,7 @@ import BottonLine from "../../../components/bottonLine";
 export default function Pay() {
     const navigation = useNavigation()
     return (
-        <>
+        <SafeAreaView>
             <NavegateTopScreen route={"Home"} icon={"close"} />
             <View style={{ width: "100%", padding: 20, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <Text style={{ fontSize: 30, fontWeight: "600", marginBottom: 10 }}>Estas são suas opções de pagamento</Text>
@@ -48,7 +48,7 @@ export default function Pay() {
                     </View>
                 </View>
             </View>
-        </>
+        </SafeAreaView>
     )
 
 }

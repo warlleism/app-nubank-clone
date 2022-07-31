@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, TextInput } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, TextInput, SafeAreaView } from "react-native";
 import { useRef, useState } from "react";
 import Icon from "react-native-vector-icons/AntDesign";
 import NavegateTopScreen from "../../../../components/topScreenNavegate";
@@ -21,7 +21,7 @@ export default function Account() {
     const scrollRef = useRef();
 
     return (
-        <>
+        <SafeAreaView>
             <NavegateTopScreen route={"Home"} icon={"left"} rightIcon={"questioncircleo"} />
             <ScrollView
                 ref={scrollRef}
@@ -239,7 +239,7 @@ export default function Account() {
                     </View>
                 </View>
             </ScrollView>
-        </>
+        </SafeAreaView>
 
     )
 }

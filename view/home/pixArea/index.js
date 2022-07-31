@@ -1,4 +1,4 @@
-import { Image, Keyboard, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, Keyboard, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Animated } from "react-native";
 import NavegateTopScreen from "../../../components/topScreenNavegate"
@@ -73,7 +73,7 @@ export default function PixArea() {
     }
 
     return (
-        <>
+        <SafeAreaView>
             <NavegateTopScreen route={"Home"} icon={"close"} rightIcon={"questioncircleo"} />
             <ScrollView>
                 <View style={{ width: "100%", padding: 20, display: "flex", flexDirection: "column", justifyContent: "center" }}>
@@ -193,7 +193,7 @@ export default function PixArea() {
                         <Deposit posicao={posicao2} showCloseTogle={"none"} />
                     </Animated.View>
                 )}
-        </>
+        </SafeAreaView>
     )
 
 }

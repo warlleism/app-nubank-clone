@@ -1,4 +1,4 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, SafeAreaView, Text, TouchableOpacity, View } from "react-native";
 import NavegateTopScreen from "../../../../components/topScreenNavegate";
 import Icon from "react-native-vector-icons/AntDesign";
 import BottonLine from "../../../../components/bottonLine";
@@ -13,7 +13,7 @@ export default function SavedMoney() {
     const navigation = useNavigation()
 
     return (
-        <>
+        <SafeAreaView>
             <NavegateTopScreen route={"Account"} icon={"close"} rightIcon={"questioncircleo"} />
             <View style={{ padding: 20, display: "flex", flexDirection: "column", justifyContent: "space-between", height: "94%" }}>
                 <View>
@@ -52,6 +52,6 @@ export default function SavedMoney() {
                     <AppButton titulo={"Guardar"} marginBotton={20} background={"#530889"} color={"#ffff"} weight={"700"} pVertical={16} />
                 </View>
             </View>
-        </>
+        </SafeAreaView>
     )
 }

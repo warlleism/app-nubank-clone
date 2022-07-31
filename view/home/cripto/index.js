@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Image, Text, TouchableOpacity, View, StatusBar, Animated } from "react-native";
+import { Image, Text, TouchableOpacity, View, StatusBar, Animated, SafeAreaView } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import NavegateTopScreen from "../../../components/topScreenNavegate"
 import Img3 from '../../../images/nuimg3.png'
@@ -44,14 +44,6 @@ export default function Cripto() {
         ]).start();
     }
 
-    // useEffect(() => {
-    //     Animated.timing(letras, {
-    //         toValue: dados,
-    //         duration: 1000,
-    //         useNativeDriver: false
-    //     }).start()
-    // }, [dados])
-
     useEffect(() => {
         Animacao()
     }, [])
@@ -59,12 +51,8 @@ export default function Cripto() {
 
 
     return (
-        <>
-            {/* 
-            <TouchableOpacity onPress={() => setDados(dados == 20 ? 40 : dados == 40 ? 20 : 40)} style={{ marginTop: 30, width: "55%", borderRadius: 200, paddingHorizontal: 20, paddingVertical: 10, backgroundColor: "#600e83" }}>
-                <Animated.Text style={{ fontSize: letras, fontWeight: "600" }}>Chegou agora?</Animated.Text>
-            </TouchableOpacity> */}
-
+        <SafeAreaView>
+    
             <NavegateTopScreen route={"Home"} icon={"left"} rightIcon={"questioncircleo"} />
             <ScrollView padding={20} style={{ position: "relative" }}>
                 <Animated.View style={[{
@@ -110,6 +98,6 @@ export default function Cripto() {
                 </Animated.View>
             </ScrollView>
             <StatusBar backgroundColor={"#f2f2f2"} barStyle="dark-content" />
-        </>
+        </SafeAreaView>
     )
 }

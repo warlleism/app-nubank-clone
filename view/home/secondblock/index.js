@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, SafeAreaView } from "react-native";
 import AppButton from "../../../components/button";
 import Icon from "react-native-vector-icons/AntDesign";
 import Tesseract from '../../../icons/tesseract.png'
@@ -14,7 +14,7 @@ import { useNavigation } from "@react-navigation/native";
 export default function secondBlock() {
     const navigation = useNavigation()
     return (
-        <>
+        <SafeAreaView>
             <View style={{ width: '100%', display: "flex", flexDirection: "column", alignItems: "center", backgroundColor: "#ffff" }}>
                 <BottonLine />
                 <TouchableOpacity onPress={() => console.log("Teste")} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
@@ -134,7 +134,7 @@ export default function secondBlock() {
                     </ScrollView>
                 </ScrollView>
             </View>
-        </>
+        </SafeAreaView>
     )
 }
 

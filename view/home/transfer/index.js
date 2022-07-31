@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Dimensions, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { TextInputMask } from "react-native-masked-text";
 import NavegateTopScreen from "../../../components/topScreenNavegate"
 import Icon from "react-native-vector-icons/AntDesign";
@@ -13,7 +13,7 @@ export default function Transfer(props) {
   const Width = Dimensions.get("window").width
 
   return (
-    <>
+    <SafeAreaView>
       <View style={{ backgroundColor: "#f2f2f2", height: '100%', width: Width, position: "relative" }}>
         <NavegateTopScreen route={"Home"} icon={"close"} rightIcon={"qrcode"} display={props.showCloseTogle ? props.showCloseTogle : ""} />
         <View style={{ padding: 20 }}>
@@ -42,7 +42,7 @@ export default function Transfer(props) {
           </Text>
         </TouchableOpacity>
       </View>
-    </>
+    </SafeAreaView>
   )
 }
 

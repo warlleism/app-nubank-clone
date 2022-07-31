@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Animated, StyleSheet, Text, View, Keyboard } from "react-native";
+import { Animated, StyleSheet, Text, View, Keyboard, SafeAreaView } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 // import { useNavigation } from "@react-navigation/native";
 import { TextInputMask } from "react-native-masked-text";
@@ -29,7 +29,7 @@ export default function CellPhoneRecharge() {
     const [numero, setNumero] = useState('')
 
     return (
-        <>
+        <SafeAreaView>
             <View style={styleContent.main}>
                 <View style={{ position: "relative" }}>
                     <NavegateTopScreen route={"Home"} icon={"close"} />
@@ -67,7 +67,7 @@ export default function CellPhoneRecharge() {
             <Animated.View style={[{ position: "absolute", transform: [{ translateX: transform }] }]}>
                 <SelectOperator numero={numero} />
             </Animated.View>
-        </>
+        </SafeAreaView>
 
     )
 }

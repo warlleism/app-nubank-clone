@@ -1,5 +1,5 @@
 import NavegateTopScreen from "../../../components/topScreenNavegate";
-import { View, Text, ScrollView, TouchableOpacity, StatusBar, Image } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity, StatusBar, Image, SafeAreaView } from "react-native";
 import BottonLine from "../../../components/bottonLine"
 import Icon from "react-native-vector-icons/AntDesign";
 import Investir from "../../../icons/investir.png"
@@ -18,7 +18,7 @@ import Sair from "../../../icons/Sair.png"
 
 export default function Profile() {
     return (
-        <>
+        <SafeAreaView>
             <ScrollView style={{ display: "flex", flexDirection: "column", backgroundColor: "#712F79" }}>
                 <NavegateTopScreen route={"Home"} icon={"close"} color={"#ffff"} backgroundColor={"#712F79"} />
                 <View style={{ padding: 20, backgroundColor: "#712F79" }}>
@@ -127,6 +127,6 @@ export default function Profile() {
             </ScrollView>
 
             <StatusBar backgroundColor="#712F79"  />
-        </>
+        </SafeAreaView>
     )
 }
