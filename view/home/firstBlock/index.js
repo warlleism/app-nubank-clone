@@ -93,10 +93,10 @@ export default function firstBlock(props) {
                     <TouchableOpacity onPress={() => navigation.navigate("Cripto")} style={firstStyleContainer.infoContent}>
                         <Text style={{ width: 280, letterSpacing: 1, marginLeft: 10, fontWeight: '500', fontWeight: '400' }}><Text style={{ color: '#a031df' }}>Cripto:</Text> Compre com segurança a partir de R$1</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={console.log('teste')} style={firstStyleContainer.infoContent}>
+                    <TouchableOpacity onPress={() => console.log('teste')} style={firstStyleContainer.infoContent}>
                         <Text style={{ width: 280, letterSpacing: 1, marginLeft: 10, fontWeight: '500', fontWeight: '400' }}>Conheça a <Text style={{ color: '#a031df' }}>conta PJ:</Text> prática e livre de burocracia para seu...</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={console.log('teste')} style={firstStyleContainer.lastInfoContent} >
+                    <TouchableOpacity onPress={() => console.log('teste')} style={firstStyleContainer.lastInfoContent} >
                         <Text style={{ width: 280, letterSpacing: 1, marginLeft: 10, fontWeight: '500', fontWeight: '400' }}>Salve amigos da burocracia. <Text style={{ color: '#a031df' }}>Faça um convite para o Nubank.</Text> prática e livre de burocracia para seu...</Text>
                     </TouchableOpacity>
                 </ScrollView>

@@ -17,7 +17,7 @@ export default function secondBlock() {
         <>
             <View style={{ width: '100%', display: "flex", flexDirection: "column", alignItems: "center", backgroundColor: "#ffff" }}>
                 <BottonLine />
-                <TouchableOpacity onPress={console.log("Teste")} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
+                <TouchableOpacity onPress={() => console.log("Teste")} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
                     <View>
                         <Text style={{ marginTop: 5, fontSize: 25, fontWeight: '500' }}>Cartão de crédito</Text>
                         <Text style={{ fontSize: 16, marginTop: 15, fontWeight: '500', color: '#151515c7' }}>Fatura fechada</Text>
@@ -31,7 +31,7 @@ export default function secondBlock() {
                     <Icon name="right" size={14} style={{ color: 'black' }} />
                 </TouchableOpacity>
                 <BottonLine />
-                <TouchableOpacity onPress={console.log('teste')} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
+                <TouchableOpacity onPress={() => console.log('teste')} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
                     <View>
                         <Text style={{ marginTop: 5, fontSize: 17, fontWeight: '500' }}>Empréstimo</Text>
                         <Text style={{ fontSize: 13, marginTop: 15, fontWeight: '500', color: '#151515c7' }}>Crie um aviso para saber quando um empréstimo fica disponível</Text>
@@ -39,12 +39,12 @@ export default function secondBlock() {
                     <Icon name="right" size={14} style={{ color: 'black' }} />
                 </TouchableOpacity>
                 <BottonLine />
-                <TouchableOpacity onPress={console.log('teste')} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
+                <TouchableOpacity onPress={() => console.log('teste')} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
                     <View>
                         <Text style={{ marginTop: 5, fontSize: 17, fontWeight: '500' }}>Investimentos</Text>
                         <Text style={{ fontSize: 13, marginTop: 15, fontWeight: '500', color: '#151515c7' }}>O jeito Nu de investir: sem asteriscos, linguagem fácil e a partir de R$1. Saiba mais.</Text>
-                        <TouchableOpacity onPress={console.log('teste')}><Text style={styleContent.content}><Image source={Tesseract} style={{ width: 27, height: 18 }} />     Meu Pedacinho do Nubank</Text></TouchableOpacity>
-                        <TouchableOpacity onPress={console.log('teste')}><Text style={styleContent.content}><Image source={Cartao} style={{ width: 27, height: 18 }} />     Consultar saldo para transferência</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={() => console.log('teste')}><Text style={styleContent.content}><Image source={Tesseract} style={{ width: 27, height: 18 }} />     Meu Pedacinho do Nubank</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={() => console.log('teste')}><Text style={styleContent.content}><Image source={Cartao} style={{ width: 27, height: 18 }} />     Consultar saldo para transferência</Text></TouchableOpacity>
                     </View>
                     <Icon name="right" size={14} style={{ color: 'black' }} />
                 </TouchableOpacity>
@@ -58,30 +58,30 @@ export default function secondBlock() {
                     <Icon name="right" size={14} style={{ color: 'black' }} />
                 </TouchableOpacity>
                 <BottonLine />
-                <TouchableOpacity onPress={console.log('teste')} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
+                <TouchableOpacity onPress={() => console.log('teste')} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
                     <View style={{ width: '100%' }}>
                         <Text style={{ marginTop: 5, fontSize: 17, fontWeight: '500' }}>Seguros</Text>
                         <Text style={{ fontSize: 13, marginTop: 15, fontWeight: '500', color: '#151515c7' }}>Proteção para você cuidar do que importa</Text>
                         <View style={styleContent.contentHeart}>
-                            <View style={{display: "flex", flexDirection: "row"}}>
+                            <View style={{ display: "flex", flexDirection: "row" }}>
                                 <Image source={Coracao} style={{ width: 23, height: 23, marginRight: 20 }} />
-                                <TouchableOpacity onPress={console.log('teste')}><Text>Seguro vida</Text></TouchableOpacity>
+                                <TouchableOpacity onPress={() => console.log('teste')}><Text>Seguro vida</Text></TouchableOpacity>
                             </View>
                             <Text style={{ color: '#a031df' }}>Conhecer</Text>
                         </View>
 
                     </View>
-                    <TouchableOpacity onPress={console.log('teste')}>
+                    <TouchableOpacity onPress={() => console.log('teste')}>
                         <Icon name="right" size={14} style={{ color: 'black' }} />
                     </TouchableOpacity>
                 </TouchableOpacity>
                 <BottonLine />
-                <TouchableOpacity onPress={console.log('teste')} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
+                <TouchableOpacity onPress={() => console.log('teste')} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
                     <View style={{ width: '100%' }}>
                         <Text style={{ marginTop: 5, fontSize: 17, fontWeight: '500' }}>Shopping</Text>
                         <Text style={{ fontSize: 13, marginTop: 15, fontWeight: '500', color: '#151515c7' }}>Vantagens exclusivas das nossas marcas preferidas</Text>
                     </View>
-                    <TouchableOpacity onPress={console.log('teste')}>
+                    <TouchableOpacity onPress={() => console.log('teste')}>
                         <Icon name="right" size={14} style={{ color: 'black' }} />
                     </TouchableOpacity>
                 </TouchableOpacity>

@@ -1,7 +1,8 @@
-import { Dimensions, ScrollView, StatusBar, Text, View, Animated, SafeAreaView, StyleSheet } from "react-native";
+import { Dimensions, StatusBar, Text, View, Animated, SafeAreaView, StyleSheet } from "react-native";
 import NavegateTopScreen from "../../../../components/topScreenNavegate";
 import BottonLine from "../../../../components/bottonLine";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Data from "../../dados.json"
 
 const screen = Dimensions.get("window").width;
 
@@ -9,8 +10,66 @@ export default function TotalIncome() {
 
     const [x] = useState(new Animated.Value(0))
 
+    const dados = {
+        saldo: "",
+        rendeu: "",
+        valor: "",
+        redimentosBrutos: "",
+        valorRendimentosBrutos: "",
+        imposto: "",
+        valorImposto: "",
+        iof: "",
+        valorIOF: "",
+        saldoEntradasSaidas: "",
+        valorEntradaSaida: "",
+        entradas: "",
+        valorEntradas: "",
+        saidas: "",
+        valorSaidas: "",
+        dinheiroGuardado: "",
+        valorSaidaDe: "",
+        rendendo: "",
+        valorRendendo: ""
+    }
+
+    const [data, setData] = useState(dados)
+
+    const getData = () => {
+        Data.data.map((e) => {
+            e.rendimento.map(e => {
+                setData({
+                    saldo: e.saldo,
+                    rendeu: e.rendeu,
+                    valor: e.valor,
+                    redimentosBrutos: e.redimentosBrutos,
+                    valorRendimentosBrutos: e.valorRendimentosBrutos,
+                    imposto: e.imposto,
+                    valorImposto: e.valorImposto,
+                    iof: e.iof,
+                    valorIOF: e.valorIOF,
+                    saldoEntradasSaidas: e.saldoEntradasSaidas,
+                    valorEntradaSaida: e.valorEntradaSaida,
+                    entradas: e.entradas,
+                    valorEntradas: e.valorEntradas,
+                    saidas: e.saidas,
+                    valorSaidas: e.valorSaidas,
+                    dinheiroGuardado: e.dinheiroGuardado,
+                    valorSaidaDe: e.valorSaidaDe,
+                    rendendo: e.rendendo,
+                    valorRendendo: e.valorRendendo
+                })
+            })
+        })
+    }
+
+    useEffect(() => {
+        getData()
+    }, [])
+
+
     return (
         <SafeAreaView>
+            {console.log(data)}
             <NavegateTopScreen color={"#ffff"} route={"Account"} icon={"close"} rightIcon={"questioncircleo"} backgroundColor={"#8734c7"} />
             <Animated.View style={{
                 display: "flex",
@@ -57,6 +116,9 @@ export default function TotalIncome() {
                     <Text style={{ textAlign: "center", color: "black", fontWeight: "700" }}>Outubro</Text>
                 </View>
                 <View style={{ width: 393 / 3.4 }}>
+                    <Text style={{ textAlign: "center", color: "black", fontWeight: "700" }}>Novembro</Text>
+                </View>
+                <View style={{ width: 393 / 3.4 }}>
                     <Text style={{ textAlign: "center", color: "black", fontWeight: "700" }}>Dezembro</Text>
                 </View>
             </Animated.View>
@@ -80,402 +142,451 @@ export default function TotalIncome() {
                 })}
             >
                 <View style={{ display: "flex", flexDirection: "row" }}>
-                    <View style={{ width: screen, padding: 20 }}>
-                        <Text>Saldo em 31 de janeiro de 2022</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
-                        <Text style={{ color: "green" }}>R$ 0,00</Text>
+
+                     <View style={{ width: screen, padding: 20 }}>
+                        <Text>{data.saldo}</Text>
+                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
+                        <Text style={{ color: "green" }}>{data.valor}</Text>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Redimentos brutos</Text>
-                            <Text>+ R$ 1,14</Text>
+                            <Text>{data.redimentosBrutos}</Text>
+                            <Text>{data.valorRendimentosBrutos}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Imposto de Renda</Text>
-                            <Text>- R$ 0,07</Text>
+                            <Text>{data.imposto}</Text>
+                            <Text>{data.valorImposto}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>IOF</Text>
-                            <Text>- R$ 0,84</Text>
+                            <Text>{data.iof}</Text>
+                            <Text>{data.valorIOF}</Text>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Saldo entre Entradas e Saídas</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>R$ 0,00</Text></Text>
+                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
+                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Entradas</Text>
-                                <Text>+ R$ 0,80</Text>
+                                <Text>{data.entradas}</Text>
+                                <Text>{data.valorEntradas}</Text>
                             </View>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Saídas</Text>
-                                <Text>- R$ 0,00</Text>
+                                <Text>{data.saidas}</Text>
+                                <Text>{data.valorSaidas}</Text>
                             </View>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Disponível + Dinheiro Guardado</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>Saldo de R$ 0,22</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
+                            <Text>{data.dinheiroGuardado}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
                         </View>
                     </View>
+
                     <View style={{ width: screen, padding: 20 }}>
-                        <Text>Saldo em 31 de janeiro de 2022</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
-                        <Text style={{ color: "green" }}>R$ 0,00</Text>
+                        <Text>{data.saldo}</Text>
+                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
+                        <Text style={{ color: "green" }}>{data.valor}</Text>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Redimentos brutos</Text>
-                            <Text>+ R$ 1,14</Text>
+                            <Text>{data.redimentosBrutos}</Text>
+                            <Text>{data.valorRendimentosBrutos}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Imposto de Renda</Text>
-                            <Text>- R$ 0,07</Text>
+                            <Text>{data.imposto}</Text>
+                            <Text>{data.valorImposto}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>IOF</Text>
-                            <Text>- R$ 0,84</Text>
+                            <Text>{data.iof}</Text>
+                            <Text>{data.valorIOF}</Text>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Saldo entre Entradas e Saídas</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>R$ 0,00</Text></Text>
+                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
+                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Entradas</Text>
-                                <Text>+ R$ 0,80</Text>
+                                <Text>{data.entradas}</Text>
+                                <Text>{data.valorEntradas}</Text>
                             </View>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Saídas</Text>
-                                <Text>- R$ 0,00</Text>
+                                <Text>{data.saidas}</Text>
+                                <Text>{data.valorSaidas}</Text>
                             </View>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Disponível + Dinheiro Guardado</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>Saldo de R$ 0,22</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
+                            <Text>{data.dinheiroGuardado}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
                         </View>
                     </View>
+
                     <View style={{ width: screen, padding: 20 }}>
-                        <Text>Saldo em 31 de janeiro de 2022</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
-                        <Text style={{ color: "green" }}>R$ 0,00</Text>
+                        <Text>{data.saldo}</Text>
+                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
+                        <Text style={{ color: "green" }}>{data.valor}</Text>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Redimentos brutos</Text>
-                            <Text>+ R$ 1,14</Text>
+                            <Text>{data.redimentosBrutos}</Text>
+                            <Text>{data.valorRendimentosBrutos}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Imposto de Renda</Text>
-                            <Text>- R$ 0,07</Text>
+                            <Text>{data.imposto}</Text>
+                            <Text>{data.valorImposto}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>IOF</Text>
-                            <Text>- R$ 0,84</Text>
+                            <Text>{data.iof}</Text>
+                            <Text>{data.valorIOF}</Text>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Saldo entre Entradas e Saídas</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>R$ 0,00</Text></Text>
+                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
+                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Entradas</Text>
-                                <Text>+ R$ 0,80</Text>
+                                <Text>{data.entradas}</Text>
+                                <Text>{data.valorEntradas}</Text>
                             </View>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Saídas</Text>
-                                <Text>- R$ 0,00</Text>
+                                <Text>{data.saidas}</Text>
+                                <Text>{data.valorSaidas}</Text>
                             </View>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Disponível + Dinheiro Guardado</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>Saldo de R$ 0,22</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
+                            <Text>{data.dinheiroGuardado}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
                         </View>
                     </View>
+
                     <View style={{ width: screen, padding: 20 }}>
-                        <Text>Saldo em 31 de janeiro de 2022</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
-                        <Text style={{ color: "green" }}>R$ 0,00</Text>
+                        <Text>{data.saldo}</Text>
+                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
+                        <Text style={{ color: "green" }}>{data.valor}</Text>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Redimentos brutos</Text>
-                            <Text>+ R$ 1,14</Text>
+                            <Text>{data.redimentosBrutos}</Text>
+                            <Text>{data.valorRendimentosBrutos}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Imposto de Renda</Text>
-                            <Text>- R$ 0,07</Text>
+                            <Text>{data.imposto}</Text>
+                            <Text>{data.valorImposto}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>IOF</Text>
-                            <Text>- R$ 0,84</Text>
+                            <Text>{data.iof}</Text>
+                            <Text>{data.valorIOF}</Text>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Saldo entre Entradas e Saídas</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>R$ 0,00</Text></Text>
+                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
+                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Entradas</Text>
-                                <Text>+ R$ 0,80</Text>
+                                <Text>{data.entradas}</Text>
+                                <Text>{data.valorEntradas}</Text>
                             </View>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Saídas</Text>
-                                <Text>- R$ 0,00</Text>
+                                <Text>{data.saidas}</Text>
+                                <Text>{data.valorSaidas}</Text>
                             </View>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Disponível + Dinheiro Guardado</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>Saldo de R$ 0,22</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
+                            <Text>{data.dinheiroGuardado}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
                         </View>
                     </View>
+
                     <View style={{ width: screen, padding: 20 }}>
-                        <Text>Saldo em 31 de janeiro de 2022</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
-                        <Text style={{ color: "green" }}>R$ 0,00</Text>
+                        <Text>{data.saldo}</Text>
+                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
+                        <Text style={{ color: "green" }}>{data.valor}</Text>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Redimentos brutos</Text>
-                            <Text>+ R$ 1,14</Text>
+                            <Text>{data.redimentosBrutos}</Text>
+                            <Text>{data.valorRendimentosBrutos}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Imposto de Renda</Text>
-                            <Text>- R$ 0,07</Text>
+                            <Text>{data.imposto}</Text>
+                            <Text>{data.valorImposto}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>IOF</Text>
-                            <Text>- R$ 0,84</Text>
+                            <Text>{data.iof}</Text>
+                            <Text>{data.valorIOF}</Text>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Saldo entre Entradas e Saídas</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>R$ 0,00</Text></Text>
+                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
+                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Entradas</Text>
-                                <Text>+ R$ 0,80</Text>
+                                <Text>{data.entradas}</Text>
+                                <Text>{data.valorEntradas}</Text>
                             </View>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Saídas</Text>
-                                <Text>- R$ 0,00</Text>
+                                <Text>{data.saidas}</Text>
+                                <Text>{data.valorSaidas}</Text>
                             </View>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Disponível + Dinheiro Guardado</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>Saldo de R$ 0,22</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
+                            <Text>{data.dinheiroGuardado}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
                         </View>
                     </View>
+
                     <View style={{ width: screen, padding: 20 }}>
-                        <Text>Saldo em 31 de janeiro de 2022</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
-                        <Text style={{ color: "green" }}>R$ 0,00</Text>
+                        <Text>{data.saldo}</Text>
+                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
+                        <Text style={{ color: "green" }}>{data.valor}</Text>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Redimentos brutos</Text>
-                            <Text>+ R$ 1,14</Text>
+                            <Text>{data.redimentosBrutos}</Text>
+                            <Text>{data.valorRendimentosBrutos}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Imposto de Renda</Text>
-                            <Text>- R$ 0,07</Text>
+                            <Text>{data.imposto}</Text>
+                            <Text>{data.valorImposto}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>IOF</Text>
-                            <Text>- R$ 0,84</Text>
+                            <Text>{data.iof}</Text>
+                            <Text>{data.valorIOF}</Text>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Saldo entre Entradas e Saídas</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>R$ 0,00</Text></Text>
+                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
+                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Entradas</Text>
-                                <Text>+ R$ 0,80</Text>
+                                <Text>{data.entradas}</Text>
+                                <Text>{data.valorEntradas}</Text>
                             </View>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Saídas</Text>
-                                <Text>- R$ 0,00</Text>
+                                <Text>{data.saidas}</Text>
+                                <Text>{data.valorSaidas}</Text>
                             </View>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Disponível + Dinheiro Guardado</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>Saldo de R$ 0,22</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
+                            <Text>{data.dinheiroGuardado}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
                         </View>
                     </View>
+
                     <View style={{ width: screen, padding: 20 }}>
-                        <Text>Saldo em 31 de janeiro de 2022</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
-                        <Text style={{ color: "green" }}>R$ 0,00</Text>
+                        <Text>{data.saldo}</Text>
+                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
+                        <Text style={{ color: "green" }}>{data.valor}</Text>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Redimentos brutos</Text>
-                            <Text>+ R$ 1,14</Text>
+                            <Text>{data.redimentosBrutos}</Text>
+                            <Text>{data.valorRendimentosBrutos}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Imposto de Renda</Text>
-                            <Text>- R$ 0,07</Text>
+                            <Text>{data.imposto}</Text>
+                            <Text>{data.valorImposto}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>IOF</Text>
-                            <Text>- R$ 0,84</Text>
+                            <Text>{data.iof}</Text>
+                            <Text>{data.valorIOF}</Text>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Saldo entre Entradas e Saídas</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>R$ 0,00</Text></Text>
+                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
+                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Entradas</Text>
-                                <Text>+ R$ 0,80</Text>
+                                <Text>{data.entradas}</Text>
+                                <Text>{data.valorEntradas}</Text>
                             </View>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Saídas</Text>
-                                <Text>- R$ 0,00</Text>
+                                <Text>{data.saidas}</Text>
+                                <Text>{data.valorSaidas}</Text>
                             </View>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Disponível + Dinheiro Guardado</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>Saldo de R$ 0,22</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
+                            <Text>{data.dinheiroGuardado}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
                         </View>
                     </View>
+
                     <View style={{ width: screen, padding: 20 }}>
-                        <Text>Saldo em 31 de janeiro de 2022</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
-                        <Text style={{ color: "green" }}>R$ 0,00</Text>
+                        <Text>{data.saldo}</Text>
+                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
+                        <Text style={{ color: "green" }}>{data.valor}</Text>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Redimentos brutos</Text>
-                            <Text>+ R$ 1,14</Text>
+                            <Text>{data.redimentosBrutos}</Text>
+                            <Text>{data.valorRendimentosBrutos}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Imposto de Renda</Text>
-                            <Text>- R$ 0,07</Text>
+                            <Text>{data.imposto}</Text>
+                            <Text>{data.valorImposto}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>IOF</Text>
-                            <Text>- R$ 0,84</Text>
+                            <Text>{data.iof}</Text>
+                            <Text>{data.valorIOF}</Text>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Saldo entre Entradas e Saídas</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>R$ 0,00</Text></Text>
+                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
+                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Entradas</Text>
-                                <Text>+ R$ 0,80</Text>
+                                <Text>{data.entradas}</Text>
+                                <Text>{data.valorEntradas}</Text>
                             </View>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Saídas</Text>
-                                <Text>- R$ 0,00</Text>
+                                <Text>{data.saidas}</Text>
+                                <Text>{data.valorSaidas}</Text>
                             </View>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Disponível + Dinheiro Guardado</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>Saldo de R$ 0,22</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
+                            <Text>{data.dinheiroGuardado}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
                         </View>
                     </View>
+
                     <View style={{ width: screen, padding: 20 }}>
-                        <Text>Saldo em 31 de janeiro de 2022</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
-                        <Text style={{ color: "green" }}>R$ 0,00</Text>
+                        <Text>{data.saldo}</Text>
+                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
+                        <Text style={{ color: "green" }}>{data.valor}</Text>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Redimentos brutos</Text>
-                            <Text>+ R$ 1,14</Text>
+                            <Text>{data.redimentosBrutos}</Text>
+                            <Text>{data.valorRendimentosBrutos}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Imposto de Renda</Text>
-                            <Text>- R$ 0,07</Text>
+                            <Text>{data.imposto}</Text>
+                            <Text>{data.valorImposto}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>IOF</Text>
-                            <Text>- R$ 0,84</Text>
+                            <Text>{data.iof}</Text>
+                            <Text>{data.valorIOF}</Text>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Saldo entre Entradas e Saídas</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>R$ 0,00</Text></Text>
+                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
+                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Entradas</Text>
-                                <Text>+ R$ 0,80</Text>
+                                <Text>{data.entradas}</Text>
+                                <Text>{data.valorEntradas}</Text>
                             </View>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Saídas</Text>
-                                <Text>- R$ 0,00</Text>
+                                <Text>{data.saidas}</Text>
+                                <Text>{data.valorSaidas}</Text>
                             </View>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Disponível + Dinheiro Guardado</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>Saldo de R$ 0,22</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
+                            <Text>{data.dinheiroGuardado}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
                         </View>
                     </View>
+
                     <View style={{ width: screen, padding: 20 }}>
-                        <Text>Saldo em 31 de janeiro de 2022</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
-                        <Text style={{ color: "green" }}>R$ 0,00</Text>
+                        <Text>{data.saldo}</Text>
+                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
+                        <Text style={{ color: "green" }}>{data.valor}</Text>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Redimentos brutos</Text>
-                            <Text>+ R$ 1,14</Text>
+                            <Text>{data.redimentosBrutos}</Text>
+                            <Text>{data.valorRendimentosBrutos}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Imposto de Renda</Text>
-                            <Text>- R$ 0,07</Text>
+                            <Text>{data.imposto}</Text>
+                            <Text>{data.valorImposto}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>IOF</Text>
-                            <Text>- R$ 0,84</Text>
+                            <Text>{data.iof}</Text>
+                            <Text>{data.valorIOF}</Text>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Saldo entre Entradas e Saídas</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>R$ 0,00</Text></Text>
+                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
+                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Entradas</Text>
-                                <Text>+ R$ 0,80</Text>
+                                <Text>{data.entradas}</Text>
+                                <Text>{data.valorEntradas}</Text>
                             </View>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Saídas</Text>
-                                <Text>- R$ 0,00</Text>
+                                <Text>{data.saidas}</Text>
+                                <Text>{data.valorSaidas}</Text>
                             </View>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Disponível + Dinheiro Guardado</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>Saldo de R$ 0,22</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
+                            <Text>{data.dinheiroGuardado}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
                         </View>
                     </View>
+
                     <View style={{ width: screen, padding: 20 }}>
-                        <Text>Saldo em 31 de janeiro de 2022</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>Seu dinheiro rendeu</Text>
-                        <Text style={{ color: "green" }}>R$ 0,00</Text>
+                        <Text>{data.saldo}</Text>
+                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
+                        <Text style={{ color: "green" }}>{data.valor}</Text>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Redimentos brutos</Text>
-                            <Text>+ R$ 1,14</Text>
+                            <Text>{data.redimentosBrutos}</Text>
+                            <Text>{data.valorRendimentosBrutos}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>Imposto de Renda</Text>
-                            <Text>- R$ 0,07</Text>
+                            <Text>{data.imposto}</Text>
+                            <Text>{data.valorImposto}</Text>
                         </View>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>IOF</Text>
-                            <Text>- R$ 0,84</Text>
+                            <Text>{data.iof}</Text>
+                            <Text>{data.valorIOF}</Text>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Saldo entre Entradas e Saídas</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>R$ 0,00</Text></Text>
+                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
+                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Entradas</Text>
-                                <Text>+ R$ 0,80</Text>
+                                <Text>{data.entradas}</Text>
+                                <Text>{data.valorEntradas}</Text>
                             </View>
                             <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>Saídas</Text>
-                                <Text>- R$ 0,00</Text>
+                                <Text>{data.saidas}</Text>
+                                <Text>{data.valorSaidas}</Text>
                             </View>
                         </View>
                         <BottonLine />
                         <View>
-                            <Text>Disponível + Dinheiro Guardado</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>Saldo de R$ 0,22</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>rendendo <Text style={{ color: "green" }}>9,15% ao ano</Text></Text>
+                            <Text>{data.dinheiroGuardado}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
                         </View>
                     </View>
+
+                    <View style={{ width: screen, padding: 20 }}>
+                        <Text>{data.saldo}</Text>
+                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
+                        <Text style={{ color: "green" }}>{data.valor}</Text>
+                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
+                            <Text>{data.redimentosBrutos}</Text>
+                            <Text>{data.valorRendimentosBrutos}</Text>
+                        </View>
+                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
+                            <Text>{data.imposto}</Text>
+                            <Text>{data.valorImposto}</Text>
+                        </View>
+                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
+                            <Text>{data.iof}</Text>
+                            <Text>{data.valorIOF}</Text>
+                        </View>
+                        <BottonLine />
+                        <View>
+                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
+                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
+                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
+                                <Text>{data.entradas}</Text>
+                                <Text>{data.valorEntradas}</Text>
+                            </View>
+                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
+                                <Text>{data.saidas}</Text>
+                                <Text>{data.valorSaidas}</Text>
+                            </View>
+                        </View>
+                        <BottonLine />
+                        <View>
+                            <Text>{data.dinheiroGuardado}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
+                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
+                        </View>
+                    </View>
+
                 </View>
             </Animated.ScrollView>
             <StatusBar

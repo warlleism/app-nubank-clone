@@ -1,0 +1,34 @@
+{
+    "data": [
+        {
+            "user": [
+                {
+                    "name": "Warllei"
+                }
+            ],
+            "rendimento": [
+                {
+                    "saldo": "Saldo em 31 de janeiro de 2022",
+                    "rendeu": "Seu dinheiro rendeu",
+                    "valor": "R$ 0,00",
+                    "redimentosBrutos": "Redimentos brutos",
+                    "valorRendimentosBrutos": "+ R$ 1,14",
+                    "imposto": "Imposto de Renda",
+                    "valorImposto": "- R$ 0,07",
+                    "iof": "IOF",
+                    "valorIOF": "- R$ 0,84",
+                    "saldoEntradasSaidas": "Saldo entre Entradas e Saídas",
+                    "valorEntradaSaida": "R$ 0,00",
+                    "entradas": "Entradas",
+                    "valorEntradas": "+ R$ 0,80",
+                    "saidas": "Saídas",
+                    "valorSaidas": "+ R$ 0,80",
+                    "dinheiroGuardado": "Disponível + Dinheiro Guardado",
+                    "valorSaidaDe": "Saldo de R$ 0,22",
+                    "rendendo": "rendendo ",
+                    "valorRendendo": "9,15% ao ano"
+                }
+            ]
+        }
+    ]
+}

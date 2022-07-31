@@ -1,9 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, StatusBar, SafeAreaView } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
 import FirstBlock from "../firstBlock/index";
 import SecondBlock from "../secondblock/index";
+import Dados from "../dados.json"
 
 export default function Home() {
 
@@ -14,6 +15,26 @@ export default function Home() {
     const showMoneyFunction = () => {
         setShowMoney(!showMoney)
     }
+
+    const dados = {
+        name: ""
+    }
+
+    const [data, setData] = useState(dados)
+
+
+    const getDados = () => {
+        Dados.data.map((e) => {
+            e.user.map(e => setData({
+                name: e.name
+            }))
+        })
+    }
+
+    useEffect(() => {
+        getDados()
+    }, [])
+
     return (
         <SafeAreaView>
             <ScrollView scrollEventThrottle={16} style={{ backgroundColor: "#8734c7" }}>
@@ -26,16 +47,16 @@ export default function Home() {
                             <TouchableOpacity onPress={() => showMoneyFunction()}>
                                 {showMoney ? <Icon name="eye" size={23} style={{ marginRight: '16%', color: '#fff' }} /> : <Icon name="eyeo" size={23} style={{ marginRight: '16%', color: '#fff' }} />}
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={console.log('teste')}>
+                            <TouchableOpacity onPress={() => console.log('teste')}>
                                 <Icon name="questioncircleo" size={23} style={{ marginRight: '16%', color: '#fff' }} />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={console.log('teste')}>
+                            <TouchableOpacity onPress={() => console.log('teste')}>
                                 <Icon name="adduser" size={23} style={{ color: '#fff', marginRight: '16%' }} />
                             </TouchableOpacity>
                         </View>
                     </View>
                     <View>
-                        <Text style={{ color: '#fff', marginTop: '-10%', marginLeft: '5%', fontSize: 20 }}>Olá, Warllei</Text>
+                        <Text style={{ color: '#fff', marginTop: '-10%', marginLeft: '5%', fontSize: 20 }}>Olá, {data.name}</Text>
                     </View>
                 </View>
                 <FirstBlock showMoney={showMoney} />
