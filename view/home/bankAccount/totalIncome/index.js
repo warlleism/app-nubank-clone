@@ -66,10 +66,55 @@ export default function TotalIncome() {
         getData()
     }, [])
 
+    let a = [1, 2, 3, 4, 5,6,7,8,9,10,11,12]
+
+    const Container = () => {
+        return a.map((e) => {
+            return (
+                <View style={{ width: screen, padding: 20 }}>
+                    <Text>{data.saldo}</Text>
+                    <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
+                    <Text style={{ color: "green" }}>{data.valor}</Text>
+                    <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
+                        <Text>{data.redimentosBrutos}</Text>
+
+                        <Text>{data.valorRendimentosBrutos}</Text>
+                    </View>
+                    <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
+                        <Text>{data.imposto}</Text>
+                        <Text>{data.valorImposto}</Text>
+                    </View>
+                    <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
+                        <Text>{data.iof}</Text>
+                        <Text>{data.valorIOF}</Text>
+                    </View>
+                    <BottonLine />
+                    <View>
+                        <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
+                        <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
+                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
+                            <Text>{data.entradas}</Text>
+                            <Text>{data.valorEntradas}</Text>
+                        </View>
+                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
+                            <Text>{data.saidas}</Text>
+                            <Text>{data.valorSaidas}</Text>
+                        </View>
+                    </View>
+                    <BottonLine />
+                    <View>
+                        <Text>{data.dinheiroGuardado}</Text>
+                        <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
+                        <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
+                    </View>
+                </View>
+            )
+        })
+    }
+
 
     return (
         <SafeAreaView>
-            {console.log(data)}
             <NavegateTopScreen color={"#ffff"} route={"Account"} icon={"close"} rightIcon={"questioncircleo"} backgroundColor={"#8734c7"} />
             <Animated.View style={{
                 display: "flex",
@@ -142,451 +187,7 @@ export default function TotalIncome() {
                 })}
             >
                 <View style={{ display: "flex", flexDirection: "row" }}>
-
-                     <View style={{ width: screen, padding: 20 }}>
-                        <Text>{data.saldo}</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
-                        <Text style={{ color: "green" }}>{data.valor}</Text>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.redimentosBrutos}</Text>
-                            <Text>{data.valorRendimentosBrutos}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.imposto}</Text>
-                            <Text>{data.valorImposto}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.iof}</Text>
-                            <Text>{data.valorIOF}</Text>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.entradas}</Text>
-                                <Text>{data.valorEntradas}</Text>
-                            </View>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.saidas}</Text>
-                                <Text>{data.valorSaidas}</Text>
-                            </View>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text>{data.dinheiroGuardado}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
-                        </View>
-                    </View>
-
-                    <View style={{ width: screen, padding: 20 }}>
-                        <Text>{data.saldo}</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
-                        <Text style={{ color: "green" }}>{data.valor}</Text>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.redimentosBrutos}</Text>
-                            <Text>{data.valorRendimentosBrutos}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.imposto}</Text>
-                            <Text>{data.valorImposto}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.iof}</Text>
-                            <Text>{data.valorIOF}</Text>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.entradas}</Text>
-                                <Text>{data.valorEntradas}</Text>
-                            </View>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.saidas}</Text>
-                                <Text>{data.valorSaidas}</Text>
-                            </View>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text>{data.dinheiroGuardado}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
-                        </View>
-                    </View>
-
-                    <View style={{ width: screen, padding: 20 }}>
-                        <Text>{data.saldo}</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
-                        <Text style={{ color: "green" }}>{data.valor}</Text>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.redimentosBrutos}</Text>
-                            <Text>{data.valorRendimentosBrutos}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.imposto}</Text>
-                            <Text>{data.valorImposto}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.iof}</Text>
-                            <Text>{data.valorIOF}</Text>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.entradas}</Text>
-                                <Text>{data.valorEntradas}</Text>
-                            </View>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.saidas}</Text>
-                                <Text>{data.valorSaidas}</Text>
-                            </View>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text>{data.dinheiroGuardado}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
-                        </View>
-                    </View>
-
-                    <View style={{ width: screen, padding: 20 }}>
-                        <Text>{data.saldo}</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
-                        <Text style={{ color: "green" }}>{data.valor}</Text>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.redimentosBrutos}</Text>
-                            <Text>{data.valorRendimentosBrutos}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.imposto}</Text>
-                            <Text>{data.valorImposto}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.iof}</Text>
-                            <Text>{data.valorIOF}</Text>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.entradas}</Text>
-                                <Text>{data.valorEntradas}</Text>
-                            </View>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.saidas}</Text>
-                                <Text>{data.valorSaidas}</Text>
-                            </View>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text>{data.dinheiroGuardado}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
-                        </View>
-                    </View>
-
-                    <View style={{ width: screen, padding: 20 }}>
-                        <Text>{data.saldo}</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
-                        <Text style={{ color: "green" }}>{data.valor}</Text>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.redimentosBrutos}</Text>
-                            <Text>{data.valorRendimentosBrutos}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.imposto}</Text>
-                            <Text>{data.valorImposto}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.iof}</Text>
-                            <Text>{data.valorIOF}</Text>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.entradas}</Text>
-                                <Text>{data.valorEntradas}</Text>
-                            </View>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.saidas}</Text>
-                                <Text>{data.valorSaidas}</Text>
-                            </View>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text>{data.dinheiroGuardado}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
-                        </View>
-                    </View>
-
-                    <View style={{ width: screen, padding: 20 }}>
-                        <Text>{data.saldo}</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
-                        <Text style={{ color: "green" }}>{data.valor}</Text>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.redimentosBrutos}</Text>
-                            <Text>{data.valorRendimentosBrutos}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.imposto}</Text>
-                            <Text>{data.valorImposto}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.iof}</Text>
-                            <Text>{data.valorIOF}</Text>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.entradas}</Text>
-                                <Text>{data.valorEntradas}</Text>
-                            </View>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.saidas}</Text>
-                                <Text>{data.valorSaidas}</Text>
-                            </View>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text>{data.dinheiroGuardado}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
-                        </View>
-                    </View>
-
-                    <View style={{ width: screen, padding: 20 }}>
-                        <Text>{data.saldo}</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
-                        <Text style={{ color: "green" }}>{data.valor}</Text>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.redimentosBrutos}</Text>
-                            <Text>{data.valorRendimentosBrutos}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.imposto}</Text>
-                            <Text>{data.valorImposto}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.iof}</Text>
-                            <Text>{data.valorIOF}</Text>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.entradas}</Text>
-                                <Text>{data.valorEntradas}</Text>
-                            </View>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.saidas}</Text>
-                                <Text>{data.valorSaidas}</Text>
-                            </View>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text>{data.dinheiroGuardado}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
-                        </View>
-                    </View>
-
-                    <View style={{ width: screen, padding: 20 }}>
-                        <Text>{data.saldo}</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
-                        <Text style={{ color: "green" }}>{data.valor}</Text>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.redimentosBrutos}</Text>
-                            <Text>{data.valorRendimentosBrutos}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.imposto}</Text>
-                            <Text>{data.valorImposto}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.iof}</Text>
-                            <Text>{data.valorIOF}</Text>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.entradas}</Text>
-                                <Text>{data.valorEntradas}</Text>
-                            </View>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.saidas}</Text>
-                                <Text>{data.valorSaidas}</Text>
-                            </View>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text>{data.dinheiroGuardado}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
-                        </View>
-                    </View>
-
-                    <View style={{ width: screen, padding: 20 }}>
-                        <Text>{data.saldo}</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
-                        <Text style={{ color: "green" }}>{data.valor}</Text>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.redimentosBrutos}</Text>
-                            <Text>{data.valorRendimentosBrutos}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.imposto}</Text>
-                            <Text>{data.valorImposto}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.iof}</Text>
-                            <Text>{data.valorIOF}</Text>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.entradas}</Text>
-                                <Text>{data.valorEntradas}</Text>
-                            </View>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.saidas}</Text>
-                                <Text>{data.valorSaidas}</Text>
-                            </View>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text>{data.dinheiroGuardado}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
-                        </View>
-                    </View>
-
-                    <View style={{ width: screen, padding: 20 }}>
-                        <Text>{data.saldo}</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
-                        <Text style={{ color: "green" }}>{data.valor}</Text>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.redimentosBrutos}</Text>
-                            <Text>{data.valorRendimentosBrutos}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.imposto}</Text>
-                            <Text>{data.valorImposto}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.iof}</Text>
-                            <Text>{data.valorIOF}</Text>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.entradas}</Text>
-                                <Text>{data.valorEntradas}</Text>
-                            </View>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.saidas}</Text>
-                                <Text>{data.valorSaidas}</Text>
-                            </View>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text>{data.dinheiroGuardado}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
-                        </View>
-                    </View>
-
-                    <View style={{ width: screen, padding: 20 }}>
-                        <Text>{data.saldo}</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
-                        <Text style={{ color: "green" }}>{data.valor}</Text>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.redimentosBrutos}</Text>
-                            <Text>{data.valorRendimentosBrutos}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.imposto}</Text>
-                            <Text>{data.valorImposto}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.iof}</Text>
-                            <Text>{data.valorIOF}</Text>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.entradas}</Text>
-                                <Text>{data.valorEntradas}</Text>
-                            </View>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.saidas}</Text>
-                                <Text>{data.valorSaidas}</Text>
-                            </View>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text>{data.dinheiroGuardado}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
-                        </View>
-                    </View>
-
-                    <View style={{ width: screen, padding: 20 }}>
-                        <Text>{data.saldo}</Text>
-                        <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
-                        <Text style={{ color: "green" }}>{data.valor}</Text>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.redimentosBrutos}</Text>
-                            <Text>{data.valorRendimentosBrutos}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.imposto}</Text>
-                            <Text>{data.valorImposto}</Text>
-                        </View>
-                        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                            <Text>{data.iof}</Text>
-                            <Text>{data.valorIOF}</Text>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text style={{ marginBottom: 10 }}>{data.saldoEntradasSaidas}</Text>
-                            <Text>é <Text style={{ fontWeight: "bold" }}>{data.valorEntradaSaida}</Text></Text>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.entradas}</Text>
-                                <Text>{data.valorEntradas}</Text>
-                            </View>
-                            <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
-                                <Text>{data.saidas}</Text>
-                                <Text>{data.valorSaidas}</Text>
-                            </View>
-                        </View>
-                        <BottonLine />
-                        <View>
-                            <Text>{data.dinheiroGuardado}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300", marginTop: 30 }}>{data.valorSaidaDe}</Text>
-                            <Text style={{ fontSize: 20, fontWeight: "300" }}>{data.rendendo} <Text style={{ color: "green" }}>{data.valorRendendo}</Text></Text>
-                        </View>
-                    </View>
-
+                    {Container()}
                 </View>
             </Animated.ScrollView>
             <StatusBar
