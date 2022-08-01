@@ -10,14 +10,43 @@ import Cobrar from "../../../icons/cobrar.png"
 import Doacao from "../../../icons/coracao.png"
 import Global from "../../../icons/global.png"
 import Investir from "../../../icons/investir.png"
-
-
+import Data from "../data.json"
+import { useEffect, useState } from "react";
 
 export default function firstBlock(props) {
+
     const navigation = useNavigation();
+
+    const [data, setData] = useState([])
+
+    const getData = () => {
+        Data.data.map((e) => {
+            setData(e)
+        })
+    }
+
+    useEffect(() => {
+        getData()
+    })
+
+    // const Container = () => {
+    //     return data?.circle?.map((e, item) => {
+    //         return (
+    //             <View key={item} style={firstStyleContainer.viewContentIcon}>
+    //                 <TouchableOpacity onPress={() => navigation.navigate("PixArea")} style={firstStyleContainer.iconsScroll}>
+    //                     <Image source={{ uri: e.icon }} style={{ width: 30, height: 30 }} />
+    //                 </TouchableOpacity>
+    //                 <Text style={firstStyleContainer.textoContentIcons}>{e.nome ? e.nome : "teste"}</Text>
+    //             </View>
+    //         )
+    //     })
+    // }
 
     return (
         <SafeAreaView>
+            {/* {
+                Container()
+            } */}
             <View style={{ width: '100%', display: "flex", flexDirection: "column", alignItems: "center", backgroundColor: "#ffff" }}>
                 <TouchableOpacity onPress={() => navigation.navigate('Account')} style={firstStyleContainer.containerCorpoTop}>
                     <View>
@@ -28,12 +57,14 @@ export default function firstBlock(props) {
                 </TouchableOpacity>
                 <ScrollView scrollEventThrottle={16}>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ display: "flex", flexDirection: "row", marginTop: 40 }}>
+
                         <View style={firstStyleContainer.viewContentIcon}>
                             <TouchableOpacity onPress={() => navigation.navigate("PixArea")} style={firstStyleContainer.iconsScroll}>
                                 <Image source={Pix} style={{ width: 30, height: 30 }} />
                             </TouchableOpacity>
                             <Text style={firstStyleContainer.textoContentIcons}>Área Pix</Text>
                         </View>
+
                         <View style={firstStyleContainer.viewContentIcon}>
                             <TouchableOpacity onPress={() => navigation.navigate("Pay")} style={firstStyleContainer.iconsScroll}>
                                 <Image source={Pagar} style={{ width: 30, height: 15, marginTop: 8 }} />
@@ -93,7 +124,7 @@ export default function firstBlock(props) {
                     <TouchableOpacity onPress={() => navigation.navigate("Cripto")} style={firstStyleContainer.infoContent}>
                         <Text style={{ width: 280, letterSpacing: 1, marginLeft: 10, fontWeight: '500', fontWeight: '400' }}><Text style={{ color: '#a031df' }}>Cripto:</Text> Compre com segurança a partir de R$1</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => console.log('teste')} style={firstStyleContainer.infoContent}>
+                    <TouchableOpacity onPress={() => navigation.navigate("PjAccount")} style={firstStyleContainer.infoContent}>
                         <Text style={{ width: 280, letterSpacing: 1, marginLeft: 10, fontWeight: '500', fontWeight: '400' }}>Conheça a <Text style={{ color: '#a031df' }}>conta PJ:</Text> prática e livre de burocracia para seu...</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => console.log('teste')} style={firstStyleContainer.lastInfoContent} >

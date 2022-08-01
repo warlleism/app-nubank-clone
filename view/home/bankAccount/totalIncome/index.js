@@ -2,7 +2,7 @@ import { Dimensions, StatusBar, Text, View, Animated, SafeAreaView, StyleSheet }
 import NavegateTopScreen from "../../../../components/topScreenNavegate";
 import BottonLine from "../../../../components/bottonLine";
 import { useEffect, useState } from "react";
-import Data from "../../dados.json"
+import Data from "../../data.json"
 
 const screen = Dimensions.get("window").width;
 

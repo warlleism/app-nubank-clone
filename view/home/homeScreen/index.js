@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity, StatusBar, SafeAr
 import Icon from "react-native-vector-icons/AntDesign";
 import FirstBlock from "../firstBlock/index";
 import SecondBlock from "../secondblock/index";
-import Dados from "../dados.json"
+import Data from "../data.json"
 
 export default function Home() {
 
@@ -16,15 +16,15 @@ export default function Home() {
         setShowMoney(!showMoney)
     }
 
-    const dados = {
+    const initialData = {
         name: ""
     }
 
-    const [data, setData] = useState(dados)
+    const [data, setData] = useState(initialData)
 
 
-    const getDados = () => {
-        Dados.data.map((e) => {
+    const getData = () => {
+        Data.data.map((e) => {
             e.user.map(e => setData({
                 name: e.name
             }))
@@ -32,7 +32,7 @@ export default function Home() {
     }
 
     useEffect(() => {
-        getDados()
+        getData()
     }, [])
 
     return (

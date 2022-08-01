@@ -17,6 +17,7 @@ import Demand from './view/home/demand';
 import Donation from './view/home/donation';
 import InternationalTransfer from "./view/home/internacionalTransfer"
 import Invest from "./view/home/invest"
+import PjAccount from './view/home/pjAccount';
 
 const Stack = createStackNavigator();
 
@@ -44,6 +45,7 @@ function MyStack() {
       <Stack.Screen name="Donation" component={Donation} />
       <Stack.Screen name="InternationalTransfer" component={InternationalTransfer} />
       <Stack.Screen name="Invest" component={Invest} />
+      <Stack.Screen name="PjAccount" component={PjAccount} />
     </Stack.Navigator>
   );
 }

@@ -28,6 +28,12 @@
                     "rendendo": "rendendo ",
                     "valorRendendo": "9,15% ao ano"
                 }
+            ],
+            "circle": [
+                {
+                    "nome": "Área Pix",
+                    "icon": "../../../icons/pix.png"
+                }
             ]
         }
     ]
