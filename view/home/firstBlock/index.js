@@ -127,8 +127,9 @@ export default function firstBlock(props) {
                     <TouchableOpacity onPress={() => navigation.navigate("PjAccount")} style={firstStyleContainer.infoContent}>
                         <Text style={{ width: 280, letterSpacing: 1, marginLeft: 10, fontWeight: '500', fontWeight: '400' }}>Conheça a <Text style={{ color: '#a031df' }}>conta PJ:</Text> prática e livre de burocracia para seu...</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => console.log('teste')} style={firstStyleContainer.lastInfoContent} >
-                        <Text style={{ width: 280, letterSpacing: 1, marginLeft: 10, fontWeight: '500', fontWeight: '400' }}>Salve amigos da burocracia. <Text style={{ color: '#a031df' }}>Faça um convite para o Nubank.</Text> prática e livre de burocracia para seu...</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate("NoBureaucracy")} style={firstStyleContainer.lastInfoContent} >
+                        <Text style={{ width: 280, letterSpacing: 1, fontWeight: '500', fontWeight: '400' }}>Salve amigos da burocracia.</Text>
+                        <Text style={{ color: '#a031df' }}>Faça um convite para o Nubank.</Text>
                     </TouchableOpacity>
                 </ScrollView>
 
@@ -184,7 +185,7 @@ const firstStyleContainer = StyleSheet.create({
     },
     lastInfoContent: {
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "column",
         backgroundColor: '#ececf5',
         width: 320,
         padding: 20,

@@ -5,6 +5,7 @@ import PerfeitoNegocio from "../../../images/perfeitoNegocio.png"
 import SimplesAssim from "../../../images/simplesAssim.jpg"
 import VoceControle from "../../../images/voceControle.png"
 import Icon from "react-native-vector-icons/AntDesign";
+import { useNavigation } from "@react-navigation/native";
 
 const { width } = Dimensions.get("window")
 const { height } = Dimensions.get("window").height
@@ -36,10 +37,12 @@ export default function PjAccount() {
 
     const [activeIndex, setActiveIndex] = useState(0)
 
+    const navigation = useNavigation()
+
     const ImagemContainer = ({ item, textos }) => {
         return (
             <View style={{ width: width, height: height }}>
-                
+
                 <Image source={item.url} style={styles.image} />
 
                 <View style={{ position: "absolute", bottom: 60, padding: 20 }}>
@@ -71,7 +74,7 @@ export default function PjAccount() {
 
                     <FlatList
                         data={imagens}
-                        style={{ height: "100%", backgroundColor: "green" }}
+                        style={{ height: "100%" }}
                         horizontal
                         onMomentumScrollEnd={(event) => setActiveIndex(parseInt(event.nativeEvent.contentOffset.x / width * 1.2))}
                         scrollEventThrottle={16}
@@ -101,12 +104,13 @@ export default function PjAccount() {
                 </TouchableOpacity>
             </SafeAreaView>
 
-            <View style={{ position: "absolute", top: 10, left: 10 }}>
+            <TouchableOpacity onPress={() => navigation.navigate("Home")} style={{ position: "absolute", top: 10, left: 10 }}>
                 <Icon name="close" size={26} style={{ color: '#ffff', backgroundColor: "#2a2a2abf", borderRadius: 30, padding: 3 }} />
-            </View>
+            </TouchableOpacity>
         </>
     )
 }
+
 const styles = StyleSheet.create({
 
     textContainer: {
@@ -131,7 +135,7 @@ const styles = StyleSheet.create({
     dotsContainer: {
         flexDirection: "row",
         justifyContent: "center",
-        left: "46%"
+        alignSelf: "center"
     },
     dots: {
         width: 8,

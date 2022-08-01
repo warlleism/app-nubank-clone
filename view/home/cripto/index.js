@@ -48,13 +48,10 @@ export default function Cripto() {
         Animacao()
     }, [])
 
-
-
     return (
         <SafeAreaView>
-    
             <NavegateTopScreen route={"Home"} icon={"left"} rightIcon={"questioncircleo"} />
-            <ScrollView padding={20} style={{ position: "relative" }}>
+            <ScrollView padding={20} style={{ position: "relative", marginBottom: 40 }}>
                 <Animated.View style={[{
                     transform: [{ translateX: posicao }]
                 }]}>
