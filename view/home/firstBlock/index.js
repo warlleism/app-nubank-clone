@@ -10,43 +10,15 @@ import Cobrar from "../../../icons/cobrar.png"
 import Doacao from "../../../icons/coracao.png"
 import Global from "../../../icons/global.png"
 import Investir from "../../../icons/investir.png"
-import Data from "../data.json"
-import { useEffect, useState } from "react";
 
 export default function firstBlock(props) {
 
     const navigation = useNavigation();
 
-    const [data, setData] = useState([])
-
-    const getData = () => {
-        Data.data.map((e) => {
-            setData(e)
-        })
-    }
-
-    useEffect(() => {
-        getData()
-    })
-
-    // const Container = () => {
-    //     return data?.circle?.map((e, item) => {
-    //         return (
-    //             <View key={item} style={firstStyleContainer.viewContentIcon}>
-    //                 <TouchableOpacity onPress={() => navigation.navigate("PixArea")} style={firstStyleContainer.iconsScroll}>
-    //                     <Image source={{ uri: e.icon }} style={{ width: 30, height: 30 }} />
-    //                 </TouchableOpacity>
-    //                 <Text style={firstStyleContainer.textoContentIcons}>{e.nome ? e.nome : "teste"}</Text>
-    //             </View>
-    //         )
-    //     })
-    // }
 
     return (
         <SafeAreaView>
-            {/* {
-                Container()
-            } */}
+
             <View style={{ width: '100%', display: "flex", flexDirection: "column", alignItems: "center", backgroundColor: "#ffff" }}>
                 <TouchableOpacity onPress={() => navigation.navigate('Account')} style={firstStyleContainer.containerCorpoTop}>
                     <View>
@@ -55,65 +27,62 @@ export default function firstBlock(props) {
                     </View>
                     <Icon name="right" size={14} style={{ color: 'black' }} />
                 </TouchableOpacity>
-                <ScrollView scrollEventThrottle={16}>
-                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ display: "flex", flexDirection: "row", marginTop: 40 }}>
+                <ScrollView horizontal={true} scrollEventThrottle={16} showsHorizontalScrollIndicator={false} style={{ display: "flex", flexDirection: "row", marginTop: 40 }}>
+                    <View style={firstStyleContainer.viewContentIcon}>
+                        <TouchableOpacity onPress={() => navigation.navigate("PixArea")} style={firstStyleContainer.iconsScroll}>
+                            <Image source={Pix} style={{ width: 30, height: 30 }} />
+                        </TouchableOpacity>
+                        <Text style={firstStyleContainer.textoContentIcons}>Área Pix</Text>
+                    </View>
 
-                        <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={() => navigation.navigate("PixArea")} style={firstStyleContainer.iconsScroll}>
-                                <Image source={Pix} style={{ width: 30, height: 30 }} />
-                            </TouchableOpacity>
-                            <Text style={firstStyleContainer.textoContentIcons}>Área Pix</Text>
-                        </View>
-
-                        <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={() => navigation.navigate("Pay")} style={firstStyleContainer.iconsScroll}>
-                                <Image source={Pagar} style={{ width: 30, height: 15, marginTop: 8 }} />
-                            </TouchableOpacity>
-                            <Text style={firstStyleContainer.textoContentIcons}>Pagar</Text>
-                        </View>
-                        <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={() => navigation.navigate("Transfer")} style={firstStyleContainer.iconsScroll}>
-                                <Image source={Transferir} style={{ width: 33, height: 30 }} />
-                            </TouchableOpacity>
-                            <Text style={firstStyleContainer.textoContentIcons}>Transferir</Text>
-                        </View>
-                        <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={() => navigation.navigate("Deposit")} style={firstStyleContainer.iconsScroll}>
-                                <Image source={Depositar} style={{ width: 35, height: 30 }} />
-                            </TouchableOpacity>
-                            <Text style={firstStyleContainer.textoContentIcons}>Depositar</Text>
-                        </View>
-                        <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={() => navigation.navigate("Recharge")} style={firstStyleContainer.iconsScroll}>
-                                <Image source={Telefone} style={{ width: 30, height: 30 }} />
-                            </TouchableOpacity>
-                            <Text style={firstStyleContainer.textoContentIcons}>Recarga de celular</Text>
-                        </View>
-                        <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={() => navigation.navigate("Demand")} style={firstStyleContainer.iconsScroll}>
-                                <Image source={Cobrar} style={{ width: 42, height: 39 }} />
-                            </TouchableOpacity>
-                            <Text style={firstStyleContainer.textoContentIcons}>Cobrar</Text>
-                        </View>
-                        <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={() => navigation.navigate("Donation")} style={firstStyleContainer.iconsScroll}>
-                                <Image source={Doacao} style={{ width: 39, height: 34 }} />
-                            </TouchableOpacity>
-                            <Text style={firstStyleContainer.textoContentIcons}>Doação</Text>
-                        </View>
-                        <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={() => navigation.navigate("InternationalTransfer")} style={firstStyleContainer.iconsScroll}>
-                                <Image source={Global} style={{ width: 53, height: 33 }} />
-                            </TouchableOpacity>
-                            <Text style={firstStyleContainer.textoContentIcons}>Tranferência Internac. </Text>
-                        </View>
-                        <View style={firstStyleContainer.viewContentIcon}>
-                            <TouchableOpacity onPress={() => navigation.navigate("Invest")} style={firstStyleContainer.iconsScroll}>
-                                <Image source={Investir} style={{ width: 30, height: 36 }} />
-                            </TouchableOpacity>
-                            <Text style={firstStyleContainer.textoContentIcons}>Investir</Text>
-                        </View>
-                    </ScrollView>
+                    <View style={firstStyleContainer.viewContentIcon}>
+                        <TouchableOpacity onPress={() => navigation.navigate("Pay")} style={firstStyleContainer.iconsScroll}>
+                            <Image source={Pagar} style={{ width: 30, height: 15, marginTop: 8 }} />
+                        </TouchableOpacity>
+                        <Text style={firstStyleContainer.textoContentIcons}>Pagar</Text>
+                    </View>
+                    <View style={firstStyleContainer.viewContentIcon}>
+                        <TouchableOpacity onPress={() => navigation.navigate("Transfer")} style={firstStyleContainer.iconsScroll}>
+                            <Image source={Transferir} style={{ width: 33, height: 30 }} />
+                        </TouchableOpacity>
+                        <Text style={firstStyleContainer.textoContentIcons}>Transferir</Text>
+                    </View>
+                    <View style={firstStyleContainer.viewContentIcon}>
+                        <TouchableOpacity onPress={() => navigation.navigate("Deposit")} style={firstStyleContainer.iconsScroll}>
+                            <Image source={Depositar} style={{ width: 35, height: 30 }} />
+                        </TouchableOpacity>
+                        <Text style={firstStyleContainer.textoContentIcons}>Depositar</Text>
+                    </View>
+                    <View style={firstStyleContainer.viewContentIcon}>
+                        <TouchableOpacity onPress={() => navigation.navigate("Recharge")} style={firstStyleContainer.iconsScroll}>
+                            <Image source={Telefone} style={{ width: 30, height: 30 }} />
+                        </TouchableOpacity>
+                        <Text style={firstStyleContainer.textoContentIcons}>Recarga de celular</Text>
+                    </View>
+                    <View style={firstStyleContainer.viewContentIcon}>
+                        <TouchableOpacity onPress={() => navigation.navigate("Demand")} style={firstStyleContainer.iconsScroll}>
+                            <Image source={Cobrar} style={{ width: 42, height: 39 }} />
+                        </TouchableOpacity>
+                        <Text style={firstStyleContainer.textoContentIcons}>Cobrar</Text>
+                    </View>
+                    <View style={firstStyleContainer.viewContentIcon}>
+                        <TouchableOpacity onPress={() => navigation.navigate("Donation")} style={firstStyleContainer.iconsScroll}>
+                            <Image source={Doacao} style={{ width: 39, height: 34 }} />
+                        </TouchableOpacity>
+                        <Text style={firstStyleContainer.textoContentIcons}>Doação</Text>
+                    </View>
+                    <View style={firstStyleContainer.viewContentIcon}>
+                        <TouchableOpacity onPress={() => navigation.navigate("InternationalTransfer")} style={firstStyleContainer.iconsScroll}>
+                            <Image source={Global} style={{ width: 53, height: 33 }} />
+                        </TouchableOpacity>
+                        <Text style={firstStyleContainer.textoContentIcons}>Tranferência Internac. </Text>
+                    </View>
+                    <View style={firstStyleContainer.viewContentIcon}>
+                        <TouchableOpacity onPress={() => navigation.navigate("Invest")} style={firstStyleContainer.iconsScroll}>
+                            <Image source={Investir} style={{ width: 30, height: 36 }} />
+                        </TouchableOpacity>
+                        <Text style={firstStyleContainer.textoContentIcons}>Investir</Text>
+                    </View>
                 </ScrollView>
                 <TouchableOpacity onPress={() => navigation.navigate("Cards")} style={firstStyleContainer.cartoesContent}>
                     <Image source={Pix} style={{ width: 30, height: 30 }} />

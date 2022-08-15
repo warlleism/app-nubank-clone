@@ -11,7 +11,7 @@ export default function Home() {
     const navigation = useNavigation();
     const [showMoney, setShowMoney] = useState(true)
 
-    //Lógica para mostrar ou não do valor monetário na conta
+    //Lógica para mostrar ou não do valor monetário da conta
     const showMoneyFunction = () => {
         setShowMoney(!showMoney)
     }

@@ -39,7 +39,7 @@ export default function PjAccount() {
 
     const navigation = useNavigation()
 
-    const ImagemContainer = ({ item, textos }) => {
+    const ImagemContainer = (item) => {
         return (
             <View style={{ width: width, height: height }}>
 
@@ -81,7 +81,7 @@ export default function PjAccount() {
                         pagingEnabled
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={(item) => String(item?.id)}
-                        renderItem={({ item }) => <ImagemContainer item={item} textos={"teste"} />}
+                        renderItem={({ item }) => ImagemContainer(item)}
                     />
                 </View>
 

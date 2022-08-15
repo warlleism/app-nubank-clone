@@ -71,13 +71,12 @@ export default function TotalIncome() {
     const Container = () => {
         return a.map((e) => {
             return (
-                <View style={{ width: screen, padding: 20 }}>
+                <View key={e} style={{ width: screen, padding: 20 }}>
                     <Text>{data.saldo}</Text>
                     <Text style={{ fontSize: 19, fontWeight: "300", marginTop: 20 }}>{data.rendeu}</Text>
                     <Text style={{ color: "green" }}>{data.valor}</Text>
                     <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>
                         <Text>{data.redimentosBrutos}</Text>
-
                         <Text>{data.valorRendimentosBrutos}</Text>
                     </View>
                     <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 17 }}>

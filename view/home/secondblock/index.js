@@ -17,7 +17,7 @@ export default function secondBlock() {
         <SafeAreaView>
             <View style={{ width: '100%', display: "flex", flexDirection: "column", alignItems: "center", backgroundColor: "#ffff" }}>
                 <BottonLine />
-                <TouchableOpacity onPress={() => console.log("Teste")} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
+                <TouchableOpacity onPress={() => navigation.navigate("CreditCard")} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
                     <View>
                         <Text style={{ marginTop: 5, fontSize: 25, fontWeight: '500' }}>Cartão de crédito</Text>
                         <Text style={{ fontSize: 16, marginTop: 15, fontWeight: '500', color: '#151515c7' }}>Fatura fechada</Text>

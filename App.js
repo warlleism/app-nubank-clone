@@ -19,6 +19,7 @@ import InternationalTransfer from "./view/home/internacionalTransfer"
 import Invest from "./view/home/invest"
 import PjAccount from './view/home/pjAccount';
 import NoBureaucracy from './view/home/noBureaucracy';
+import CreditCard from './view/home/creditCard';
 
 const Stack = createStackNavigator();
 
@@ -48,6 +49,7 @@ function MyStack() {
       <Stack.Screen name="Invest" component={Invest} />
       <Stack.Screen name="PjAccount" component={PjAccount} />
       <Stack.Screen name="NoBureaucracy" component={NoBureaucracy} />
+      <Stack.Screen name="CreditCard" component={CreditCard} />
     </Stack.Navigator>
   );
 }

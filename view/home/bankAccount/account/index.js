@@ -26,7 +26,9 @@ export default function Account() {
             <ScrollView
                 ref={scrollRef}
                 showsVerticalScrollIndicator={false}
-                decelerationRate="normal">
+                decelerationRate="normal"
+                style={{marginBottom: 40}}
+                >
                 <View>
                     <View style={{ padding: 20 }}>
                         <View>
@@ -180,6 +182,7 @@ export default function Account() {
                                 </View>
                                 <Text>11 JUL</Text>
                             </View>
+                            <BottonLine />
                             <View style={{ marginTop: 20, display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                                 <View style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
                                     <View style={{ padding: 7, backgroundColor: "#c2c2c38c", borderRadius: 50, marginRight: 20 }}>
