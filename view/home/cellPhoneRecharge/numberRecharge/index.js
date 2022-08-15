@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
-import { Animated, StyleSheet, Text, View, Keyboard, SafeAreaView } from "react-native";
+import { Animated, StyleSheet, Text, View, Keyboard, SafeAreaView, Dimensions } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-// import { useNavigation } from "@react-navigation/native";
 import { TextInputMask } from "react-native-masked-text";
 import NavegateTopScreen from "../../../../components/topScreenNavegate"
 import Icon from "react-native-vector-icons/AntDesign";
 import SelectOperator from "../selectOperator";
 
 
+const { height } = Dimensions.get("window")
 
 export default function CellPhoneRecharge() {
 
     const [transform, setTransform] = useState(new Animated.Value(600))
+
 
     function Animacao() {
         Keyboard.dismiss()
@@ -30,9 +31,9 @@ export default function CellPhoneRecharge() {
 
     return (
         <SafeAreaView>
+            <NavegateTopScreen route={"Home"} icon={"close"} />
             <View style={styleContent.main}>
                 <View style={{ position: "relative" }}>
-                    <NavegateTopScreen route={"Home"} icon={"close"} />
                     <View style={{ width: "100%", top: -30, display: "flex", alignItems: "center" }}>
                         <View style={{ backgroundColor: "#4a4848db", width: 160, height: 3, borderRadius: 50 }}>
                             <View style={{ backgroundColor: "#a031df", width: 50, height: 3, borderRadius: 50 }}>
@@ -77,7 +78,8 @@ const styleContent = StyleSheet.create({
         position: "relative",
         display: "flex",
         justifyContent: "space-between",
-        height: "100%"
+        height: "90%",
+        marginTop: 60,
     },
     button: {
         borderRadius: 200 / 2,

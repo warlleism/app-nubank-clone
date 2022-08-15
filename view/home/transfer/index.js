@@ -9,13 +9,13 @@ import Icon from "react-native-vector-icons/AntDesign";
 export default function Transfer(props) {
 
   const [valor, setValor] = useState("0,00")
-  const Height = Dimensions.get("window").height
-  const Width = Dimensions.get("window").width
+  const { width } = Dimensions.get("window")
+  const { height } = Dimensions.get("window")
 
   return (
     <SafeAreaView>
-      <View style={{ backgroundColor: "#f2f2f2", height: '100%', width: Width, position: "relative" }}>
-        <NavegateTopScreen route={"Home"} icon={"close"} rightIcon={"qrcode"} display={props.showCloseTogle ? props.showCloseTogle : ""} />
+      <NavegateTopScreen route={"Home"} icon={"close"} rightIcon={"qrcode"} display={props.showCloseTogle ? props.showCloseTogle : ""} />
+      <View style={{ backgroundColor: "#f2f2f2", height: "90%", width: width, position: "relative", marginTop: 60 }}>
         <View style={{ padding: 20 }}>
           <Text style={{ fontSize: 32, width: 300, marginBottom: 10, fontWeight: "500" }}>Qual é o valor da <Text style={{ color: "#a031df", fontWeight: "800" }}>transferência?</Text></Text>
           <Text>Saldo disponível em conta <Text style={{ fontSize: 17, fontWeight: "600", color: "#a031df" }}>R$ 1829,80</Text></Text>

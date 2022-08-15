@@ -11,7 +11,7 @@ export default function InternationalTransfer() {
     return (
         <SafeAreaView>
             <NavegateTopScreen route={"Home"} icon={"close"} rightIcon={"questioncircleo"} />
-            <View style={{ width: "100%", padding: 20, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <View style={{ width: "100%", padding: 20, display: "flex", flexDirection: "column", justifyContent: "center", marginTop: 60 }}>
                 <Text style={{ fontSize: 30, fontWeight: "700", marginBottom: 10 }}>Transferência <Text style={{ color: "#a031df" }}>Internacional</Text></Text>
                 <Text style={{ fontSize: 17, marginTop: 10 }}>Envie e receba dinheiro do exterior de maneira rápida e segura.</Text>
                 <View>

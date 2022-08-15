@@ -11,14 +11,14 @@ export default function Demand(props) {
 
     return (
         <SafeAreaView>
-            <View style={{ backgroundColor: "#f2f2f2", height: "100%", width: Width, position: "relative" }}>
-                <NavegateTopScreen route={"Home"} icon={"close"} display={props.showCloseTogle ? props.showCloseTogle : ""} />
+            <NavegateTopScreen route={"Home"} icon={"close"} display={props.showCloseTogle ? props.showCloseTogle : ""} />
+            <View style={{ backgroundColor: "#f2f2f2", height: "90%", width: Width, position: "relative", marginTop: 60 }}>
                 <View style={{ padding: 20, position: "relative" }}>
                     <Text style={{ fontSize: 32, width: 300, marginBottom: 10, fontWeight: "500" }}>Qual é o valor a <Text style={{ color: "#a031df", fontWeight: "800" }}>receber?</Text></Text>
                     <TextInputMask
                         autoFocus={true}
                         type={'money'}
-                        
+
                         value={valor}
                         options={{
                             precision: 2,

@@ -18,8 +18,8 @@ export default function Deposit(props) {
 
     return (
         <SafeAreaView>
-            <Animated.View style={{ backgroundColor: "#f2f2f2", height: Height, width: Width }}>
-                <NavegateTopScreen route={"Home"} icon={"close"} display={props.showCloseTogle ? props.showCloseTogle : ""} />
+            <NavegateTopScreen route={"Home"} icon={"close"} display={props.showCloseTogle ? props.showCloseTogle : ""} />
+            <Animated.View style={{ backgroundColor: "#f2f2f2", height: Height, width: Width, marginTop: 60 }}>
                 <ScrollView style={{ marginTop: -30 }}>
                     <View style={{ width: "100%", padding: 20, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                         <Text style={{ fontSize: 30, fontWeight: "600", marginBottom: 10, width: 320 }}>Como você quer <Text style={{ color: "#a031df" }}>depositar</Text> na sua conta do Nubank?</Text>

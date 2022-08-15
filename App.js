@@ -20,6 +20,8 @@ import Invest from "./view/home/invest"
 import PjAccount from './view/home/pjAccount';
 import NoBureaucracy from './view/home/noBureaucracy';
 import CreditCard from './view/home/creditCard';
+import Loan from './view/home/loan';
+import PieceNubank from './view/home/pieceNubank';
 
 const Stack = createStackNavigator();
 
@@ -50,6 +52,8 @@ function MyStack() {
       <Stack.Screen name="PjAccount" component={PjAccount} />
       <Stack.Screen name="NoBureaucracy" component={NoBureaucracy} />
       <Stack.Screen name="CreditCard" component={CreditCard} />
+      <Stack.Screen name="Loan" component={Loan} />
+      <Stack.Screen name="PieceNubank" component={PieceNubank} />
     </Stack.Navigator>
   );
 }

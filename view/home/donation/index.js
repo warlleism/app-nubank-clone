@@ -22,7 +22,7 @@ export default function Donation(props) {
                             <Icon name="arrowright" size={23} style={{ color: '#8734c7' }} />
                         </Pressable>
                     </View>
-                    <TouchableOpacity onPress={(() => console.log("teste"))} style={{ alignSelf: "center", alignItems: "center", width: "99%", marginBottom: 60, borderRadius: 50, backgroundColor: "#8734c7", padding: 15 }}>
+                    <TouchableOpacity onPress={(() => console.log("teste"))} style={{ alignSelf: "center", alignItems: "center", width: "99%", marginBottom: 70, borderRadius: 50, backgroundColor: "#8734c7", padding: 15 }}>
                         <Text style={{ color: "#ffff", fontWeight: "600", fontSize: 16 }}>Fazer doação</Text>
                     </TouchableOpacity>
                 </View>

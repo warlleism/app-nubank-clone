@@ -10,7 +10,7 @@ export default function MyCards() {
     return (
         <SafeAreaView>
             <NavegateTopScreen route={"Home"} icon={"close"} />
-            <View style={{ padding: 20 }}>
+            <View style={{ padding: 20, marginTop: 60 }}>
                 <Text style={{ fontSize: 26, fontWeight: "600" }}>Meus cartões</Text>
                 <TouchableOpacity onPress={() => console.log("teste")} style={{ marginTop: 40 }}>
                     <Text style={{ fontWeight: "600", color: "#0000009c" }}>Cartão físico</Text>

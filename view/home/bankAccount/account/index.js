@@ -27,7 +27,7 @@ export default function Account() {
                 ref={scrollRef}
                 showsVerticalScrollIndicator={false}
                 decelerationRate="normal"
-                style={{marginBottom: 40}}
+                style={{marginBottom: 40, marginTop: 60}}
                 >
                 <View>
                     <View style={{ padding: 20 }}>

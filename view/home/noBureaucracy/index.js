@@ -14,7 +14,7 @@ export default function NoBureaucracy(props) {
     return (
         <>
             <NavegateTopScreen route={"Home"} icon={"left"} display={props.showCloseTogle ? props.showCloseTogle : ""} />
-            <ScrollView>
+            <ScrollView style={{marginTop: 60}}>
                 <View style={{ padding: 20 }}>
                     <Text style={{ fontSize: 27, fontWeight: "600" }}>Convide seus amigos para o Nubank</Text>
                     <Text style={{ fontSize: 16, fontWeight: "100" }}>Salve amigos e familiares da burocracia. para cada convite aceito, um novo brasão é liberado</Text>
