@@ -15,7 +15,7 @@ export default function SavedMoney() {
     return (
         <SafeAreaView>
             <NavegateTopScreen route={"Account"} icon={"close"} rightIcon={"questioncircleo"} />
-            <View style={{ padding: 20, display: "flex", flexDirection: "column", justifyContent: "space-between", height: "94%" }}>
+            <View style={{ marginTop: 40, padding: 20, display: "flex", flexDirection: "column", justifyContent: "space-between", height: "94%" }}>
                 <View>
                     <View>
                         <Text style={{ fontSize: 14, fontWeight: "600" }}>Total guardado</Text>

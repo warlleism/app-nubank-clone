@@ -82,7 +82,7 @@ export default function Profile() {
                         data.map((e) => {
                             return (
                                 <>
-                                    <TouchableOpacity onPress={() => console.log("teste")} style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center", padding: 20 }}>
+                                    <TouchableOpacity onPress={() => console.log("teste")} style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center", padding: 20 }} key={e.dsc}>
                                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
                                             <Image source={e.img} style={{ width: 35, height: 35 }} />
                                             <Text style={{ fontWeight: "600", marginLeft: 20 }}>{e.dsc}</Text>

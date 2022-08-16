@@ -11,17 +11,16 @@ import BottonLine from "../../../components/bottonLine";
 import Icon from "react-native-vector-icons/AntDesign";
 import Transfer from "../transfer/index";
 import Deposit from "../deposit/index";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function PixArea() {
 
     const navigation = useNavigation()
 
-    const [posicao, setPosicao] = useState(new Animated.Value(3200))
-    const [posicao2, setPosicao2] = useState(new Animated.Value(3200))
+    const [posicao] = useState(new Animated.Value(3200))
+    const [posicao2] = useState(new Animated.Value(3200))
     const [showTransfer, setShowTransfer] = useState(false)
     const [showDeposit, setShowDeposit] = useState(true)
-
 
     function Animacao(valor) {
         setShowTransfer(true)
@@ -72,10 +71,24 @@ export default function PixArea() {
         }
     }
 
+    const data = [
+
+        {
+            img: CopiarColar,
+            dsc: "Pix Copiar e Cola",
+            navigate: "PixArea"
+        },
+        {
+            img: QrCode,
+            dsc: "Ler QR code",
+            navigate: "PixArea"
+        },
+    ]
+
     return (
         <SafeAreaView>
             <NavegateTopScreen route={"Home"} icon={"close"} rightIcon={"questioncircleo"} />
-            <ScrollView style={{marginTop: 60}}>
+            <ScrollView style={{ marginTop: 60 }}>
                 <View style={{ width: "100%", padding: 20, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                     <Text style={{ fontSize: 30, fontWeight: "600", marginBottom: 10 }}>Área Pix</Text>
                     <Text>Envie e receba pagamentos a  qualquer hora do dia da semana, sem pagar nada por isso.</Text>
@@ -88,18 +101,19 @@ export default function PixArea() {
                                 </TouchableOpacity>
                                 <Text style={firstStyleContainer.textoContentIcons}>Transferir</Text>
                             </View>
-                            <View style={firstStyleContainer.viewContentIcon}>
-                                <TouchableOpacity onPress={() => navigation.navigate("PixArea")} style={firstStyleContainer.imagemIcon}>
-                                    <Image source={CopiarColar} style={{ width: 30, height: 30 }} />
-                                </TouchableOpacity>
-                                <Text style={firstStyleContainer.textoContentIcons}>Pix Copiar e Colar</Text>
-                            </View>
-                            <View style={firstStyleContainer.viewContentIcon}>
-                                <TouchableOpacity onPress={() => navigation.navigate("PixArea")} style={firstStyleContainer.imagemIcon}>
-                                    <Image source={QrCode} style={{ width: 30, height: 30 }} />
-                                </TouchableOpacity>
-                                <Text style={firstStyleContainer.textoContentIcons}>Ler QR code</Text>
-                            </View>
+                            {
+                                data.map((e) => {
+                                    return (
+                                        <View style={firstStyleContainer.viewContentIcon} key={e.dsc}>
+                                            <TouchableOpacity onPress={() => navigation.navigate(e.navigate)} style={firstStyleContainer.imagemIcon}>
+                                                <Image source={e.img} style={{ width: 30, height: 30 }} />
+                                            </TouchableOpacity>
+                                            <Text style={firstStyleContainer.textoContentIcons}>{e.dsc}</Text>
+                                        </View>
+                                    )
+                                })
+                            }
+
                         </View>
                     </View>
                     <View>

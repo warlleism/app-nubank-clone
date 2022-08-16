@@ -119,7 +119,7 @@ export default function TotalIncome() {
                 display: "flex",
                 flexDirection: "row",
                 marginBottom: 10,
-                marginTop: 20,
+                marginTop: 60,
                 maxWidth: screen * 12,
                 transform: [{
                     translateX: x.interpolate({

@@ -76,11 +76,10 @@ export default function firstBlock(props) {
                     <Icon name="right" size={14} style={{ color: 'black' }} />
                 </TouchableOpacity>
                 <ScrollView horizontal={true} scrollEventThrottle={16} showsHorizontalScrollIndicator={false} style={{ display: "flex", flexDirection: "row", marginTop: 40 }}>
-
                     {
                         data.map((e) => {
                             return (
-                                <View style={firstStyleContainer.viewContentIcon}>
+                                <View style={firstStyleContainer.viewContentIcon} key={e.dsc}>
                                     <TouchableOpacity onPress={() => navigation.navigate(e.navigate)} style={firstStyleContainer.iconsScroll}>
                                         <Image source={e.img} style={{ width: 40, height: 40 }} />
                                     </TouchableOpacity>
@@ -89,13 +88,11 @@ export default function firstBlock(props) {
                             )
                         })
                     }
-
                 </ScrollView>
                 <TouchableOpacity onPress={() => navigation.navigate("Cards")} style={firstStyleContainer.cartoesContent}>
                     <Image source={Pix} style={{ width: 30, height: 30 }} />
                     <Text style={{ marginLeft: 10, fontWeight: '500' }}>Meus Cartões</Text>
                 </TouchableOpacity>
-
                 <ScrollView scrollEventThrottle={16} horizontal={true} showsHorizontalScrollIndicator={false} style={{ display: "flex", flexDirection: "row", padding: 20 }} >
                     <TouchableOpacity onPress={() => navigation.navigate("Cripto")} style={firstStyleContainer.infoContent}>
                         <Text style={{ width: 280, letterSpacing: 1, marginLeft: 10, fontWeight: '500', fontWeight: '400' }}><Text style={{ color: '#a031df' }}>Cripto:</Text> Compre com segurança a partir de R$1</Text>
