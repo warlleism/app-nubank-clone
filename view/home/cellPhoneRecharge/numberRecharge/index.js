@@ -78,13 +78,13 @@ const styleContent = StyleSheet.create({
         position: "relative",
         display: "flex",
         justifyContent: "space-between",
-        height: "90%",
+        height: "88%",
         marginTop: 60,
     },
     button: {
         borderRadius: 200 / 2,
         padding: 10,
-        backgroundColor: "#a010df"
+        backgroundColor: "#a010df",
     },
     buttonDesable: {
         borderRadius: 200 / 2,

@@ -7,7 +7,7 @@ const AppButton = (props) =>
             paddingVertical: props.pVertical ? props.pVertical : 6,
             paddingHorizontal: props.pHorizontal ? props.pHorizontal : 14,
             textAlign: "center",
-            fontSize: 14,
+            fontSize: props.fontSize ? props.fontSize : 14,
             borderColor: '#fff',
             color: props.color,
             borderRadius: props.radius ? props.radius : 100,

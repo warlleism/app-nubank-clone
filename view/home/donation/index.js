@@ -10,7 +10,7 @@ export default function Donation(props) {
         <>
             <NavegateTopScreen route={"Home"} icon={"close"}  display={props.showCloseTogle ? props.showCloseTogle : ""} />
             <SafeAreaView>
-                <View style={{ padding: 20, width: dimensions.width, height: dimensions.height, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                <View style={{ marginTop: 60, padding: 20, width: dimensions.width, height: dimensions.height, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                     <View>
                         <Image source={Imagem} style={{ width: 100, height: 160 }} />
                         <Text style={{ fontWeight: "600", fontSize: 25, marginBottom: 10 }}>Doe usando seu cartão de crédito</Text>

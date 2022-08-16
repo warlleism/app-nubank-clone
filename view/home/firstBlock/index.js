@@ -15,6 +15,54 @@ export default function firstBlock(props) {
 
     const navigation = useNavigation();
 
+    const data = [
+        {
+            img: Pix,
+            dsc: "Área Pix",
+            navigate: "PixArea"
+        },
+        {
+            img: Pagar,
+            dsc: "Pagar",
+            navigate: "Pay"
+        },
+        {
+            img: Transferir,
+            dsc: "Transferir",
+            navigate: "Transfer"
+        },
+        {
+            img: Depositar,
+            dsc: "Depositar",
+            navigate: "Deposit"
+        },
+        {
+            img: Telefone,
+            dsc: "Recarga de celular",
+            navigate: "Recharge"
+        },
+        {
+            img: Cobrar,
+            dsc: "Cobrar",
+            navigate: "Demand"
+        },
+        {
+            img: Doacao,
+            dsc: "Doação",
+            navigate: "Donation"
+        },
+        {
+            img: Global,
+            dsc: "Tranferência Internac.",
+            navigate: "InternationalTransfer"
+        },
+        {
+            img: Investir,
+            dsc: "Investir",
+            navigate: "Invest"
+        },
+    ]
+
 
     return (
         <SafeAreaView>
@@ -28,61 +76,20 @@ export default function firstBlock(props) {
                     <Icon name="right" size={14} style={{ color: 'black' }} />
                 </TouchableOpacity>
                 <ScrollView horizontal={true} scrollEventThrottle={16} showsHorizontalScrollIndicator={false} style={{ display: "flex", flexDirection: "row", marginTop: 40 }}>
-                    <View style={firstStyleContainer.viewContentIcon}>
-                        <TouchableOpacity onPress={() => navigation.navigate("PixArea")} style={firstStyleContainer.iconsScroll}>
-                            <Image source={Pix} style={{ width: 30, height: 30 }} />
-                        </TouchableOpacity>
-                        <Text style={firstStyleContainer.textoContentIcons}>Área Pix</Text>
-                    </View>
 
-                    <View style={firstStyleContainer.viewContentIcon}>
-                        <TouchableOpacity onPress={() => navigation.navigate("Pay")} style={firstStyleContainer.iconsScroll}>
-                            <Image source={Pagar} style={{ width: 30, height: 15, marginTop: 8 }} />
-                        </TouchableOpacity>
-                        <Text style={firstStyleContainer.textoContentIcons}>Pagar</Text>
-                    </View>
-                    <View style={firstStyleContainer.viewContentIcon}>
-                        <TouchableOpacity onPress={() => navigation.navigate("Transfer")} style={firstStyleContainer.iconsScroll}>
-                            <Image source={Transferir} style={{ width: 33, height: 30 }} />
-                        </TouchableOpacity>
-                        <Text style={firstStyleContainer.textoContentIcons}>Transferir</Text>
-                    </View>
-                    <View style={firstStyleContainer.viewContentIcon}>
-                        <TouchableOpacity onPress={() => navigation.navigate("Deposit")} style={firstStyleContainer.iconsScroll}>
-                            <Image source={Depositar} style={{ width: 35, height: 30 }} />
-                        </TouchableOpacity>
-                        <Text style={firstStyleContainer.textoContentIcons}>Depositar</Text>
-                    </View>
-                    <View style={firstStyleContainer.viewContentIcon}>
-                        <TouchableOpacity onPress={() => navigation.navigate("Recharge")} style={firstStyleContainer.iconsScroll}>
-                            <Image source={Telefone} style={{ width: 30, height: 30 }} />
-                        </TouchableOpacity>
-                        <Text style={firstStyleContainer.textoContentIcons}>Recarga de celular</Text>
-                    </View>
-                    <View style={firstStyleContainer.viewContentIcon}>
-                        <TouchableOpacity onPress={() => navigation.navigate("Demand")} style={firstStyleContainer.iconsScroll}>
-                            <Image source={Cobrar} style={{ width: 42, height: 39 }} />
-                        </TouchableOpacity>
-                        <Text style={firstStyleContainer.textoContentIcons}>Cobrar</Text>
-                    </View>
-                    <View style={firstStyleContainer.viewContentIcon}>
-                        <TouchableOpacity onPress={() => navigation.navigate("Donation")} style={firstStyleContainer.iconsScroll}>
-                            <Image source={Doacao} style={{ width: 39, height: 34 }} />
-                        </TouchableOpacity>
-                        <Text style={firstStyleContainer.textoContentIcons}>Doação</Text>
-                    </View>
-                    <View style={firstStyleContainer.viewContentIcon}>
-                        <TouchableOpacity onPress={() => navigation.navigate("InternationalTransfer")} style={firstStyleContainer.iconsScroll}>
-                            <Image source={Global} style={{ width: 53, height: 33 }} />
-                        </TouchableOpacity>
-                        <Text style={firstStyleContainer.textoContentIcons}>Tranferência Internac. </Text>
-                    </View>
-                    <View style={firstStyleContainer.viewContentIcon}>
-                        <TouchableOpacity onPress={() => navigation.navigate("Invest")} style={firstStyleContainer.iconsScroll}>
-                            <Image source={Investir} style={{ width: 30, height: 36 }} />
-                        </TouchableOpacity>
-                        <Text style={firstStyleContainer.textoContentIcons}>Investir</Text>
-                    </View>
+                    {
+                        data.map((e) => {
+                            return (
+                                <View style={firstStyleContainer.viewContentIcon}>
+                                    <TouchableOpacity onPress={() => navigation.navigate(e.navigate)} style={firstStyleContainer.iconsScroll}>
+                                        <Image source={e.img} style={{ width: 40, height: 40 }} />
+                                    </TouchableOpacity>
+                                    <Text style={firstStyleContainer.textoContentIcons}>{e.dsc}</Text>
+                                </View>
+                            )
+                        })
+                    }
+
                 </ScrollView>
                 <TouchableOpacity onPress={() => navigation.navigate("Cards")} style={firstStyleContainer.cartoesContent}>
                     <Image source={Pix} style={{ width: 30, height: 30 }} />
@@ -126,8 +133,8 @@ const firstStyleContainer = StyleSheet.create({
     },
     iconsScroll: {
         alignItems: "center",
-        height: 60,
-        width: 60,
+        height: 70,
+        width: 70,
         backgroundColor: '#ececf5',
         padding: 14,
         borderRadius: 100

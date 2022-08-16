@@ -7,6 +7,7 @@ import NuSocioImg3 from "../../../images/pieceNubank3.jpg"
 import pieceNubankVideo1 from "../../../images/pieceNubankVideo1.jpg"
 import pieceNubankVideo2 from "../../../images/pieceNubankVideo2.jpg"
 import pieceNubankVideo3 from "../../../images/pieceNubankVideo3.jpg"
+import AppButton from "../../../components/button"
 
 
 export default function PieceNubank() {
@@ -44,9 +45,17 @@ export default function PieceNubank() {
 
                 <View style={style.containerNuEnsina}>
                     <Text style={{ fontSize: 18, fontWeight: "600" }}>NuEnsina: o jeito Nu de ensinar sobre grana</Text>
-                    <Text style={{ marginTop: 20 }}>Aprenda novas formas de lidar com seu dinheiro e até como fazê-lo crescer. tem vídeo,Quiz, dicas diversas e muito mais!</Text>
+                    <Text style={{ marginTop: 20, marginBottom: 20 }}>Aprenda novas formas de lidar com seu dinheiro e até como fazê-lo crescer. tem vídeo,Quiz, dicas diversas e muito mais!</Text>
                     <TouchableOpacity onPress={() => console.log("teste")}>
-                        <Text style={style.buttomNu}>ir pada o NuEnsina</Text>
+                        <AppButton
+                            background={'#8734c7'}
+                            color={'#ffff'}
+                            titulo={'Ir para o NuEnsina'}
+                            evento={'testes'}
+                            pVertical={11}
+                            weight={"700"}
+                            fontSize={19}
+                        />
                     </TouchableOpacity>
                 </View>
 
@@ -75,7 +84,7 @@ export default function PieceNubank() {
                     </ScrollView>
                     <View>
                         <Text style={{ padding: 20, fontSize: 20, fontWeight: "800", marginTop: 30 }}>Comece sua jornada como a gente</Text>
-                        <Text style={{ padding: 20, fontSize: 17, marginTop: 20, color: "#35363aa6" }}>parabéns! Seu BDR vale um pedacinho do Nubank. Por aqui você vai acompanhar a variação do preço dele e também aprender sobre investimentos na bolsa de valores. Veja o conteúdo que preparamos para você.</Text>
+                        <Text style={{ padding: 20, fontSize: 17, color: "#35363aa6", marginBottom: 20 }}>parabéns! Seu BDR vale um pedacinho do Nubank. Por aqui você vai acompanhar a variação do preço dele e também aprender sobre investimentos na bolsa de valores. Veja o conteúdo que preparamos para você.</Text>
 
                         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
 
@@ -97,7 +106,16 @@ export default function PieceNubank() {
                             <Text style={{ color: "#35363aa6" }}>Salve seus amigos da burocracia.</Text>
                         </View>
                         <TouchableOpacity onPress={() => console.log("teste")}>
-                            <Text style={{ backgroundColor: "#8734c7", color: "#ffff", paddingHorizontal: 30, paddingVertical: 11, borderRadius: 40, fontWeight: "600" }}>Indicar</Text>
+                            <AppButton
+                                background={'#8734c7'}
+                                color={'#ffff'}
+                                titulo={'Indicar'}
+                                evento={'testes'}
+                                pVertical={11}
+                                pHorizontal={30}
+                                weight={"600"}
+                                fontSize={14}
+                            />
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -124,20 +142,8 @@ const style = StyleSheet.create({
         alignSelf: "center",
         borderRadius: 20
     },
-    buttomNu: {
-        width: "100%",
-        textAlign: "center",
-        fontSize: 19,
-        marginTop: 20,
-        alignSelf: "center",
-        backgroundColor: "#8734c7",
-        color: "#ffff",
-        fontWeight: "500",
-        paddingVertical: 11,
-        borderRadius: 40
-    },
     containerVideo: {
-        width: 200,
+        width: 220,
         height: 300,
         marginLeft: 10,
         marginRight: 10,

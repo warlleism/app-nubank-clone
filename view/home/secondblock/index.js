@@ -2,7 +2,6 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, SafeAreaVi
 import AppButton from "../../../components/button";
 import Icon from "react-native-vector-icons/AntDesign";
 import Tesseract from '../../../icons/tesseract.png'
-import Cartao from '../../../icons/cartao.png'
 import Crypto from '../../../icons/crypto.png'
 import Coracao from '../../../icons/coracaopiscando.png'
 import Img1 from '../../../images/nuimg1.png'
@@ -28,8 +27,8 @@ export default function secondBlock() {
                         <Text style={{ marginTop: 5, fontWeight: '500', fontSize: 20 }}>R$ 262,86</Text>
                         <Text style={{ fontSize: 16, marginTop: 5, fontWeight: '500', color: '#151515c7' }}>Vencimento dia 27</Text>
                         <View style={{ display: "flex", flexDirection: "row", marginTop: 15 }}>
-                            <AppButton marginR={6} background={'#d40a0a'} color={'#fff'} titulo={'Pagar fatura'} evento={'testess'} />
-                            <AppButton background={'#ececf5'} color={'black'} titulo={'Parcelar'} evento={'testess'} />
+                            <AppButton weight={"700"} marginR={6} background={'#d40a0a'} color={'#fff'} titulo={'Pagar fatura'} evento={'testess'} />
+                            <AppButton weight={"700"} background={'#ececf5'} color={'black'} titulo={'Parcelar compras'} evento={'testess'} />
                         </View>
                     </View>
                     <Icon name="right" size={14} style={{ color: 'black' }} />
@@ -48,7 +47,6 @@ export default function secondBlock() {
                         <Text style={{ marginTop: 5, fontSize: 17, fontWeight: '500' }}>Investimentos</Text>
                         <Text style={{ fontSize: 13, marginTop: 15, fontWeight: '500', color: '#151515c7' }}>O jeito Nu de investir: sem asteriscos, linguagem fácil e a partir de R$1. Saiba mais.</Text>
                         <TouchableOpacity onPress={() => navigation.navigate("PieceNubank")}><Text style={styleContent.content}><Image source={Tesseract} style={{ width: 27, height: 18 }} />     Meu Pedacinho do Nubank</Text></TouchableOpacity>
-                        <TouchableOpacity onPress={() => console.log('teste')}><Text style={styleContent.content}><Image source={Cartao} style={{ width: 27, height: 18 }} />     Consultar saldo para transferência</Text></TouchableOpacity>
                     </View>
                     <Icon name="right" size={14} style={{ color: 'black' }} />
                 </TouchableOpacity>
@@ -172,8 +170,8 @@ const styleContent = StyleSheet.create({
     containerImgs: {
         display: "flex",
         justifyContent: "space-between",
-        width: 200,
-        height: width / 1.4,
+        width: 250,
+        height: width / 1.5,
         marginLeft: 10,
         backgroundColor: '#ececf5'
     },
