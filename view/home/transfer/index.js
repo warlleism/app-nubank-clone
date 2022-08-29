@@ -30,14 +30,13 @@ export default function Transfer(props) {
               unit: 'R$',
               suffixUnit: ''
             }}
-            selectionColor={"#a031df"}
             keyboardType={"number-pad"}
             onChangeText={(text) => setValor(text)}
             style={{ borderBottomColor: "black", borderBottomWidth: 1, padding: 10, fontSize: 40, marginTop: 20 }}
           />
         </View>
         <TouchableOpacity disabled={valor == "0,00" ? true : false} onPress={() => console.log("teste")} style={{ position: "absolute", bottom: 40, width: "100%", display: "flex", alignItems: "flex-end", marginLeft: -20 }}>
-          <Text style={valor == "R$0,00" || valor == "0,00" ? [styleContent.button, { backgroundColor: "#4a48486b" }] : [styleContent.button, { backgroundColor: "#a010df" }]}>
+          <Text style={valor == "0,00" || valor == "0,00" ? [styleContent.button, { backgroundColor: "#4a48486b" }] : [styleContent.button, { backgroundColor: "#a010df" }]}>
             <Icon name="arrowright" size={22} color={"#ffff"} />
           </Text>
         </TouchableOpacity>

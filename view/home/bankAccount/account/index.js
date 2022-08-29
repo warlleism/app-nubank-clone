@@ -141,7 +141,7 @@ export default function Account() {
                             {
                                 data.map((e) => {
                                     return (
-                                        <>
+                                        <View key={e.dsc}>
                                             <View style={{ marginTop: 20, display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                                                 <View style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
                                                     <View style={{ padding: 7, backgroundColor: "#c2c2c38c", borderRadius: 50, marginRight: 20 }}>
@@ -156,7 +156,7 @@ export default function Account() {
                                                 <Text>11 JUL</Text>
                                             </View>
                                             <BottonLine />
-                                        </>
+                                        </View>
                                     )
                                 })
                             }
